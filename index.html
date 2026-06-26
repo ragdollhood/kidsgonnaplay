@@ -2260,6 +2260,16 @@ function buildAdSlot(ad, lang){
 
   const body=document.createElement('div');
   body.className='ad-slot-body';
+  
+const label = document.createElement('div');
+label.textContent = lang === 'sv' ? 'Annons' : 'Ad';
+label.style.fontSize = '11px';
+label.style.opacity = '0.7';
+label.style.marginBottom = '6px';
+label.style.fontWeight = 'bold';
+
+body.appendChild(label);
+
   const t=document.createElement('h3');
   t.className='ad-slot-title';
   t.textContent=title;
