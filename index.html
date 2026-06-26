@@ -2289,7 +2289,7 @@ body.appendChild(label);
   t.textContent=title;
   const s=document.createElement('p');
   s.className='ad-slot-subtitle';
-  s.textContent=subtitle;
+s.innerHTML = subtitle;
   body.appendChild(t);
   body.appendChild(s);
   el.appendChild(body);
