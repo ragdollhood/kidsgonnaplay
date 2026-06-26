@@ -2209,7 +2209,9 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
 <script>
 (function(){
   const state={lang:'en',activeCard:null};
+  document.body.classList.add('lang-en');
   const buttons=[...document.querySelectorAll('.lang-btn')];
+  document.body.classList.add('lang-en');
   const cards=[...document.querySelectorAll('.card')];
   const modal=document.getElementById('gameModal');
   const modalClose=document.getElementById('modalClose');
@@ -2227,7 +2229,11 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
   function applyTranslations(){document.documentElement.lang=state.lang; buttons.forEach(btn=>btn.classList.toggle('active', btn.dataset.langTarget===state.lang)); document.querySelectorAll('[data-en][data-sv]:not(.card):not(.filter-btn):not(.slogan)').forEach(el=>{el.textContent=state.lang==='sv'?el.dataset.sv:el.dataset.en;}); document.querySelectorAll('.filter-btn[data-en][data-sv]').forEach(el=>{el.textContent=state.lang==='sv'?el.dataset.sv:el.dataset.en; if(el.classList.contains('active')) el.textContent=el.textContent;}); cards.forEach(card=>{const title=textFor(card,'title'); const subtitle=textFor(card,'subtitle'); card.querySelector('[data-field="title"]').textContent=title; card.querySelector('[data-field="subtitle"]').textContent=subtitle; card.setAttribute('aria-label', title); const img=card.querySelector('img'); img.alt=title; img.src=imageFor(card);}); renderSlogan(); } 
   function openModal(card,focusClose=true){state.activeCard=card; const title=textFor(card,'title'); const subtitle=textFor(card,'subtitle'); const details=textFor(card,'details'); modalImage.src=imageFor(card); modalImage.alt=title; modalTitle.textContent=title; modalSubtitle.textContent=subtitle; modalDetails.textContent=details; modalMeta.textContent=''; modalMeta.style.display='none'; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; if(focusClose) modalClose.focus(); }
   function closeModal(){modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow='';}
-  buttons.forEach(btn=>btn.addEventListener('click',()=>{state.lang=btn.dataset.langTarget; state.activeCard=null; closeModal(); applyTranslations();}));
+  buttons.forEach(btn=>btn.addEventListener('click',()=>{state.lang=btn.dataset.langTarget; 
+  document.body.classList.remove('lang-en','lang-sv');
+  document.body.classList.add('lang-' + state.lang);
+
+                                                         state.activeCard=null; closeModal(); applyTranslations();}));
   cards.forEach(card=>card.addEventListener('click',()=>openModal(card)));
 
   function visibleCards(){return cards.filter(c=>c.style.display!=='none');}
