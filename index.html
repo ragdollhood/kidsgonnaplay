@@ -159,7 +159,26 @@ footer{text-align:center;padding:30px;color:#5a4a2c;font-size:.95rem}
 .modal{display:flex!important;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .24s ease, visibility .24s ease}
 .modal.open{opacity:1;visibility:visible;pointer-events:auto}
 .modal-dialog{position:relative;border-radius:28px}
+/* ✅ Language toggle for top text */
+.top-text-sv{
+  display:none;
+}
 
+body.lang-sv .top-text-en{
+  display:none;
+}
+
+body.lang-sv .top-text-sv{
+  display:inline;
+}
+
+body.lang-en .top-text-en{
+  display:inline;
+}
+
+body.lang-en .top-text-sv{
+  display:none;
+}
 
 .modal-close,#modalClose{position:absolute!important;top:10px!important;right:10px!important;width:60px!important;height:60px!important;border-radius:999px!important;border:3px solid var(--purple)!important;background:#fff!important;box-shadow:0 6px 16px rgba(72,39,103,.18)!important;font-size:40px!important;line-height:1!important;color:var(--purple)!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;cursor:pointer;z-index:30;transition:transform .15s ease, box-shadow .15s ease, filter .15s ease}
 .modal-close:hover,#modalClose:hover{transform:scale(1.06);box-shadow:0 10px 22px rgba(72,39,103,.24)!important;filter:brightness(1.02)}
