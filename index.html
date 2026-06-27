@@ -2386,17 +2386,61 @@ document.querySelectorAll('.lang-btn').forEach(btn=>{
 });
 
 render();
-</script><script>
-(function(){
-  fetch('https://api.counterapi.dev/v1/kidsgonnaplay-ragdollhood/visits/up')
-    .then(function(r){return r.json()})
-    .then(function(d){
-      var n=d.count!=null?d.count:(d.Count!=null?d.Count:null);
-      if(n!=null){
-        var el=document.getElementById('headerVisits');
-        if(el) el.textContent='✦ '+Number(n).toLocaleString('sv-SE')+' VISITORS';
+</script>
+
+<script>
+const SUPABASE_URL = "https://qjevqnimmmqjxyewdrpk.supabase.co";
+const SUPABASE_KEY = "sb_publishable_zTb_SonUDr4Tp47x-FGZxQ_2hQm7G6m";
+
+async function updateCounter() {
+  const box = document.getElementById("headerVisits");
+
+  try {
+    const getRes = await fetch(`${SUPABASE_URL}/rest/v1/counter?id=eq.1&select=value`, {
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`
       }
-    })
-    .catch(function(){});
-})();
-</script></body></html>
+    });
+
+    if (!getRes.ok) {
+      box.textContent = "API error";
+      return;
+    }
+
+    const data = await getRes.json();
+
+    if (!data || !data[0]) {
+      box.textContent = "No row";
+      return;
+    }
+
+    const current = Number(data[0].value || 0);
+    const newValue = current + 1;
+
+    const patchRes = await fetch(`${SUPABASE_URL}/rest/v1/counter?id=eq.1`, {
+      method: "PATCH",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        "Content-Type": "application/json",
+        Prefer: "return=representation"
+      },
+      body: JSON.stringify({ value: newValue })
+    });
+
+    if (!patchRes.ok) {
+      box.textContent = "Update error";
+      return;
+    }
+
+    box.textContent = "Visits: " + newValue;
+
+  } catch (e) {
+    box.textContent = "Error";
+  }
+}
+
+updateCounter();
+</script>
+</body></html>
