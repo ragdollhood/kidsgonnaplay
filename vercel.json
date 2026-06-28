@@ -1,10 +1,1 @@
-{
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "kidsgonnaplay.com" }],
-      "destination": "https://www.kidsgonnaplay.com/:path*",
-      "permanent": true
-    }
-  ]
-}
+
