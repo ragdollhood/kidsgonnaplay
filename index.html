@@ -206,8 +206,7 @@ g.organ.hovsel .hoverpart{transform:scale(1.16)}
 
 /* food flying from pantry to plate */
 .flyfood{position:fixed;z-index:90;font-size:30px;pointer-events:none;
-  transform:translate(-50%,-50%) scale(1.3);
-  transition:left .62s cubic-bezier(.35,.8,.35,1), top .62s cubic-bezier(.55,-.25,.45,1), transform .62s ease;
+  will-change:transform;
   filter:drop-shadow(0 5px 6px rgba(40,25,10,.4))}
 /* search */
 #pantryHead{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:2px}
@@ -1167,30 +1166,14 @@ function renderPlate(){
   const z=document.getElementById('plateZone');
   const w=z.clientWidth||360, h=z.clientHeight||520;
   const cx=w/2, n=mealItems.length;
-  const IW0=120, IH0=110;                               // cell base size
-  // the window image is FIXED — never grows. Food may sit outside the plate but
-  // always inside the image, never overlapping; items shrink only as a last resort.
-  let s=1, IW=IW0, IH=IH0, cols=1, rows=Math.max(1,n), maxCols=1, maxRows=1;
-  for(const sc of [1,.93,.86,.8,.74,.68,.62,.57,.52]){
-    IW=IW0*sc; IH=IH0*sc;
-    maxCols=Math.max(1,Math.floor((w*0.97)/IW));
-    maxRows=Math.max(1,Math.floor((h*0.95)/IH));
-    cols = (n<=9) ? Math.min(Math.max(1,n),3) : Math.ceil(n/3);
-    cols = Math.min(Math.max(cols, Math.ceil(Math.max(1,n)/maxRows)), maxCols);
-    rows = Math.ceil(Math.max(1,n)/cols);
-    s=sc;
-    if(rows<=maxRows) break;
-  }
-  // plate: always a circle, sized for up to a 3x3 grid, capped inside the image
+  // plate size
   const plateMaxD=Math.min(w*0.94, h*0.86);
-  const diag=Math.hypot(Math.min(cols,3)*IW, Math.min(rows,3)*IH);
-  const plateD=Math.min(plateMaxD, Math.max(245, diag/0.92));
-  const plateW=plateD, plateH=plateD;
+  const plateD=Math.min(plateMaxD, Math.max(245, w*0.88));
   const zh=h, cyz=h*0.52;
   if(z.style.minHeight) z.style.minHeight='';
   const img=z.querySelector('.plate-photo');
-  img.style.width=plateW+'px'; img.style.height=plateH+'px';
-  // cutlery resting on the windowsill (elements may not exist)
+  img.style.width=plateD+'px'; img.style.height=plateD+'px';
+  // cutlery
   const fork=document.getElementById('cutFork'), knife=document.getElementById('cutKnife');
   if(fork && knife){
     const L=Math.min(w*0.30,210), W=L*0.149, sillY=zh*0.935;
@@ -1198,17 +1181,60 @@ function renderPlate(){
     fork.style.left=(w*0.24 - W/2)+'px';
     knife.style.left=(w*0.76 - W/2)+'px';
   }
-  // food side by side in columns/rows, never overlapping, never outside the image
+  // ── Circular layout ──────────────────────────────────────────
+  // Rings: outer (up to 6), then centre slot (7th), then inner ring (8-12), then outer-2 (13+)
+  // Each ring gets a radius and the items placed evenly around it.
+  function circlePositions(total, platePx, cy){
+    const outerR = platePx * 0.355;   // outer ring radius
+    const innerR = platePx * 0.185;   // inner ring radius
+    const positions = [];
+    // Hexagonal layout:
+    // Slot 0 = centre
+    // Slots 1-6 = outer ring, fixed hex angles: top, top-right, bottom-right, bottom, bottom-left, top-left
+    // Slots 7-12 = second outer ring (outerR2), same hex angles offset by 30deg
+    // Slots 13+ = third ring, scaled down further
+    // Scale is reduced when total > 7 so nothing overlaps.
+    const hexAngles = [-Math.PI/2, -Math.PI/6, Math.PI/6, Math.PI/2, 5*Math.PI/6, -5*Math.PI/6];
+    // hex2 angles rotated 30° so they sit between ring-1 items
+    const hex2Angles = hexAngles.map(a => a + Math.PI/6);
+    const outerR2 = platePx * 0.46;
+    // item scale: reduce when rings stack up so they don't overlap
+    const itemScale = total <= 7 ? 1 : total <= 13 ? 0.82 : 0.68;
+    // centre slot
+    positions.push({x:0, y:0, s: itemScale});
+    // ring 1 (up to 6 items)
+    for(let i=0;i<Math.min(total-1,6);i++){
+      const a = hexAngles[i];
+      positions.push({x: outerR*Math.cos(a), y: outerR*Math.sin(a), s: itemScale});
+    }
+    // ring 2 (items 8-13)
+    if(total > 7){
+      for(let i=0;i<Math.min(total-7,6);i++){
+        const a = hex2Angles[i];
+        positions.push({x: outerR2*Math.cos(a), y: outerR2*Math.sin(a), s: itemScale});
+      }
+    }
+    // ring 3 (items 14+), even further out
+    if(total > 13){
+      const outerR3 = platePx * 0.54;
+      const sc3 = 0.58;
+      const restCount = total - 13;
+      for(let i=0;i<restCount;i++){
+        const a = hexAngles[i % 6];
+        positions.push({x: outerR3*Math.cos(a), y: outerR3*Math.sin(a), s: sc3});
+      }
+    }
+    return positions;
+  }
+  const positions = circlePositions(n, plateD, cyz);
   mealItems.forEach((it,i)=>{
     const f=foodById(it.foodId);
-    const row=Math.floor(i/cols);
-    const inRow=(row<rows-1)?cols:(n-(rows-1)*cols);
-    const col=i-row*cols;
+    const pos = positions[i] || {x:0, y:0, s:0.6};
     const el=document.createElement('div');
     el.className='plate-item'+(it.eaten?' eaten':'');
-    el.style.left=(cx+(col-(inRow-1)/2)*IW)+'px';
-    el.style.top =(cyz+(row-(rows-1)/2)*IH)+'px';
-    el.style.transform='translate(-50%,-50%) scale('+s+')';
+    el.style.left=(cx + pos.x)+'px';
+    el.style.top =(cyz + pos.y)+'px';
+    el.style.transform='translate(-50%,-50%) scale('+pos.s+')';
     el.draggable=true;
     const nm=f[lang], fs=Math.min(10.5, Math.max(6, 126/nm.length));
     const tid='tarc'+it.uid, bid='barc'+it.uid;
@@ -1225,7 +1251,7 @@ function renderPlate(){
         <span class="em-wrap"><span class="em">${f.em}</span></span>
       </button>
       <div class="rowline">
-        <button class="qty" title="${t('howMuch')}">${fmtMeasure(f,it.qty,lang)}</button>
+        <button class="qty" title="${t('howMuch')}">${fmtMeasure(f,it.qty,lang)}${fmtMeasureAlt(f,it.qty,lang)?'<span style="font-weight:400;opacity:.7;font-size:9px;margin-left:3px">'+fmtMeasureAlt(f,it.qty,lang)+'</span>':''}</button>
       </div>`;
     el.addEventListener('dragstart',ev=>ev.dataTransfer.setData('text/plain','item:'+it.uid));
     el.querySelector('.qty').onclick=ev=>{ev.stopPropagation();openQtyPop(it,ev.currentTarget);};
@@ -1321,15 +1347,58 @@ function flyToPlate(f, fromEl, done){
   try{
     const r=fromEl.getBoundingClientRect();
     const z=document.getElementById('plateZone').getBoundingClientRect();
+
+    // Compute the target slot for the incoming item
+    const mealItems=items.filter(x=>x.meal===activeMeal);
+    const existingIdx=mealItems.findIndex(x=>x.foodId===f.id);
+    const slotIdx = existingIdx>=0 ? existingIdx : mealItems.length;
+
+    // Replicate circlePositions logic to get landing spot in screen coords
+    const plateD = z.width * 0.46;
+    const platePx = plateD/2;
+    const cx = z.left + z.width/2;
+    const cyz_abs = z.top + z.height*0.55;
+    const outerR = platePx * 0.32;
+    const outerR2 = platePx * 0.46;
+    const hexAngles = [-Math.PI/2, -Math.PI/6, Math.PI/6, Math.PI/2, 5*Math.PI/6, -5*Math.PI/6];
+    const hex2Angles = hexAngles.map(a => a + Math.PI/6);
+    let tx=cx, ty=cyz_abs;
+    if(slotIdx===0){
+      tx=cx; ty=cyz_abs;
+    } else if(slotIdx<=6){
+      const a=hexAngles[slotIdx-1];
+      tx=cx+outerR*Math.cos(a); ty=cyz_abs+outerR*Math.sin(a);
+    } else if(slotIdx<=12){
+      const a=hex2Angles[slotIdx-7];
+      tx=cx+outerR2*Math.cos(a); ty=cyz_abs+outerR2*Math.sin(a);
+    } else {
+      const outerR3=platePx*0.54;
+      const a=hexAngles[(slotIdx-13)%6];
+      tx=cx+outerR3*Math.cos(a); ty=cyz_abs+outerR3*Math.sin(a);
+    }
+
+    // Place element at start position (fixed, centered on source)
+    const startX = r.left + r.width/2;
+    const startY = r.top + r.height/2;
     const fl=document.createElement('span');
     fl.className='flyfood'; fl.textContent=f.em;
-    fl.style.left=(r.left+r.width/2)+'px'; fl.style.top=(r.top+r.height/2)+'px';
+    // Pin to top-left corner of viewport; use transform to position+scale
+    fl.style.left='0px'; fl.style.top='0px';
+    fl.style.transform=`translate(${startX}px,${startY}px) translate(-50%,-50%) scale(1.3)`;
     document.body.appendChild(fl);
-    requestAnimationFrame(()=>{requestAnimationFrame(()=>{
-      fl.style.left=(z.left+z.width/2)+'px';
-      fl.style.top=(z.top+z.height*0.55)+'px';
-      fl.style.transform='translate(-50%,-50%) scale(.85)';
-    });});
+
+    // Animate directly from source to target slot using Web Animations API
+    const dx = tx - startX;
+    const dy = ty - startY;
+    fl.animate([
+      { transform: `translate(${startX}px,${startY}px) translate(-50%,-50%) scale(1.3)` },
+      { transform: `translate(${tx}px,${ty}px) translate(-50%,-50%) scale(0.85)` }
+    ], {
+      duration: 620,
+      easing: 'cubic-bezier(.35,.6,.35,1)',
+      fill: 'forwards'
+    });
+
     setTimeout(()=>{fl.remove(); done&&done();},640);
   }catch(e){ done&&done(); }
 }
@@ -1447,6 +1516,31 @@ function fmtMeasure(f,q,lng){
   if(unit==='egg')   return fr(amt)+(amt===1?' egg':' eggs');
   return fr(amt)+' '+unit;
 }
+function fmtMeasureAlt(f,q,lng){
+  // Returns an alternative measurement in parentheses for the other unit system
+  const [base,unit]=f.m[lng], amt=base*q;
+  // g → oz conversion
+  if(unit==='g'){
+    const oz=Math.round((amt/28.35)*4)/4;
+    return '('+fr(oz)+' oz)';
+  }
+  // oz → g conversion
+  if(unit==='oz'){
+    const g=Math.round(amt*28.35/5)*5;
+    return '('+g+' g)';
+  }
+  // dl → cups
+  if(unit==='dl'){
+    const cups=Math.round(amt*0.4226*4)/4;
+    return '('+fr(cups)+(cups===1?' cup':' cups')+')';
+  }
+  // cup → dl
+  if(unit==='cup'){
+    const dl=Math.round(amt*2.366*4)/4;
+    return '('+fr(dl)+' dl)';
+  }
+  return '';
+}
 function addItem(foodId,eaten,announce){
   const ex=items.find(x=>x.foodId===foodId && x.meal===activeMeal);
   if(ex){
@@ -1489,7 +1583,7 @@ function openQtyPop(it,anchor){
   const f=foodById(it.foodId);
   document.getElementById('qtyTitle').textContent=f.em+' '+f[lang]+' — '+t('howMuch');
   document.getElementById('qtyRange').value=it.qty;
-  document.getElementById('qtyLabel').textContent=fmtMeasure(f,it.qty,lang);
+  document.getElementById('qtyLabel').textContent=fmtMeasure(f,it.qty,lang)+(fmtMeasureAlt(f,it.qty,lang)?' '+fmtMeasureAlt(f,it.qty,lang):'');
   pop.classList.add('open');
   placePop(pop,anchor,140);
 }
@@ -1497,7 +1591,7 @@ function closeQtyPop(){pop.classList.remove('open');popItemUid=null;}
 document.getElementById('qtyRange').addEventListener('input',e=>{
   const it=items.find(x=>x.uid===popItemUid); if(!it){closeQtyPop();return;}
   it.qty=parseFloat(e.target.value);
-  document.getElementById('qtyLabel').textContent=fmtMeasure(foodById(it.foodId),it.qty,lang);
+  document.getElementById('qtyLabel').textContent=fmtMeasure(foodById(it.foodId),it.qty,lang)+(fmtMeasureAlt(foodById(it.foodId),it.qty,lang)?' '+fmtMeasureAlt(foodById(it.foodId),it.qty,lang):'');
   render();
 });
 
