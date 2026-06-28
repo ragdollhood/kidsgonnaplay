@@ -4,4 +4,17 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: facebot
+Allow: /
+
+User-agent: facebookcatalog
+Allow: /
+
+# Block unnecessary paths from crawling
+Disallow: /cdn-cgi/
+Disallow: /*.json$
+Disallow: /api/
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
 Sitemap: https://kidsgonnaplay.com/sitemap.xml
