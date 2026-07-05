@@ -553,6 +553,22 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
   font-variant-numeric:tabular-nums;
   padding-left:4px;
 }
+.header-share{display:flex;align-items:center;gap:6px;}
+.header-share .share-icon-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:999px;flex-shrink:0;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+  transition:transform .15s ease;
+}
+.header-share .share-icon-btn:hover{transform:translateY(-1px)}
+.header-share .share-icon-btn:active{transform:scale(.92)}
+.header-share .share-fb{background:#1877F2;color:#fff;}
+.header-share .share-ig{background:radial-gradient(circle at 30% 107%,#fdf497,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);color:#fff;}
+.header-share .share-icon-btn svg{width:14px;height:14px;display:block;}
+@media(max-width:768px){
+  .header-share .share-icon-btn{width:22px;height:22px;}
+  .header-share .share-icon-btn svg{width:12px;height:12px;}
+}
 @media(max-width:768px){
   .header-donate .donate{font-size:10px;padding:6px 12px;}
   .header-donate{left:10px;top:12px;}
@@ -594,6 +610,14 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
     </svg>
     <span>Keep it free!</span>
   </a>
+  <div class="header-share">
+    <a class="share-icon-btn share-fb" id="share-fb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
+    </a>
+    <a class="share-icon-btn share-ig" id="share-ig" href="#" target="_blank" rel="noopener" aria-label="Share on Instagram" title="Share on Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77a4.9 4.9 0 0 1 1.77-1.15c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.25a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5ZM17.4 6.15a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/></svg>
+    </a>
+  </div>
 </div><div aria-label="Language selector" class="lang-switcher"><button aria-label="English" class="lang-btn active" data-lang-target="en" title="English" type="button"><img src="/images/engalpha.png" width="28" height="28"/></button><button aria-label="Svenska" class="lang-btn" data-lang-target="sv" title="Svenska" type="button"><img src="/images/swealpha.png" width="28" height="28"/></button></div></div>
 <div class="header-inner">
   <div class="header-text">
@@ -2210,8 +2234,10 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
 </button></section>
 
 <div aria-hidden="true" class="modal" id="gameModal"><div aria-labelledby="modalTitle" aria-modal="true" class="modal-dialog" role="dialog"><button aria-label="Close" class="modal-close" id="modalClose" type="button">&times;</button><div class="modal-grid"><div class="modal-media"><img alt="" id="modalImage" src=""/></div><div class="modal-content"><h2 class="modal-title" id="modalTitle"></h2><p class="modal-subtitle" id="modalSubtitle"></p><div class="modal-details" id="modalDetails"></div><div class="modal-meta" id="modalMeta"></div></div></div></div></div>
-<p style="text-align:center;max-width:none;margin:20px auto 8px;padding:0 16px;font-size:.92rem;color:#6b5230;line-height:1.5;" data-en="DISCLAIMER: The activities, games, and content provided on this website are intended for informational, educational, and entertainment purposes only. While we strive to provide safe and enjoyable activities, all activities should be carried out under appropriate adult supervision. Parents, guardians, and caregivers are solely responsible for determining whether an activity is suitable for a particular child, taking into account the child's age, abilities, health, and the environment in which the activity takes place. KidsGonnaPlay makes no representations or warranties regarding the safety, suitability, or effectiveness of any activity. Participation in any activity is entirely at your own risk. To the fullest extent permitted by applicable law, KidsGonnaPlay and its owners, contributors, and affiliates shall not be liable for any injury, loss, damage, accident, or claim arising from the use of this website or participation in any activity described on this website. By using this website, you acknowledge and agree to these terms. © 2026 KidsGonnaPlay. All rights reserved. CONTACT: ragdollhood@gmail.com" 
-  data-sv="ANSVARSFRISKRIVNING: Aktiviteterna, lekarna och innehållet på denna webbplats tillhandahålls endast i informations-, utbildnings- och underhållningssyfte. Även om vi strävar efter att erbjuda säkra och roliga aktiviteter ska alla aktiviteter genomföras under lämplig uppsikt av en vuxen. Föräldrar, vårdnadshavare och andra ansvariga vuxna ansvarar själva för att bedöma om en aktivitet är lämplig för det enskilda barnet med hänsyn till barnets ålder, förmåga, hälsa och den miljö där aktiviteten genomförs. KidsGonnaPlay lämnar inga garantier avseende säkerheten, lämpligheten eller resultatet av någon aktivitet som presenteras på webbplatsen. Deltagande i aktiviteter sker helt på egen risk. I den utsträckning som tillåts enligt tillämplig lag ansvarar KidsGonnaPlay, dess ägare, medarbetare eller samarbetspartners inte för skador, förluster, olyckor eller andra konsekvenser som kan uppstå genom användning av webbplatsen eller deltagande i någon aktivitet som beskrivs på webbplatsen. Genom att använda denna webbplats bekräftar du att du har läst, förstått och accepterat denna ansvarsfriskrivning. Vissa aktiviteter kan innehålla små föremål eller moment som inte är lämpliga för alla åldrar. Vuxna ansvarar för att bedöma eventuella risker innan aktiviteten påbörjas. © 2026 KidsGonnaPlay. Alla rättigheter förbehållna. KONTAKT: ragdollhood@gmail.com</p>
+<p style="text-align:center;max-width:none;margin:20px auto 8px;padding:0 16px;font-size:.92rem;color:#6b5230;line-height:1.5;" data-en="DISCLAIMER: The activities and games provided on this website are intended for entertainment and educational purposes only. While we strive to offer safe and fun suggestions, all activities should be carried out under appropriate adult supervision. We are not responsible for any injuries, damages, or incidents that may occur while participating in these activities. It is the responsibility of parents or guardians to assess the suitability of each activity based on the child’s age, abilities, and environment. By using this website, you agree that participation in any activity is at your own risk. CONTACT: ragdollhood@gmail.com" 
+  data-sv="ANSVARSFRISKRIVNING: De aktiviteter och lekar som presenteras på denna webbplats är endast avsedda för underhållnings- och utbildningssyfte. Även om vi strävar efter att erbjuda säkra och roliga förslag, bör alla aktiviteter utföras under lämplig uppsikt av en vuxen.
+Vi ansvarar inte för eventuella skador, olyckor eller incidenter som kan uppstå vid deltagande i dessa aktiviteter. Det är föräldrars eller vårdnadshavares ansvar att bedöma om varje aktivitet är lämplig utifrån barnets ålder, förmåga och omgivning.
+Genom att använda denna webbplats accepterar du att deltagande i aktiviteter sker på egen risk. KONTAKT: ragdollhood@gmail.com</p>
 <footer>
   <p style="margin:0;font-size:.85rem;">Contact: <a href="mailto:ragdollhood@gmail.com" style="color:#5a4a2c">ragdollhood@gmail.com</a></p>
 </footer>
@@ -2255,6 +2281,26 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
   modal.addEventListener('click', e=>{if(e.target===modal) closeModal();});
   document.addEventListener('keydown', e=>{if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); if(modal.classList.contains('open') && e.key==='ArrowRight') openRelative(1); if(modal.classList.contains('open') && e.key==='ArrowLeft') openRelative(-1);});
   applyTranslations();
+})();
+
+// Share buttons
+(function(){
+  const pageUrl = window.location.href;
+  const fbLink = document.getElementById('share-fb');
+  if (fbLink) { fbLink.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl); }
+  const igLink = document.getElementById('share-ig');
+  if (igLink) {
+    igLink.addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText(pageUrl).then(()=>{
+        const isSv = document.body.classList.contains('lang-sv');
+        igLink.setAttribute('title', isSv ? 'Länk kopierad!' : 'Link copied!');
+        const original = igLink.innerHTML;
+        igLink.innerHTML = '✓';
+        setTimeout(()=>{ igLink.innerHTML = original; }, 2000);
+      }).catch(()=>{ window.open('https://www.instagram.com/', '_blank'); });
+    });
+  }
 })();
 </script><script>
 // ── Ad definitions ──────────────────────────────────────────────
