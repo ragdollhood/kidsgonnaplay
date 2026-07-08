@@ -10,6 +10,9 @@ Allow: /
 User-agent: facebookcatalog
 Allow: /
 
+User-agent: *
+Disallow: /4zhmyr.html
+
 # Block unnecessary paths from crawling
 Disallow: /cdn-cgi/
 Disallow: /*.json$
