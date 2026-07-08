@@ -9,4 +9,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://kidsgonnaplay.com/"/>
     <xhtml:link rel="alternate" hreflang="sv" href="https://kidsgonnaplay.com/"/>
   </url>
+  <url>
+    <loc>https://kidsgonnaplay.com/store.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kidsgonnaplay.com/store.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://kidsgonnaplay.com/store.html"/>
+  </url>
 </urlset>
