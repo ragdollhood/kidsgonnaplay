@@ -20,8 +20,13 @@ img{max-width:100%}
 /* ===== Header ===== */
 header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180deg,var(--orange),#f7b94d);border-bottom:clamp(3px,1.2vw,10px) solid var(--purple);position:relative}
 .header-inner{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:1100px;margin:0 auto}
-.back-link{position:absolute;left:14px;top:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.9);color:#3c2470;font-weight:800;font-size:.82rem;text-decoration:none;padding:7px 13px;border-radius:999px;box-shadow:0 3px 0 rgba(0,0,0,.12);white-space:nowrap}
-.back-link:hover{transform:translateY(-1px)}
+.header-donate{position:absolute;left:12px;top:8px;display:flex;align-items:center;z-index:10}
+.header-share{display:flex;align-items:center;gap:6px}
+.header-share .share-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:999px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s ease}
+.header-share .share-icon-btn:hover{transform:translateY(-1px)}
+.header-share .share-icon-btn:active{transform:scale(.92)}
+.header-share .share-icon-btn.share-fb{background:#1877F2;color:#fff}
+.header-share .share-icon-btn svg{width:14px;height:14px;display:block}
   
 .title-img{
   width: clamp(140px, 30vw, 300px);
@@ -30,32 +35,18 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
   margin:6px auto 0;
 }
   
-.lang-switcher{position:absolute;top:14px;right:14px;display:flex;gap:6px}
+.lang-switcher{position:absolute;top:8px;right:14px;display:flex;gap:6px}
 .lang-switcher .lang-btn{border:none;background:transparent;padding:0;cursor:pointer}
 .lang-switcher .lang-btn img{display:block;width:28px;height:28px;border-radius:999px}
 .lang-switcher .lang-btn.active{display:none}
 
-/* Mobile-only share icons (hidden on desktop, shown top-left under the back arrow) */
-.header-mobile-share{display:none}
-
 @media(max-width:640px){
   header{padding:14px 14px 16px;min-height:110px}
-  /* Back link becomes a small square icon-only button, top-left */
-  .back-link{
-    top:14px;left:14px;padding:0;width:38px;height:38px;justify-content:center;border-radius:12px;gap:0;
-  }
-  .back-link .back-text{display:none}
+  .header-donate{left:8px;top:8px}
+  .header-share .share-icon-btn{width:22px;height:22px}
+  .header-share .share-icon-btn svg{width:12px;height:12px}
   /* Language flags stay top-right, same as desktop */
-  .lang-switcher{position:absolute;top:14px;right:14px;justify-content:flex-end;margin-top:0}
-  /* Small FB/IG icons, top-left, under the back arrow */
-  .header-mobile-share{
-    display:flex;position:absolute;left:14px;top:58px;gap:6px;z-index:2;
-  }
-  .header-mobile-share a{
-    display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;
-    box-shadow:0 3px 0 rgba(0,0,0,.12);color:#fff;
-  }
-  .header-mobile-share .share-fb{background:#1877F2}
+  .lang-switcher{position:absolute;top:8px;right:14px;justify-content:flex-end;margin-top:0}
   .header-inner{padding-top:0}
   .title-img{
   width: clamp(140px, 30vw, 300px);
@@ -179,13 +170,12 @@ body.lang-sv .x-en{display:none}
 <body>
 
 <header>
-  <a class="back-link" href="/" data-en="&larr; Back to all games" data-sv="&larr; Tillbaka till lekarna">
-    <span class="arrow">&larr;</span><span class="back-text">Back to all games</span>
-  </a>
-  <div class="header-mobile-share">
-    <a class="share-fb" id="share-fb-mobile" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
-    </a>
+  <div class="header-donate">
+    <div class="header-share">
+      <a class="share-icon-btn share-fb" id="share-fb-mobile" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
+      </a>
+    </div>
   </div>
   <div aria-label="Language selector" class="lang-switcher">
     <button aria-label="English" class="lang-btn active" data-lang-target="en" title="English" type="button"><img src="images/engalpha.png"/></button>
