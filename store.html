@@ -106,6 +106,8 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
 @media(max-width:640px){
   /* Remove the purple "E-book" tag on mobile */
   .hero .eyebrow{display:none}
+  /* Book cover is not clickable/zoomable on mobile */
+  .book{cursor:default}
   /* The share row is shown as small icons in the header instead */
   .hero .share-row{display:none}
   /* "Get the e-book" button comes first, above the headline */
@@ -360,6 +362,7 @@ body.lang-sv .x-en{display:none}
   const bookEl=document.querySelector('.book');
   if(bookEl){
     bookEl.addEventListener('click', (e)=>{
+      if(window.matchMedia('(max-width:640px)').matches) return;
       e.stopPropagation();
       document.querySelectorAll('.zoom-pop.zoomed').forEach(el=>el.classList.remove('zoomed'));
       bookEl.classList.toggle('zoomed');
