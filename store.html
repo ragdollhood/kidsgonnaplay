@@ -87,7 +87,15 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
   overflow:hidden;cursor:pointer;z-index:5;
 }
 .book-stage:hover .book{transform:rotateY(-6deg) rotateX(2deg)}
-.book.zoomed{transform:scale(1.55) rotateY(0deg) rotateX(0deg) !important;box-shadow:0 45px 90px rgba(60,36,112,.5),inset -8px 0 0 rgba(0,0,0,.18);z-index:50}
+.book.zoomed{
+  position:fixed !important;
+  top:50% !important;left:50% !important;
+  transform:translate(-50%,-50%) rotateY(0deg) rotateX(0deg) !important;
+  width:min(78vw,360px) !important;max-width:78vw !important;
+  height:auto !important;max-height:80vh !important;
+  box-shadow:0 45px 90px rgba(60,36,112,.5),inset -8px 0 0 rgba(0,0,0,.18);
+  z-index:999;
+}
 .book-cover-img{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;text-align:center;padding-top:34px}
@@ -161,33 +169,25 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .page-scroll img:hover{transform:translateY(-3px)}
 @media(max-width:640px){.page-scroll{grid-template-columns:repeat(2,1fr);gap:14px}}
 
-/* Click-to-enlarge for any image (lifts up in place, like the book cover) */
+/* Click-to-enlarge for any image (opens centered on screen, like a lightbox) */
 .zoom-pop{cursor:pointer}
-.zoom-pop.zoomed{transform:scale(1.75) translateY(0)!important;z-index:60;box-shadow:0 30px 60px rgba(60,36,112,.5)!important;position:relative}
+.zoom-pop.zoomed{
+  position:fixed !important;
+  top:50% !important;left:50% !important;
+  transform:translate(-50%,-50%) !important;
+  width:auto !important;height:auto !important;
+  max-width:90vw !important;max-height:85vh !important;
+  z-index:999;
+  box-shadow:0 30px 60px rgba(60,36,112,.5)!important;
+}
 .feature-card img{position:relative;transition:transform .3s ease,box-shadow .3s ease}
 
-/* On mobile, enlarge from the center of the screen instead of scaling
-   in place — prevents zoomed images (book cover, feature images, and
-   the "Inside the book" gallery) from overflowing off the sides. */
-@media(max-width:640px){
-  .book.zoomed{
-    position:fixed!important;
-    top:50%!important;left:50%!important;right:auto!important;bottom:auto!important;
-    transform:translate(-50%,-50%)!important;
-    width:min(86vw,340px)!important;
-    margin:0!important;
-    z-index:999!important;
-  }
-  .zoom-pop.zoomed{
-    position:fixed!important;
-    top:50%!important;left:50%!important;right:auto!important;bottom:auto!important;
-    transform:translate(-50%,-50%)!important;
-    width:min(86vw,340px)!important;
-    height:auto!important;
-    max-height:80vh!important;
-    margin:0!important;
-    z-index:999!important;
-  }
+/* Dimmed backdrop behind any zoomed/enlarged image */
+body.zoom-active::after{
+  content:'';
+  position:fixed;inset:0;
+  background:rgba(43,20,60,.55);
+  z-index:998;
 }
 
 footer{text-align:center;padding:30px 20px;color:#5a4a2c;font-size:.9rem}
@@ -350,17 +350,25 @@ body.lang-sv .x-en{display:none}
   buttons.forEach(btn=>btn.addEventListener('click',()=>{ state.lang=btn.dataset.langTarget; applyLang(); }));
   applyLang();
 
-  // Click book cover to lift it up larger (in place, not fullscreen)
+  // Track whether anything is currently zoomed, to toggle the dimmed backdrop
+  function updateZoomBackdrop(){
+    const anyZoomed=document.querySelector('.zoomed');
+    document.body.classList.toggle('zoom-active', !!anyZoomed);
+  }
+
+  // Click book cover to lift it up larger, centered on screen
   const bookEl=document.querySelector('.book');
   if(bookEl){
     bookEl.addEventListener('click', (e)=>{
       e.stopPropagation();
       document.querySelectorAll('.zoom-pop.zoomed').forEach(el=>el.classList.remove('zoomed'));
       bookEl.classList.toggle('zoomed');
+      updateZoomBackdrop();
     });
     document.addEventListener('click', (e)=>{
       if(bookEl.classList.contains('zoomed') && !bookEl.contains(e.target)){
         bookEl.classList.remove('zoomed');
+        updateZoomBackdrop();
       }
     });
   }
@@ -390,7 +398,7 @@ body.lang-sv .x-en{display:none}
   const fbLinkMobile=document.getElementById('share-fb-mobile');
   if(fbLinkMobile){ fbLinkMobile.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(pageUrl); }
 
-  // Click any content image to lift it up larger in place (same effect as the book cover)
+  // Click any content image to lift it up larger, centered on screen (same effect as the book cover)
   const zoomables=[...document.querySelectorAll('.page-scroll img, .feature-card img')];
   zoomables.forEach(img=>{
     img.classList.add('zoom-pop');
@@ -400,19 +408,33 @@ body.lang-sv .x-en{display:none}
       zoomables.forEach(el=>{ if(el!==img) el.classList.remove('zoomed'); });
       if(bookEl) bookEl.classList.remove('zoomed');
       img.classList.toggle('zoomed', !wasZoomed);
+      updateZoomBackdrop();
     });
   });
   document.addEventListener('click', (e)=>{
     if(!e.target.classList.contains('zoom-pop')){
       zoomables.forEach(el=>el.classList.remove('zoomed'));
+      updateZoomBackdrop();
     }
   });
   document.addEventListener('keydown', (e)=>{
     if(e.key==='Escape'){
       zoomables.forEach(el=>el.classList.remove('zoomed'));
       if(bookEl) bookEl.classList.remove('zoomed');
+      updateZoomBackdrop();
     }
   });
+
+  // Close any enlarged image as soon as the user starts scrolling
+  function closeAllZooms(){
+    if(document.querySelector('.zoomed')){
+      zoomables.forEach(el=>el.classList.remove('zoomed'));
+      if(bookEl) bookEl.classList.remove('zoomed');
+      updateZoomBackdrop();
+    }
+  }
+  window.addEventListener('scroll', closeAllZooms, {passive:true});
+  window.addEventListener('touchmove', closeAllZooms, {passive:true});
 })();
 
 
