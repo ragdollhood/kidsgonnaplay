@@ -2512,13 +2512,15 @@ registerUniqueVisitor();
 
   function positionFloatDesktop(){
     const firstCard = document.querySelector('#gameCards .card');
-    if(!firstCard){ floatImg.style.display='none'; return; }
+    if(!firstCard){ return; } // keep last known good position instead of hiding
+    const scrollY = window.scrollY || window.pageYOffset || 0;
     const rect = firstCard.getBoundingClientRect();
+    const absTop = rect.top + scrollY;
     const gap = 16;
     const left = rect.left - gap - rect.width;
-    if(left < 8){ floatImg.style.display='none'; return; }
+    if(left < 8){ return; } // keep last known good position instead of hiding
     floatImg.style.borderRadius = '16px';
-    floatImg.style.top    = rect.top + 'px';
+    floatImg.style.top    = absTop + 'px';
     floatImg.style.left   = left + 'px';
     floatImg.style.width  = rect.width + 'px';
     floatImg.style.height = rect.height + 'px';
@@ -2530,14 +2532,21 @@ registerUniqueVisitor();
     const headerEl = document.querySelector('header');
     if(!fbIcon || !headerEl){ return; } // keep last known good position instead of hiding
 
+    // Use document-absolute coordinates (scroll-compensated) so the
+    // calculation stays correct even if it runs while the page is
+    // scrolled away from the top (e.g. mobile toolbar resize events).
+    const scrollY = window.scrollY || window.pageYOffset || 0;
     const fbRect     = fbIcon.getBoundingClientRect();
     const headerRect = headerEl.getBoundingClientRect();
+    const fbAbsBottom     = fbRect.bottom + scrollY;
+    const fbAbsLeft       = fbRect.left; // horizontal position unaffected by vertical scroll
+    const headerAbsBottom = headerRect.bottom + scrollY;
 
     const topGap    = 4;  // space under the Facebook button
     const bottomGap = 4;  // space kept above the purple header line
 
-    const top = fbRect.bottom + topGap;
-    const availableHeight = headerRect.bottom - top - bottomGap;
+    const top = fbAbsBottom + topGap;
+    const availableHeight = headerAbsBottom - top - bottomGap;
 
     if(availableHeight < 10){ return; } // truly no room — keep last known good position
 
@@ -2546,11 +2555,12 @@ registerUniqueVisitor();
 
     floatImg.style.borderRadius = '10px';
     floatImg.style.top    = top + 'px';
-    floatImg.style.left   = fbRect.left + 'px';
+    floatImg.style.left   = fbAbsLeft + 'px';
     floatImg.style.width  = size + 'px';
     floatImg.style.height = size + 'px';
     floatImg.style.display = 'block';
   }
+
 
   closeBtn.addEventListener('click', function(e){
     e.stopPropagation();
