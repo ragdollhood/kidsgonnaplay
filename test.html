@@ -583,7 +583,6 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
 .buynow-float{position:fixed;z-index:900;display:none;cursor:pointer;border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(72,39,103,.25);transition:transform .18s ease,box-shadow .18s ease}
 .buynow-float:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(72,39,103,.3)}
 .buynow-float img{display:block;width:100%;height:100%;object-fit:cover}
-@media(max-width:1000px){.buynow-float{display:none!important}}
 </style></head>
 <body>
 
@@ -2501,17 +2500,55 @@ registerUniqueVisitor();
   overlayImg.addEventListener('click', goToStore);
   floatImg.addEventListener('click', goToStore);
 
+  const MOBILE_BREAKPOINT = 600;
+
   function positionFloat(){
+    if(window.innerWidth <= MOBILE_BREAKPOINT){
+      positionFloatMobile();
+    } else {
+      positionFloatDesktop();
+    }
+  }
+
+  function positionFloatDesktop(){
     const firstCard = document.querySelector('#gameCards .card');
     if(!firstCard){ floatImg.style.display='none'; return; }
     const rect = firstCard.getBoundingClientRect();
     const gap = 16;
     const left = rect.left - gap - rect.width;
     if(left < 8){ floatImg.style.display='none'; return; }
+    floatImg.style.borderRadius = '16px';
     floatImg.style.top    = rect.top + 'px';
     floatImg.style.left   = left + 'px';
     floatImg.style.width  = rect.width + 'px';
     floatImg.style.height = rect.height + 'px';
+    floatImg.style.display = 'block';
+  }
+
+  function positionFloatMobile(){
+    const fbIcon   = document.getElementById('share-fb');
+    const headerEl = document.querySelector('header');
+    if(!fbIcon || !headerEl){ floatImg.style.display='none'; return; }
+
+    const fbRect     = fbIcon.getBoundingClientRect();
+    const headerRect = headerEl.getBoundingClientRect();
+
+    const topGap    = 4;  // space under the Facebook button
+    const bottomGap = 4;  // space kept above the purple header line
+
+    const top = fbRect.bottom + topGap;
+    const availableHeight = headerRect.bottom - top - bottomGap;
+
+    // keep it small — well under card size, roughly icon-sized
+    const size = Math.min(availableHeight, 46, window.innerWidth * 0.16);
+
+    if(size < 18){ floatImg.style.display='none'; return; }
+
+    floatImg.style.borderRadius = '8px';
+    floatImg.style.top    = top + 'px';
+    floatImg.style.left   = fbRect.left + 'px';
+    floatImg.style.width  = size + 'px';
+    floatImg.style.height = size + 'px';
     floatImg.style.display = 'block';
   }
 
