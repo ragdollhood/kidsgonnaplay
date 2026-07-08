@@ -45,7 +45,7 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
 
 @media(max-width:640px){
   header{padding:14px 14px 16px;min-height:110px}
-  .header-donate{left:8px;top:8px;gap:6px}
+  .header-donate{left:8px;top:8px;gap:6px;flex-direction:column;align-items:flex-start}
   .header-share .share-icon-btn{width:22px;height:22px}
   .header-share .share-icon-btn svg{width:12px;height:12px}
   .back-btn{padding:5px 10px;font-size:.72rem}
@@ -104,7 +104,10 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
   .hero > div:first-child{display:flex;flex-direction:column}
   .hero-ctas{order:-1;margin-bottom:18px}
   .hero h1{order:0}
-  .hero p.lead{order:1}
+  .hero p.lead{order:1;margin-bottom:6px}
+  /* Pull the book cover much closer to the text above it */
+  .hero{gap:6px}
+  .book-stage{gap:6px}
 }
 
 /* ===== Section shells ===== */
@@ -199,8 +202,8 @@ body.lang-sv .x-en{display:none}
   <div>
     <span class="eyebrow x-en">E-book</span>
     <span class="eyebrow x-sv">E-bok</span>
-    <h1 class="x-en">For a childhood with off-screen memories!</h1>
-    <h1 class="x-sv">Ge dina barn skärmfria barndomsminnen!</h1>
+    <h1 class="x-en">Give your kids a real childhood!</h1>
+    <h1 class="x-sv">Ge dina barn minnen de aldrig glömmer!</h1>
     <p class="lead x-en">The best childhood memories don't come from screens. This e-book gives you 100+ screen-free games and activities that spark imagination, strengthen family bonds, and create lasting memories.</p>
     <p class="lead x-sv">De bästa barndomsminnena kommer inte från skärmar. Denna e-bok ger dig 100+ skärmfria lekar och aktiviteter som väcker fantasin, stärker familjebanden och skapar minnen för livet.</p>
     <div class="hero-ctas">
