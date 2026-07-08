@@ -608,8 +608,8 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
 </header>
 
 <p class="top-text">
-  <span class="top-text-en">This website is free thanks to advertising. Adult supervision recommended. See full <a href="#disclaimer" style="color:inherit;font-weight:700;">disclaimer</a>. </span>
-  <span class="top-text-sv">Denna sida är gratis tack vare annonsering. Alla aktiviteter sker på egen risk. Se fullständig <a href="#disclaimer" style="color:inherit;font-weight:700;">ansvarsfriskrivning</a>.</span>
+  <span class="top-text-en">This website is free thanks to advertising. Adult supervision recommended. See full <a href="#" class="disclaimer-link" style="color:inherit;font-weight:700;">disclaimer</a>. </span>
+  <span class="top-text-sv">Denna sida är gratis tack vare annonsering. Alla aktiviteter sker på egen risk. Se fullständig <a href="#" class="disclaimer-link" style="color:inherit;font-weight:700;">ansvarsfriskrivning</a>.</span>
 </p>
 
 
@@ -2219,6 +2219,15 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
     Free screen-free games and activities for kids of all ages. Whether you need party games for a kids' birthday, indoor games for a rainy day, outdoor games in the yard, or simple activities for the classroom or family time — browse our full collection above and find your next favorite game.
   </p>
 </details>
+<div aria-hidden="true" class="modal" id="disclaimerModal">
+  <div aria-labelledby="disclaimerModalTitle" aria-modal="true" class="modal-dialog" role="dialog" style="max-width:640px;width:min(640px,100%);">
+    <button aria-label="Close" class="modal-close" id="disclaimerModalClose" type="button">&times;</button>
+    <div class="modal-content">
+      <h2 class="modal-title" id="disclaimerModalTitle" data-en="Disclaimer" data-sv="Ansvarsfriskrivning">Disclaimer</h2>
+      <div class="modal-details" id="disclaimerModalBody" style="white-space:pre-line;"></div>
+    </div>
+  </div>
+</div>
 <footer>
   <p style="margin:0;font-size:.85rem;">Contact: <a href="mailto:ragdollhood@gmail.com" style="color:#5a4a2c">ragdollhood@gmail.com</a></p>
 </footer>
@@ -2259,6 +2268,30 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
   modalImage.addEventListener('touchend', e=>{ if(touchStartX===null) return; const endX=(e.changedTouches&&e.changedTouches[0])?e.changedTouches[0].clientX:touchStartX; const dx=endX-touchStartX; touchStartX=null; if(Math.abs(dx)>40){ if(dx<0) openRelative(1); else openRelative(-1);} }, {passive:true});
 
   modalClose.addEventListener('click', closeModal);
+
+  // Disclaimer popup
+  const disclaimerModal=document.getElementById('disclaimerModal');
+  const disclaimerModalClose=document.getElementById('disclaimerModalClose');
+  const disclaimerModalBody=document.getElementById('disclaimerModalBody');
+  const disclaimerSource=document.getElementById('disclaimer');
+  function openDisclaimerModal(){
+    disclaimerModalBody.textContent=disclaimerSource.textContent;
+    disclaimerModal.classList.add('open');
+    disclaimerModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    disclaimerModalClose.focus();
+  }
+  function closeDisclaimerModal(){
+    disclaimerModal.classList.remove('open');
+    disclaimerModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  document.querySelectorAll('.disclaimer-link').forEach(link=>{
+    link.addEventListener('click', function(e){ e.preventDefault(); openDisclaimerModal(); });
+  });
+  disclaimerModalClose.addEventListener('click', closeDisclaimerModal);
+  disclaimerModal.addEventListener('click', function(e){ if(e.target===disclaimerModal) closeDisclaimerModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && disclaimerModal.classList.contains('open')) closeDisclaimerModal(); });
   modal.addEventListener('click', e=>{if(e.target===modal) closeModal();});
   document.addEventListener('keydown', e=>{if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); if(modal.classList.contains('open') && e.key==='ArrowRight') openRelative(1); if(modal.classList.contains('open') && e.key==='ArrowLeft') openRelative(-1);});
   applyTranslations();
