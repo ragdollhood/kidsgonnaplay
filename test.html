@@ -574,49 +574,6 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
   }
 }
 
-/* ===== Buy now popup ===== */
-.buynow-overlay{
-  position:fixed;inset:0;
-  background:rgba(21,16,35,.78);
-  display:flex;align-items:center;justify-content:center;
-  padding:24px;box-sizing:border-box;
-  z-index:2000;
-}
-.buynow-overlay.hidden{display:none;}
-.buynow-box{position:relative;width:90vw;height:85vh;max-width:1100px;}
-.buynow-box a{display:block;width:100%;height:100%;}
-.buynow-box img{
-  display:block;width:100%;height:100%;object-fit:contain;
-  border-radius:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,.4);
-  cursor:pointer;
-}
-.buynow-close{
-  position:absolute;top:-14px;right:-14px;
-  width:38px;height:38px;border-radius:50%;
-  background:#fff;border:3px solid var(--purple);color:var(--purple);
-  font-size:22px;line-height:1;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.25);
-}
-.buynow-thumb-wrap{display:none;position:fixed;left:12px;top:42px;z-index:1500;}
-.buynow-thumb-wrap.show{display:block;}
-.buynow-thumb{
-  position:relative;
-  display:inline-block;
-  width:70px;height:70px;
-  border-radius:14px;overflow:hidden;
-  box-shadow:0 6px 16px rgba(0,0,0,.25);
-}
-.buynow-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-@media(max-width:768px){
-  .buynow-thumb-wrap{left:10px;top:38px;}
-}
-@media(max-width:500px){
-  .buynow-thumb{width:54px;height:54px;}
-  .buynow-thumb-wrap{left:8px;top:34px;}
-}
-
 /* ═══ Buy-now popup + fixed floating image ═══ */
 .buynow-overlay{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;background:rgba(21,16,35,.78);padding:24px;box-sizing:border-box}
 .buynow-overlay.open{display:flex}
@@ -647,20 +604,6 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
 </div>
 
 </header>
-
-<div class="buynow-overlay" id="buynowOverlay">
-  <div class="buynow-box">
-    <button class="buynow-close" id="buynowClose" aria-label="Stäng" title="Stäng" type="button">&times;</button>
-    <a href="/store.html">
-      <img src="/images/buynow.jpg" alt="Köp e-boken">
-    </a>
-  </div>
-</div>
-<div class="buynow-thumb-wrap" id="buynowThumbWrap">
-  <a class="buynow-thumb" href="/store.html">
-    <img src="/images/buynow.jpg" alt="Köp e-boken">
-  </a>
-</div>
 
 <p class="top-text">
   <span class="top-text-en">This website is free thanks to advertising. Adult supervision recommended. See full disclaimer. </span>
@@ -2323,23 +2266,7 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
   if (fbLink) { fbLink.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl); }
 })();
 
-// Buy now popup
-(function(){
-  const overlay = document.getElementById('buynowOverlay');
-  const closeBtn = document.getElementById('buynowClose');
-  const thumbWrap = document.getElementById('buynowThumbWrap');
-  if (!overlay || !closeBtn || !thumbWrap) return;
-  const dismissed = localStorage.getItem('buynowDismissed') === '1';
-  if (dismissed) {
-    overlay.classList.add('hidden');
-    thumbWrap.classList.add('show');
-  }
-  closeBtn.addEventListener('click', function(){
-    overlay.classList.add('hidden');
-    thumbWrap.classList.add('show');
-    localStorage.setItem('buynowDismissed', '1');
-  });
-})();
+
 </script><script>
 // ── Ad definitions ──────────────────────────────────────────────
 // To add a real ad, fill in url, imageUrl, titleEn, titleSv, subtitleEn, subtitleSv.
