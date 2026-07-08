@@ -2528,7 +2528,7 @@ registerUniqueVisitor();
   function positionFloatMobile(){
     const fbIcon   = document.getElementById('share-fb');
     const headerEl = document.querySelector('header');
-    if(!fbIcon || !headerEl){ floatImg.style.display='none'; return; }
+    if(!fbIcon || !headerEl){ return; } // keep last known good position instead of hiding
 
     const fbRect     = fbIcon.getBoundingClientRect();
     const headerRect = headerEl.getBoundingClientRect();
@@ -2539,12 +2539,12 @@ registerUniqueVisitor();
     const top = fbRect.bottom + topGap;
     const availableHeight = headerRect.bottom - top - bottomGap;
 
-    // keep it small — well under card size, roughly icon-sized
-    const size = Math.min(availableHeight, 46, window.innerWidth * 0.16);
+    if(availableHeight < 10){ return; } // truly no room — keep last known good position
 
-    if(size < 18){ floatImg.style.display='none'; return; }
+    // twice as big as before, but never bigger than the space above the purple line
+    const size = Math.min(availableHeight, 92, window.innerWidth * 0.32);
 
-    floatImg.style.borderRadius = '8px';
+    floatImg.style.borderRadius = '10px';
     floatImg.style.top    = top + 'px';
     floatImg.style.left   = fbRect.left + 'px';
     floatImg.style.width  = size + 'px';
@@ -2558,8 +2558,15 @@ registerUniqueVisitor();
     positionFloat();
   });
 
+  let resizeTicking = false;
   window.addEventListener('resize', function(){
-    if(floatImg.style.display === 'block') positionFloat();
+    if(floatImg.style.display !== 'block') return;
+    if(resizeTicking) return;
+    resizeTicking = true;
+    requestAnimationFrame(function(){
+      positionFloat();
+      resizeTicking = false;
+    });
   });
 
   window.addEventListener('load', function(){
