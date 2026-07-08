@@ -19,14 +19,14 @@ a{color:inherit}
 img{max-width:100%}
 
 /* ===== Header ===== */
-header{text-align:center;padding:16px 20px 22px;background:linear-gradient(180deg,var(--orange),#f7b94d);border-bottom:clamp(3px,1.2vw,10px) solid var(--purple);position:relative;min-height:118px}
+header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180deg,var(--orange),#f7b94d);border-bottom:clamp(3px,1.2vw,8px) solid var(--purple);position:relative;min-height:90px}
 .header-inner{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:1100px;margin:0 auto}
-.logo-img{max-width:220px;width:42vw;display:block;margin:0 auto}
+.logo-img{max-width:170px;width:32vw;display:block;margin:0 auto}
 .header-topleft{position:absolute;left:12px;top:8px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;z-index:10}
 .back-link{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.06em;color:#241604;background:linear-gradient(135deg,#ffd98a,#ffb86b);border-radius:999px;padding:8px 16px;text-decoration:none;box-shadow:0 3px 12px rgba(255,180,80,.45);transition:transform .15s,box-shadow .15s;white-space:nowrap}
 .back-link:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(255,180,80,.55)}
 .back-link:active{transform:scale(.96)}
-.fb-icon-link{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;box-shadow:0 3px 12px rgba(0,0,0,.25);border-radius:999px;background:#fff;color:#1877F2;transition:transform .15s ease}
+.fb-icon-link{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:22%;background:#1877F2;color:#fff;box-shadow:0 3px 10px rgba(24,119,242,.4);transition:transform .15s ease}
 .fb-icon-link:hover{transform:translateY(-1px)}
 .fb-icon-link svg{width:20px;height:20px;display:block}
 .lang-switcher{position:absolute;top:14px;right:14px;display:flex;gap:6px}
@@ -40,24 +40,23 @@ header{text-align:center;padding:16px 20px 22px;background:linear-gradient(180de
 }
 
 /* ===== Thank you section ===== */
-.thanks-wrap{max-width:900px;margin:0 auto;padding:36px 20px 20px;text-align:center}
-.thanks-title{font-size:2rem;color:#3c2470;margin:0 0 26px;text-shadow:2px 2px 0 var(--gold)}
+.thanks-wrap{max-width:900px;margin:0 auto;padding:18px 20px 12px;text-align:center}
+.thanks-title{font-size:1.6rem;color:#3c2470;margin:0 0 16px;text-shadow:2px 2px 0 var(--gold)}
 
 /* ===== Download buttons (top) ===== */
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:900;font-size:1.05rem;border-radius:999px;padding:16px 32px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:900;font-size:1.05rem;border-radius:999px;padding:14px 30px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:scale(.97)}
 .btn-primary{background:linear-gradient(135deg,var(--gold),var(--orange));color:#3c2470;box-shadow:0 6px 0 #c97e10}
 .btn-secondary{background:#fff;color:var(--purple);border:3px solid var(--purple);box-shadow:0 5px 0 rgba(123,79,201,.25)}
-.download-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:0 0 30px}
-.fineprint{font-size:.82rem;color:#8a7550;max-width:480px;margin:0 auto 34px;line-height:1.5}
+.download-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:0 0 16px}
+.fineprint{font-size:.82rem;color:#8a7550;max-width:480px;margin:0 auto 10px;line-height:1.4}
+.contact-line{font-size:.85rem;color:#5a4a2c;margin:0 0 16px}
+.contact-line a{color:#5a4a2c;text-decoration:underline}
 
 /* ===== Illustration ===== */
-.illustration-wrap{max-width:620px;margin:0 auto 30px}
+.illustration-wrap{max-width:340px;margin:0 auto}
 .illustration-img{width:100%;display:block;border-radius:18px;box-shadow:0 14px 30px rgba(72,39,103,.18)}
-
-footer{text-align:center;padding:30px 20px;color:#5a4a2c;font-size:.9rem}
-footer a{color:#5a4a2c;text-decoration:underline}
 
 body.lang-en .x-sv{display:none}
 body.lang-sv .x-en{display:none}
@@ -105,24 +104,16 @@ body.lang-sv .x-en{display:none}
     </a>
   </div>
   <p class="fineprint">
-    <span class="x-en">Please remember this download is for your personal use only. Download it to your device for access, even offline.</span>
-    <span class="x-sv">Tänk på att den här nedladdningen är för ditt eget personliga bruk. Ladda ner den på din enhet för tillgång till den, även utan internet.</span>
+    <span class="x-en">Please remember this download is for your personal use only.<br>Download it to your device for access, even offline.</span>
+    <span class="x-sv">Tänk på att den här nedladdningen är för ditt eget personliga bruk.<br>Ladda ner den på din enhet för tillgång till den, även utan internet.</span>
   </p>
 
+  <p class="contact-line"><span class="x-en">Contact:</span><span class="x-sv">Kontakt:</span> <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
 
   <div class="illustration-wrap">
     <img class="illustration-img" src="images/thank-you.jpg" alt="Kids Gonna Play"/>
   </div>
-
-  <a class="btn btn-secondary" href="/">
-    <span class="x-en">&larr; Back to all games</span>
-    <span class="x-sv">&larr; Tillbaka till lekarna</span>
-  </a>
 </section>
-
-<footer>
-  <p><span class="x-en">Contact:</span><span class="x-sv">Kontakt:</span> <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
-</footer>
 
 <script>
 document.body.classList.add('lang-en');
