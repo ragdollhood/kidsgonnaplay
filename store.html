@@ -23,7 +23,12 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
 .back-link{position:absolute;left:14px;top:16px;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.9);color:#3c2470;font-weight:800;font-size:.82rem;text-decoration:none;padding:7px 13px;border-radius:999px;box-shadow:0 3px 0 rgba(0,0,0,.12);white-space:nowrap}
 .back-link:hover{transform:translateY(-1px)}
   
-.title-img{max-width:340px;width:60vw;display:block;margin:6px auto 0}
+.title-img{
+  width: clamp(140px, 30vw, 300px);
+  height:auto;
+  display:block;
+  margin:6px auto 0;
+}
   
 .lang-switcher{position:absolute;top:14px;right:14px;display:flex;gap:6px}
 .lang-switcher .lang-btn{border:none;background:transparent;padding:0;cursor:pointer}
@@ -52,7 +57,12 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
   }
   .header-mobile-share .share-fb{background:#1877F2}
   .header-inner{padding-top:0}
-  .title-img{max-width:150px;width:38vw;margin:10px auto 0}
+  .title-img{
+  width: clamp(140px, 30vw, 300px);
+  height:auto;
+  display:block;
+  margin:6px auto 0;
+}
 }
 
 /* ===== Hero ===== */
