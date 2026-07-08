@@ -530,28 +530,8 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
   left:12px;
   top:8px;
   display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:5px;
+  align-items:center;
   z-index:10;
-}
-.header-donate .donate{
-  display:inline-flex;align-items:center;gap:7px;
-  font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.06em;
-  color:#241604;background:linear-gradient(135deg,#ffd98a,#ffb86b);
-  border-radius:999px;padding:8px 16px;text-decoration:none;
-  box-shadow:0 3px 12px rgba(255,180,80,.45);
-  transition:transform .15s,box-shadow .15s;
-  white-space:nowrap;
-}
-.header-donate .donate:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(255,180,80,.55);}
-.header-donate .donate:active{transform:scale(.96);}
-.header-donate .donate .ppmark{flex:0 0 auto;background:#fff;border-radius:4px;padding:2px;}
-.header-donate .visits{
-  font-size:9.5px;color:rgba(255,255,255,.7);letter-spacing:.14em;
-  text-align:left;min-height:13px;font-weight:600;
-  font-variant-numeric:tabular-nums;
-  padding-left:4px;
 }
 .header-share{display:flex;align-items:center;gap:6px;}
 .header-share .share-icon-btn{
@@ -563,17 +543,13 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
 .header-share .share-icon-btn:hover{transform:translateY(-1px)}
 .header-share .share-icon-btn:active{transform:scale(.92)}
 .header-share .share-fb{background:#1877F2;color:#fff;}
-.header-share .share-ig{background:radial-gradient(circle at 30% 107%,#fdf497,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);color:#fff;}
 .header-share .share-icon-btn svg{width:14px;height:14px;display:block;}
 @media(max-width:768px){
   .header-share .share-icon-btn{width:22px;height:22px;}
   .header-share .share-icon-btn svg{width:12px;height:12px;}
 }
 @media(max-width:768px){
-  .header-donate .donate{font-size:10px;padding:6px 12px;}
-  .header-donate{left:10px;top:12px;}
-}
-@media(max-width:500px){
+  .header-donate{left:10px;top:8px;}
 }
 
 .mobile-topbar{display:contents;}
@@ -602,20 +578,9 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
 <header>
 <div class="mobile-topbar">
 <div class="header-donate">
-  <a class="donate" target="_blank" rel="noopener"
-     href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=ingenskit%40hotmail.com&item_name=KIDSGONNAPLAY&currency_code=SEK&no_shipping=1">
-    <svg class="ppmark" viewBox="0 0 24 28" width="14" height="16" aria-hidden="true">
-      <path d="M7.4 27 l.9-5.6 H6 L8.6 4.3 h7.3 c3.7 0 6 1.9 5.4 5.8 -.6 4.2 -3.7 6.2 -7.8 6.2 H10 l-.9 5.7 -.2 1.4 Z" fill="#003087"/>
-      <path d="M9.1 22.8 l.9-5.6 h2.9 c4.6 0 8-2.2 8.7-7 .1-.5.1-1 .1-1.4 1.6 .9 2.3 2.6 1.8 5.3 -.8 4.7 -4.1 6.9 -8.7 6.9 h-1.6 l-.9 5.6 -.2 1.4 H9 Z" fill="#0070e0"/>
-    </svg>
-    <span>Keep it free!</span>
-  </a>
   <div class="header-share">
     <a class="share-icon-btn share-fb" id="share-fb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
-    </a>
-    <a class="share-icon-btn share-ig" id="share-ig" href="#" target="_blank" rel="noopener" aria-label="Share on Instagram" title="Share on Instagram">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77a4.9 4.9 0 0 1 1.77-1.15c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.25a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5ZM17.4 6.15a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/></svg>
     </a>
   </div>
 </div><div aria-label="Language selector" class="lang-switcher"><button aria-label="English" class="lang-btn active" data-lang-target="en" title="English" type="button"><img src="/images/engalpha.png" width="28" height="28"/></button><button aria-label="Svenska" class="lang-btn" data-lang-target="sv" title="Svenska" type="button"><img src="/images/swealpha.png" width="28" height="28"/></button></div></div>
@@ -2286,19 +2251,6 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
   const pageUrl = window.location.href;
   const fbLink = document.getElementById('share-fb');
   if (fbLink) { fbLink.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl); }
-  const igLink = document.getElementById('share-ig');
-  if (igLink) {
-    igLink.addEventListener('click', function(e){
-      e.preventDefault();
-      navigator.clipboard.writeText(pageUrl).then(()=>{
-        const isSv = document.body.classList.contains('lang-sv');
-        igLink.setAttribute('title', isSv ? 'Länk kopierad!' : 'Link copied!');
-        const original = igLink.innerHTML;
-        igLink.innerHTML = '✓';
-        setTimeout(()=>{ igLink.innerHTML = original; }, 2000);
-      }).catch(()=>{ window.open('https://www.instagram.com/', '_blank'); });
-    });
-  }
 })();
 </script><script>
 // ── Ad definitions ──────────────────────────────────────────────
