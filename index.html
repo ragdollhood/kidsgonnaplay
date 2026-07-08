@@ -111,6 +111,7 @@
 ]
 </script><style>
 :root{--orange:#f5a623;--blue:#2eb6e8;--pink:#e8417c;--green:#5cc95c;--purple:#7b4fc9;--cream:#fff7e6}
+html{scroll-behavior:smooth}
 *{box-sizing:border-box}body{margin:0;font-family:"Trebuchet MS","Comic Sans MS",sans-serif;background:radial-gradient(circle at top left,#ffe9b3,#fdf6e3 60%);color:#2b2b2b}
 header{text-align:center;padding:28px 20px 0;background:linear-gradient(180deg,var(--orange),#f7b94d);border-bottom:clamp(3px,1.2vw,10px) solid var(--purple);position:relative;overflow:visible}
 @media(max-width:500px){header{padding:4px 12px 0;}}
@@ -607,8 +608,8 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
 </header>
 
 <p class="top-text">
-  <span class="top-text-en">This website is free thanks to advertising. Adult supervision recommended. See full disclaimer. </span>
-  <span class="top-text-sv">Denna sida är gratis tack vare annonsering. Alla aktiviteter sker på egen risk. Se fullständig ansvarsfriskrivning.</span>
+  <span class="top-text-en">This website is free thanks to advertising. Adult supervision recommended. See full <a href="#disclaimer" style="color:inherit;font-weight:700;">disclaimer</a>. </span>
+  <span class="top-text-sv">Denna sida är gratis tack vare annonsering. Alla aktiviteter sker på egen risk. Se fullständig <a href="#disclaimer" style="color:inherit;font-weight:700;">ansvarsfriskrivning</a>.</span>
 </p>
 
 
@@ -2210,11 +2211,14 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
 </button></section>
 
 <div aria-hidden="true" class="modal" id="gameModal"><div aria-labelledby="modalTitle" aria-modal="true" class="modal-dialog" role="dialog"><button aria-label="Close" class="modal-close" id="modalClose" type="button">&times;</button><div class="modal-grid"><div class="modal-media"><img alt="" id="modalImage" src=""/></div><div class="modal-content"><h2 class="modal-title" id="modalTitle"></h2><p class="modal-subtitle" id="modalSubtitle"></p><div class="modal-details" id="modalDetails"></div><div class="modal-meta" id="modalMeta"></div></div></div></div></div>
-<p style="text-align:center;max-width:none;margin:20px auto 8px;padding:0 16px;font-size:.92rem;color:#6b5230;line-height:1.5;" data-en="DISCLAIMER: The activities, games, and content provided on this website are intended for informational, educational, and entertainment purposes only. While we strive to provide safe and enjoyable activities, all activities should be carried out under appropriate adult supervision. Parents, guardians, and caregivers are solely responsible for determining whether an activity is suitable for a particular child, taking into account the child's age, abilities, health, and the environment in which the activity takes place. KidsGonnaPlay makes no representations or warranties regarding the safety, suitability, or effectiveness of any activity. Participation in any activity is entirely at your own risk. To the fullest extent permitted by applicable law, KidsGonnaPlay and its owners, contributors, and affiliates shall not be liable for any injury, loss, damage, accident, or claim arising from the use of this website or participation in any activity described on this website. By using this website, you acknowledge and agree to these terms. © 2026 Malin Larsson / KidsGonnaPlay. All rights reserved." 
+<p id="disclaimer" style="scroll-margin-top:20px;text-align:center;max-width:none;margin:20px auto 8px;padding:0 16px;font-size:.92rem;color:#6b5230;line-height:1.5;" data-en="DISCLAIMER: The activities, games, and content provided on this website are intended for informational, educational, and entertainment purposes only. While we strive to provide safe and enjoyable activities, all activities should be carried out under appropriate adult supervision. Parents, guardians, and caregivers are solely responsible for determining whether an activity is suitable for a particular child, taking into account the child's age, abilities, health, and the environment in which the activity takes place. KidsGonnaPlay makes no representations or warranties regarding the safety, suitability, or effectiveness of any activity. Participation in any activity is entirely at your own risk. To the fullest extent permitted by applicable law, KidsGonnaPlay and its owners, contributors, and affiliates shall not be liable for any injury, loss, damage, accident, or claim arising from the use of this website or participation in any activity described on this website. By using this website, you acknowledge and agree to these terms. © 2026 Malin Larsson / KidsGonnaPlay. All rights reserved." 
   data-sv="ANSVARSFRISKRIVNING: Aktiviteterna, lekarna och innehållet på denna webbplats tillhandahålls endast i informations-, utbildnings- och underhållningssyfte. Även om vi strävar efter att erbjuda säkra och roliga aktiviteter ska alla aktiviteter genomföras under lämplig uppsikt av en vuxen. Föräldrar, vårdnadshavare och andra ansvariga vuxna ansvarar själva för att bedöma om en aktivitet är lämplig för det enskilda barnet med hänsyn till barnets ålder, förmåga, hälsa och den miljö där aktiviteten genomförs. KidsGonnaPlay lämnar inga garantier avseende säkerheten, lämpligheten eller resultatet av någon aktivitet som presenteras på webbplatsen. Deltagande i aktiviteter sker helt på egen risk. I den utsträckning som tillåts enligt tillämplig lag ansvarar KidsGonnaPlay, dess ägare, medarbetare eller samarbetspartners inte för skador, förluster, olyckor eller andra konsekvenser som kan uppstå genom användning av webbplatsen eller deltagande i någon aktivitet som beskrivs på webbplatsen. Genom att använda denna webbplats bekräftar du att du har läst, förstått och accepterat denna ansvarsfriskrivning. Vissa aktiviteter kan innehålla små föremål eller moment som inte är lämpliga för alla åldrar. Vuxna ansvarar för att bedöma eventuella risker innan aktiviteten påbörjas. © 2026 Malin Larsson / KidsGonnaPlay. Alla rättigheter förbehållna."</p>
-<p style="text-align:center;max-width:700px;margin:0 auto 14px;padding:0 16px;font-size:.85rem;color:#8a7550;line-height:1.5;">
-  Free screen-free games and activities for kids of all ages. Whether you need party games for a kids' birthday, indoor games for a rainy day, outdoor games in the yard, or simple activities for the classroom or family time — browse our full collection above and find your next favorite game.
-</p>
+<details style="max-width:700px;margin:0 auto 14px;padding:0 16px;font-size:.85rem;color:#8a7550;line-height:1.5;text-align:center;">
+  <summary style="cursor:pointer;font-weight:700;" data-en="Read more" data-sv="Läs mer">Read more</summary>
+  <p style="margin:8px 0 0;">
+    Free screen-free games and activities for kids of all ages. Whether you need party games for a kids' birthday, indoor games for a rainy day, outdoor games in the yard, or simple activities for the classroom or family time — browse our full collection above and find your next favorite game.
+  </p>
+</details>
 <footer>
   <p style="margin:0;font-size:.85rem;">Contact: <a href="mailto:ragdollhood@gmail.com" style="color:#5a4a2c">ragdollhood@gmail.com</a></p>
 </footer>
