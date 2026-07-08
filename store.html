@@ -166,6 +166,30 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .zoom-pop.zoomed{transform:scale(1.75) translateY(0)!important;z-index:60;box-shadow:0 30px 60px rgba(60,36,112,.5)!important;position:relative}
 .feature-card img{position:relative;transition:transform .3s ease,box-shadow .3s ease}
 
+/* On mobile, enlarge from the center of the screen instead of scaling
+   in place — prevents zoomed images (book cover, feature images, and
+   the "Inside the book" gallery) from overflowing off the sides. */
+@media(max-width:640px){
+  .book.zoomed{
+    position:fixed!important;
+    top:50%!important;left:50%!important;right:auto!important;bottom:auto!important;
+    transform:translate(-50%,-50%)!important;
+    width:min(86vw,340px)!important;
+    margin:0!important;
+    z-index:999!important;
+  }
+  .zoom-pop.zoomed{
+    position:fixed!important;
+    top:50%!important;left:50%!important;right:auto!important;bottom:auto!important;
+    transform:translate(-50%,-50%)!important;
+    width:min(86vw,340px)!important;
+    height:auto!important;
+    max-height:80vh!important;
+    margin:0!important;
+    z-index:999!important;
+  }
+}
+
 footer{text-align:center;padding:30px 20px;color:#5a4a2c;font-size:.9rem}
 footer a{color:#5a4a2c;text-decoration:underline}
 
