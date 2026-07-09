@@ -380,7 +380,10 @@ body.lang-sv .x-en{display:none}
       <button type="button" class="book-lang-btn" data-book-lang="en"><img src="images/engalpha.png" alt=""/>English</button>
       <button type="button" class="book-lang-btn" data-book-lang="sv"><img src="images/swealpha.png" alt=""/>Swedish</button>
     </div>
-    <div class="price"><span class="old-price">$19</span> $14 <small class="x-en">/ one-time</small><small class="x-sv">/ engångsköp</small></div>
+    <div class="price">
+      <span id="price-en">Only $14 <small>/ one-time</small></span>
+      <span id="price-sv" style="display:none">Endast 149 kr engångsköp</span>
+    </div>
     <ul>
       <li class="x-en">PayPal will automatically redirect you to the download page. Please allow a few seconds for the page to appear.</li>
       <li class="x-sv">Efter ditt köp omdirigeras du automatiskt till nedladdningssidan via PayPal. Vänta några sekunder medan sidan laddas.</li>
@@ -461,10 +464,14 @@ body.lang-sv .x-en{display:none}
   const bookButtons=[...document.querySelectorAll('.book-lang-btn')];
   const buyFormEn=document.getElementById('buy-form-en');
   const buyFormSv=document.getElementById('buy-form-sv');
+  const priceEn=document.getElementById('price-en');
+  const priceSv=document.getElementById('price-sv');
   function applyBookLang(){
     bookButtons.forEach(b=>b.classList.toggle('active', b.dataset.bookLang===bookState.lang));
     if(buyFormEn) buyFormEn.style.display = bookState.lang==='en' ? '' : 'none';
     if(buyFormSv) buyFormSv.style.display = bookState.lang==='sv' ? '' : 'none';
+    if(priceEn) priceEn.style.display = bookState.lang==='en' ? '' : 'none';
+    if(priceSv) priceSv.style.display = bookState.lang==='sv' ? '' : 'none';
   }
   bookButtons.forEach(btn=>btn.addEventListener('click',()=>{ if(btn.disabled||btn.classList.contains('disabled'))return; bookState.lang=btn.dataset.bookLang; applyBookLang(); }));
   applyBookLang();
