@@ -29,34 +29,35 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 .header-share .share-icon-btn:active{transform:scale(.92)}
 .header-share .share-fb{background:#1877F2;color:#fff}
 .header-share .share-icon-btn svg{width:14px;height:14px;display:block}
-.lang-switcher{position:absolute;top:8px;right:14px;display:flex;gap:6px}
-.lang-switcher .lang-btn{border:none;background:transparent;padding:0;cursor:pointer}
-.lang-switcher .lang-btn img{display:block;width:28px;height:28px;border-radius:999px}
-.lang-switcher .lang-btn.active{display:none}
 @media(max-width:560px){
   header{padding:10px 10px 14px;min-height:70px}
   .header-donate{left:8px;top:8px}
   .header-share .share-icon-btn{width:22px;height:22px}
   .header-share .share-icon-btn svg{width:12px;height:12px}
-  .lang-switcher{top:8px;right:8px;gap:4px}
-  .lang-switcher .lang-btn img{width:22px;height:22px}
   .logo-img{width:clamp(180px, 44vw, 260px);margin-top:6px}
 }
 
-
 /* ===== Thank you section ===== */
-.thanks-wrap{max-width:900px;margin:0 auto;padding:18px 20px 12px;text-align:center}
-.thanks-title{font-size:1.6rem;color:#3c2470;margin:0 0 16px;text-shadow:2px 2px 0 var(--gold)}
+.thanks-wrap{max-width:1000px;margin:0 auto;padding:18px 20px 12px;text-align:center}
+.thanks-title{font-size:1.6rem;color:#3c2470;margin:0 0 20px;text-shadow:2px 2px 0 var(--gold)}
 
-/* ===== Download buttons (top) ===== */
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:900;font-size:1.05rem;border-radius:999px;padding:14px 30px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
+/* ===== Two-language split ===== */
+.two-col{display:flex;gap:24px;justify-content:center;align-items:stretch;flex-wrap:wrap;margin:0 auto 20px}
+.lang-col{flex:1 1 320px;max-width:440px;background:#fff;border-radius:20px;padding:22px 18px 20px;box-shadow:0 10px 24px rgba(72,39,103,.12);border:3px solid rgba(123,79,201,.15)}
+.lang-col-header{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
+.lang-flag{width:34px;height:34px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25);display:block}
+.lang-col-title{font-size:1.25rem;font-weight:900;color:#3c2470;margin:0}
+
+/* ===== Download buttons ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:900;font-size:1.0rem;border-radius:999px;padding:14px 26px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:scale(.97)}
 .btn-primary{background:linear-gradient(135deg,var(--gold),var(--orange));color:#3c2470;box-shadow:0 6px 0 #c97e10}
 .btn-secondary{background:#fff;color:var(--purple);border:3px solid var(--purple);box-shadow:0 5px 0 rgba(123,79,201,.25)}
-.download-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:0 auto 16px;max-width:480px}
-.download-row .btn{flex:1 1 200px}
-.fineprint{font-size:.82rem;color:#8a7550;max-width:480px;margin:0 auto 10px;line-height:1.4}
+.download-row{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin:0 auto 12px;max-width:340px}
+.download-row .btn{justify-content:center}
+.fineprint{font-size:.82rem;color:#8a7550;max-width:360px;margin:0 auto;line-height:1.4}
+
 .contact-line{font-size:.85rem;color:#5a4a2c;margin:0 0 16px}
 .contact-line a{color:#5a4a2c;text-decoration:underline}
 
@@ -64,15 +65,15 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 .illustration-wrap{max-width:480px;margin:0 auto}
 .illustration-img{width:100%;display:block;border-radius:18px;box-shadow:0 14px 30px rgba(72,39,103,.18)}
 
-body.lang-en .x-sv{display:none}
-body.lang-sv .x-en{display:none}
-
 @media(max-width:560px){
   .thanks-title{font-size:1.5rem}
+  .two-col{gap:16px}
+  .lang-col{padding:18px 14px 16px}
+  .fineprint{max-width:none;padding:0 4px}
 }
 </style>
 </head>
-<body class="lang-en">
+<body>
 
 <header>
   <div class="header-donate">
@@ -82,54 +83,60 @@ body.lang-sv .x-en{display:none}
       </a>
     </div>
   </div>
-  <div aria-label="Language selector" class="lang-switcher">
-    <button aria-label="English" class="lang-btn active" data-lang-target="en" title="English" type="button"><img src="images/engalpha.png"/></button>
-    <button aria-label="Svenska" class="lang-btn" data-lang-target="sv" title="Svenska" type="button"><img src="images/swealpha.png"/></button>
-  </div>
   <div class="header-inner">
     <img class="logo-img" src="images/GONNAPLAY-titel-alpha.png" alt="Kids Gonna Play"/>
   </div>
 </header>
 
 <section class="thanks-wrap">
-  <h1 class="thanks-title">
-    <span class="x-en">Thank you!</span>
-    <span class="x-sv">Tack!</span>
-  </h1>
+  <h1 class="thanks-title">Thank you! / Tack!</h1>
 
-  <div class="download-row">
-    <a class="btn btn-primary" href="gonnadownload/KIDS_GONNA_PLAY_e-book.pdf" download>
-      <span class="x-en">⬇️ Download PDF</span>
-      <span class="x-sv">⬇️ Ladda ner PDF</span>
-    </a>
-    <a class="btn btn-secondary" href="gonnadownload/KIDS_GONNA_PLAY_e-book.pdf" target="_blank" rel="noopener">
-      <span class="x-en">👀 View in browser</span>
-      <span class="x-sv">👀 Öppna i webbläsaren</span>
-    </a>
+  <div class="two-col">
+    <!-- English version -->
+    <div class="lang-col">
+      <div class="lang-col-header">
+        <img class="lang-flag" src="images/engalpha.png" alt="English flag"/>
+        <h2 class="lang-col-title">Thank you!</h2>
+      </div>
+      <div class="download-row">
+        <a class="btn btn-primary" href="gonnadownload/KIDS_GONNA_PLAY_e-book.pdf" download>
+          ⬇️ Download PDF
+        </a>
+        <a class="btn btn-secondary" href="gonnadownload/KIDS_GONNA_PLAY_e-book.pdf" target="_blank" rel="noopener">
+          👀 View in browser
+        </a>
+      </div>
+      <p class="fineprint">
+        This PDF is for your personal use only. Download it to your device for access, even offline.
+      </p>
+    </div>
+
+    <!-- Swedish version -->
+    <div class="lang-col">
+      <div class="lang-col-header">
+        <img class="lang-flag" src="images/swealpha.png" alt="Svensk flagga"/>
+        <h2 class="lang-col-title">Tack!</h2>
+      </div>
+      <div class="download-row">
+        <a class="btn btn-primary" href="gonnadownload/KIDS_GONNA_PLAY_e-bok.pdf" download>
+          ⬇️ Ladda ner PDF
+        </a>
+        <a class="btn btn-secondary" href="gonnadownload/KIDS_GONNA_PLAY_e-bok.pdf" target="_blank" rel="noopener">
+          👀 Öppna i webbläsaren
+        </a>
+      </div>
+      <p class="fineprint">
+        Denna PDF är endast för personligt bruk. Ladda ner till din enhet för åtkomst, även offline.
+      </p>
+    </div>
   </div>
-  <p class="fineprint">
-    <span class="x-en">Please remember this download is for your personal use.<br>Download it to your device for access, even offline.</span>
-    <span class="x-sv">Tänk på att den här nedladdningen är för ditt eget personliga bruk.<br>Ladda ner den på din enhet för tillgång till den, även utan internet.</span>
-  </p>
 
-  <p class="contact-line"><span class="x-en">Contact:</span><span class="x-sv">Kontakt:</span> <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
+  <p class="contact-line">Contact / Kontakt: <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
 
   <div class="illustration-wrap">
     <img class="illustration-img" src="images/thank-you.jpg" alt="Kids Gonna Play"/>
   </div>
 </section>
-
-<script>
-document.body.classList.add('lang-en');
-const langButtons=[...document.querySelectorAll('.lang-btn')];
-const langState={lang:'en'};
-function applyLang(){
-  document.body.classList.remove('lang-en','lang-sv');
-  document.body.classList.add('lang-'+langState.lang);
-  langButtons.forEach(b=>b.classList.toggle('active', b.dataset.langTarget===langState.lang));
-}
-langButtons.forEach(btn=>btn.addEventListener('click',()=>{ langState.lang=btn.dataset.langTarget; applyLang(); }));
-</script>
 
 </body>
 </html>

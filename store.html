@@ -152,7 +152,7 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
   position:relative;width:340px;max-width:80vw;aspect-ratio:3/4;border-radius:10px 16px 16px 10px;
   box-shadow:0 30px 50px rgba(60,36,112,.35),inset -8px 0 0 rgba(0,0,0,.18);
   transform:rotateY(-18deg) rotateX(4deg);transition:transform .4s ease,box-shadow .4s ease;
-  overflow:hidden;cursor:pointer;z-index:5;
+  overflow:hidden;cursor:default;z-index:5;
 }
 .book-stage:hover .book{transform:rotateY(-6deg) rotateX(2deg)}
 .book.zoomed{
@@ -372,28 +372,43 @@ body.lang-sv .x-en{display:none}
 
   <!-- ===== Buy box ===== -->
   <div class="buybox" id="buy">
-    <div class="x-en buybox-title">KIDS GONNA PLAY - The e-book</div>
-    <div class="x-sv buybox-title">KIDS GONNA PLAY - E-boken</div>
+    <div class="buylang-en buybox-title">KIDS GONNA PLAY - The e-book</div>
+    <div class="buylang-sv buybox-title" style="display:none">KIDS GONNA PLAY - E-boken</div>
     <p class="book-lang-label x-en" style="margin-top:0">Choose which language you'd like the book in:</p>
     <p class="book-lang-label x-sv" style="margin-top:0">Välj vilket språk du vill ha boken på:</p>
     <div class="book-lang-switch" role="group" aria-label="Book language">
       <button type="button" class="book-lang-btn" data-book-lang="en"><img src="images/engalpha.png" alt=""/>English</button>
-      <button type="button" class="book-lang-btn disabled" data-book-lang="sv" disabled aria-disabled="true"><img src="images/swealpha.png" alt=""/>Svenska <span class="coming-soon-tag">(COMING SOON)</span></button>
+      <button type="button" class="book-lang-btn" data-book-lang="sv"><img src="images/swealpha.png" alt=""/>Swedish</button>
     </div>
-    <div class="price"><span class="old-price">$19</span> $14 <small class="x-en">/ one-time</small><small class="x-sv">/ engångsköp</small></div>
+    <div class="price">
+      <span id="price-en">Only $14 <small>/ one-time</small></span>
+      <span id="price-sv" style="display:none">Endast 149 kr <small>/ engångsköp</small></span>
+    </div>
     <ul>
-      <li class="x-en">PayPal will automatically redirect you to the download page. Please allow a few seconds for the page to appear.</li>
-      <li class="x-sv">Efter ditt köp omdirigeras du automatiskt till nedladdningssidan via PayPal. Vänta några sekunder medan sidan laddas.</li>
-      <li class="x-en">Print at home or read on any device.</li>
-      <li class="x-sv">Skriv ut hemma eller läs på valfri skärm.</li>
+      <li class="buylang-en">PayPal will automatically redirect you to the download page. Please allow a few seconds for the page to appear.</li>
+      <li class="buylang-sv" style="display:none">Efter ditt köp omdirigeras du automatiskt till nedladdningssidan via PayPal. Vänta några sekunder medan sidan laddas.</li>
+      <li class="buylang-en">Print at home or read on any device.</li>
+      <li class="buylang-sv" style="display:none">Skriv ut hemma eller läs på valfri skärm.</li>
     </ul>
     <div style="max-width:340px;margin:0 auto">
-      <style>.pp-4ERR86VEF8EUE{text-align:center;border:none;border-radius:1.5rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-      <form action="https://www.paypal.com/ncp/payment/4ERR86VEF8EUE" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-        <input class="pp-4ERR86VEF8EUE" type="submit" value="Buy Now" />
-        <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-        <section style="font-size: 0.75rem;"> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-      </form>
+      <style>
+        .pp-4ERR86VEF8EUE{text-align:center;border:none;border-radius:1.5rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}
+        .pp-7Y78K5A768YTC{text-align:center;border:none;border-radius:1.5rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}
+      </style>
+      <div id="buy-form-en">
+        <form action="https://www.paypal.com/ncp/payment/4ERR86VEF8EUE" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+          <input class="pp-4ERR86VEF8EUE" type="submit" value="Buy Now" />
+          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+          <section style="font-size: 0.75rem;"> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+        </form>
+      </div>
+      <div id="buy-form-sv" style="display:none">
+        <form action="https://www.paypal.com/ncp/payment/7Y78K5A768YTC" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+          <input class="pp-7Y78K5A768YTC" type="submit" value="Köp Nu" />
+          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+          <section style="font-size: 0.75rem;"> Tillhandahålls av <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+        </form>
+      </div>
     </div>
     <p class="fineprint x-en">Secure checkout via PayPal. Questions? ragdollhood@gmail.com</p>
     <p class="fineprint x-sv">Säker betalning via PayPal. Frågor? ragdollhood@gmail.com</p>
@@ -426,36 +441,26 @@ body.lang-sv .x-en{display:none}
     document.body.classList.toggle('zoom-active', !!anyZoomed);
   }
 
-  // Click book cover to lift it up larger, centered on screen
+  // Book cover is not clickable
   const bookEl=document.querySelector('.book');
-  if(bookEl){
-    bookEl.addEventListener('click', (e)=>{
-      if(window.matchMedia('(max-width:640px)').matches) return;
-      e.stopPropagation();
-      document.querySelectorAll('.zoom-pop.zoomed').forEach(el=>el.classList.remove('zoomed'));
-      bookEl.classList.toggle('zoomed');
-      updateZoomBackdrop();
-    });
-    document.addEventListener('click', (e)=>{
-      if(bookEl.classList.contains('zoomed') && !bookEl.contains(e.target)){
-        bookEl.classList.remove('zoomed');
-        updateZoomBackdrop();
-      }
-    });
-  }
 
   // Book purchase language selector (independent of site UI language)
   const bookState={lang:'en'};
   const bookButtons=[...document.querySelectorAll('.book-lang-btn')];
-  const buyLink=document.getElementById('buy-link');
-  const itemNames={en:'Kids Gonna Play - E-bok (English)', sv:'Kids Gonna Play - E-bok (Svenska)'};
+  const buyFormEn=document.getElementById('buy-form-en');
+  const buyFormSv=document.getElementById('buy-form-sv');
+  const priceEn=document.getElementById('price-en');
+  const priceSv=document.getElementById('price-sv');
+  const buylangEn=[...document.querySelectorAll('.buylang-en')];
+  const buylangSv=[...document.querySelectorAll('.buylang-sv')];
   function applyBookLang(){
     bookButtons.forEach(b=>b.classList.toggle('active', b.dataset.bookLang===bookState.lang));
-    if(buyLink){
-      const url=new URL(buyLink.href);
-      url.searchParams.set('item_name', itemNames[bookState.lang]);
-      buyLink.href=url.toString();
-    }
+    if(buyFormEn) buyFormEn.style.display = bookState.lang==='en' ? '' : 'none';
+    if(buyFormSv) buyFormSv.style.display = bookState.lang==='sv' ? '' : 'none';
+    if(priceEn) priceEn.style.display = bookState.lang==='en' ? '' : 'none';
+    if(priceSv) priceSv.style.display = bookState.lang==='sv' ? '' : 'none';
+    buylangEn.forEach(el=>{ el.style.display = bookState.lang==='en' ? '' : 'none'; });
+    buylangSv.forEach(el=>{ el.style.display = bookState.lang==='sv' ? '' : 'none'; });
   }
   bookButtons.forEach(btn=>btn.addEventListener('click',()=>{ if(btn.disabled||btn.classList.contains('disabled'))return; bookState.lang=btn.dataset.bookLang; applyBookLang(); }));
   applyBookLang();
