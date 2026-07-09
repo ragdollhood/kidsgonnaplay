@@ -22,18 +22,23 @@ img{max-width:100%}
 header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180deg,var(--orange),#f7b94d);border-bottom:clamp(3px,1.2vw,8px) solid var(--purple);position:relative;min-height:90px}
 .header-inner{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:1100px;margin:0 auto}
 .logo-img{width:clamp(140px, 30vw, 300px);height:auto;display:block;margin:0 auto}
-.header-donate{position:absolute;left:12px;top:8px;display:flex;align-items:center;z-index:10}
+.header-donate{position:absolute;left:12px;top:8px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;z-index:10}
 .header-share{display:flex;align-items:center;gap:6px}
 .header-share .share-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:999px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s ease}
 .header-share .share-icon-btn:hover{transform:translateY(-1px)}
 .header-share .share-icon-btn:active{transform:scale(.92)}
 .header-share .share-fb{background:#1877F2;color:#fff}
 .header-share .share-icon-btn svg{width:14px;height:14px;display:block}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--purple);border:2px solid var(--purple);border-radius:999px;padding:6px 12px;font-weight:800;font-size:.8rem;text-decoration:none;white-space:nowrap;box-shadow:0 3px 0 rgba(123,79,201,.25);transition:transform .15s ease}
+.back-btn:hover{transform:translateY(-1px)}
+.back-btn:active{transform:scale(.95)}
 @media(max-width:560px){
   header{padding:10px 10px 14px;min-height:70px}
-  .header-donate{left:8px;top:8px}
+  .header-donate{left:8px;top:8px;gap:6px;flex-direction:column;align-items:flex-start}
   .header-share .share-icon-btn{width:22px;height:22px}
   .header-share .share-icon-btn svg{width:12px;height:12px}
+  .back-btn{padding:0 10px;font-size:.72rem;height:28px}
+  .back-btn .back-btn-label{display:none}
   .logo-img{width:clamp(180px, 44vw, 260px);margin-top:6px}
 }
 
@@ -77,6 +82,10 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 
 <header>
   <div class="header-donate">
+    <a class="back-btn" href="/" aria-label="Back to all games / Tillbaka till lekarna" title="Back to all games / Tillbaka till lekarna">
+      <span aria-hidden="true">&larr;</span>
+      <span class="back-btn-label">Games</span>
+    </a>
     <div class="header-share">
       <a class="share-icon-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.kidsgonnaplay.com" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
@@ -126,7 +135,7 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
         </a>
       </div>
       <p class="fineprint">
-        Denna PDF är endast för personligt bruk. Ladda ner till din enhet för åtkomst, även offline.
+        Denna PDF är endast för ditt personliga bruk och får ej delas. Ladda ner på din enhet för att få tillgång till den offline.
       </p>
     </div>
   </div>
