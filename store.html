@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#f5a623"/>
 
 <!-- ===== Core SEO ===== -->
-<title>Kids Gonna Play E-Book – 100+ Screen-Free Activities for Kids</title>
-<meta name="description" content="Kids Gonna Play e-book: 100+ screen-free games and activities for kids. Spark imagination, strengthen family bonds, and create memories that last. Get the instant PDF download."/>
+<title>Kids Gonna Play E-Book – 100+ Screen-Free Family Activities</title>
+<meta name="description" content="100+ screen-free games sorted by age and group size — for solo play, friends, or a party. Spark imagination and family fun. Instant PDF, print at home."/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <!-- TODO: replace with your real, final page URL before publishing -->
 <link rel="canonical" href="https://www.kidsgonnaplay.com/store.html"/>
@@ -17,12 +17,12 @@
 <!-- ===== Open Graph (Facebook, etc.) ===== -->
 <meta property="og:type" content="product"/>
 <meta property="og:site_name" content="Kids Gonna Play"/>
-<meta property="og:title" content="Kids Gonna Play E-Book – 100+ Screen-Free Activities for Kids"/>
-<meta property="og:description" content="100+ screen-free games and activities that spark imagination, strengthen family bonds, and create childhood memories that last. Instant PDF download."/>
+<meta property="og:title" content="Kids Gonna Play E-Book – 100+ Screen-Free Family Activities"/>
+<meta property="og:description" content="100+ screen-free games and activities sorted by age and group size — perfect for families, playdates, and parties. Spark imagination and family bonds. Instant PDF download."/>
 <!-- TODO: replace with your real, final page URL before publishing -->
 <meta property="og:url" content="https://www.kidsgonnaplay.com/store.html"/>
 <meta property="og:image" content="https://www.kidsgonnaplay.com/images/e-bok-framsida.jpg"/>
-<meta property="og:image:alt" content="Kids Gonna Play e-book cover"/>
+<meta property="og:image:alt" content="Kids Gonna Play e-book cover – 100+ screen-free family activities"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:locale:alternate" content="sv_SE"/>
 <meta property="product:price:amount" content="9"/>
@@ -30,9 +30,10 @@
 
 <!-- ===== Twitter Card ===== -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Kids Gonna Play E-Book – 100+ Screen-Free Activities for Kids"/>
-<meta name="twitter:description" content="100+ screen-free games and activities that spark imagination, strengthen family bonds, and create childhood memories that last."/>
+<meta name="twitter:title" content="Kids Gonna Play E-Book – 100+ Screen-Free Family Activities"/>
+<meta name="twitter:description" content="100+ screen-free games and activities sorted by age and group size — perfect for families, playdates, and parties. Instant PDF download."/>
 <meta name="twitter:image" content="https://www.kidsgonnaplay.com/images/e-bok-framsida.jpg"/>
+
 
 <!-- ===== Structured data (rich results for Google) ===== -->
 <script type="application/ld+json">
@@ -41,7 +42,13 @@
   "@type": "Product",
   "name": "Kids Gonna Play E-Book",
   "image": "https://www.kidsgonnaplay.com/images/e-bok-framsida.jpg",
-  "description": "100+ screen-free games and activities for kids that spark imagination, strengthen family bonds, and create lasting childhood memories. Instant PDF download, print at home or read on any device.",
+  "description": "100+ screen-free games and activities for kids, sorted by age and group size — solo play, with friends, or a party. Spark imagination, strengthen family bonds, and create lasting childhood memories. Instant PDF download, print at home or read on any device.",
+  "keywords": "screen-free activities for kids, family activity book, kids games PDF, rainy day activities, indoor games for children, party games for kids, printable activity book for families",
+  "audience": {
+    "@type": "PeopleAudience",
+    "suggestedMinAge": "3",
+    "suggestedMaxAge": "12"
+  },
   "brand": {
     "@type": "Brand",
     "name": "Kids Gonna Play"
@@ -54,6 +61,46 @@
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What ages is the Kids Gonna Play e-book for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The activities are sorted by age and by whether kids are playing alone or with friends, so there's something for small children, big kids, and everyone in between."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the activities screen-free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, every activity in the book is screen-free, designed to spark imagination and strengthen family bonds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I print the e-book at home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, each chapter opens with its own cover page, making it easy to print at home and organize in a binder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I get after buying, and in which languages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You get an instant PDF download that you can read on any device or print at home, available in English or Swedish."
+      }
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -234,6 +281,10 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .coming-soon-tag{font-size:.72em;font-weight:900;color:var(--pink);letter-spacing:.02em}
 
 /* Page gallery (inside the book) */
+.mini-badges{display:flex;justify-content:center;align-items:center;gap:14px;margin:6px auto 4px;flex-wrap:wrap}
+.mini-badges img.mini-badge{height:64px;width:auto;border-radius:8px;box-shadow:0 4px 10px rgba(72,39,103,.2);cursor:default}
+.subsection-title{text-align:center;color:#3c2470;font-weight:800;font-size:1.3rem;margin:26px 0 6px}
+@media(max-width:640px){.mini-badges img.mini-badge{height:52px}}
 .page-scroll{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px;padding:6px 6px 26px;margin:0 auto 10px;max-width:920px}
 .page-scroll img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 10px 22px rgba(72,39,103,.14);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;position:relative}
 .page-scroll img:hover{transform:translateY(-3px)}
@@ -317,52 +368,59 @@ body.lang-sv .x-en{display:none}
   </div>
 </section>
 
-<!-- ===== What's inside ===== -->
-<section class="block">
-  <h2 class="section-title x-en">What's inside</h2>
-  <h2 class="section-title x-sv">Vad du får</h2>
-  <p class="section-sub x-en">Built from the same badge system as the website, so every game is easy to find.</p>
-  <p class="section-sub x-sv">Byggd med samma märkessystem som webbsidan, så varje lek är lätt att hitta.</p>
-  <div class="feature-grid">
-    <div class="feature-card">
-      <img class="collage-img" src="images/e-bok-4pages.jpg" alt="Preview of 100+ screen-free kids activities inside the Kids Gonna Play e-book"/>
-      <h3 class="x-en">100+ activities</h3>
-      <h3 class="x-sv">100+ lekar</h3>
-      <p class="x-en">From five-minute time-fillers to whole rainy afternoons.</p>
-      <p class="x-sv">Från femminuters aktiviteter till hela regniga eftermiddagar.</p>
-    </div>
-    <div class="feature-card">
-      <img class="collage-img" src="images/e-bok-contents.jpg" alt="Table of contents showing activities sorted by age, group size and occasion"/>
-      <h3 class="x-en">Small children, big children. Alone, with friends or a PARTY!?</h3>
-      <h3 class="x-sv">Små barn, stora barn. Ensam, med vänner eller KALAS!?</h3>
-      <p class="x-en">All is sorted for you to easily find your best game for the perfect moment!</p>
-      <p class="x-sv">Allt är sorterat så du enkelt hittar den bästa leken för det perfekta ögonblicket!</p>
-    </div>
-    <div class="feature-card">
-      <img class="collage-img" src="images/e-bok-chapter-collage.jpg" alt="Print-ready chapter cover pages from the Kids Gonna Play e-book"/>
-      <h3 class="x-en">Print-ready chapters</h3>
-      <h3 class="x-sv">Redo att skriva ut</h3>
-      <p class="x-en">Every chapter opens with its own cover page — perfect for a binder.</p>
-      <p class="x-sv">Varje kapitel har ett eget försättsblad – perfekt att samla i en pärm.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ===== Chapters ===== -->
 <section class="block">
   <h2 class="section-title x-en">Inside the book</h2>
   <h2 class="section-title x-sv">Inuti boken</h2>
-  <p class="section-sub x-en">A quick look at the table of contents.</p>
-  <p class="section-sub x-sv">En snabbtitt på innehållsförteckningen.</p>
+  <p class="section-sub x-en">A simple color-and-symbol system sorts the book by age and by playing alone or with friends.</p>
+  <p class="section-sub x-sv">Ett enkelt färg- och symbolsystem delar upp boken efter ålder, och efter om man leker ensam eller med vänner.</p>
+  <div class="mini-badges">
+    <img class="mini-badge" src="images/_button-small-child-alone-alpha.png" alt="Badge: small child playing alone"/>
+    <img class="mini-badge" src="images/_button-small-children-friends-alpha.png" alt="Badge: small children playing with friends"/>
+  </div>
   <div class="page-scroll">
-    <img src="images/e-bok-page21.jpg" alt="Kids Gonna Play e-book, page 21 preview"/>
-    <img src="images/e-bok-page31.jpg" alt="Kids Gonna Play e-book, page 31 preview"/>
-    <img src="images/e-bok-page78.jpg" alt="Kids Gonna Play e-book, page 78 preview"/>
-    <img src="images/e-bok-page106.jpg" alt="Kids Gonna Play e-book, page 106 preview"/>
+    <img src="images/green1.jpg" alt="Kids Gonna Play e-book page 1 – screen-free activity for a small child playing alone"/>
+    <img src="images/green2.jpg" alt="Kids Gonna Play e-book page 2 – screen-free activity for a small child playing alone"/>
+    <img src="images/green3.jpg" alt="Kids Gonna Play e-book page 3 – screen-free activity for small children playing with friends"/>
+    <img src="images/green4.jpg" alt="Kids Gonna Play e-book page 4 – screen-free activity for small children playing with friends"/>
   </div>
 
-  <p class="section-sub x-en" style="margin-top:26px">A peek at the chapters.</p>
-  <p class="section-sub x-sv" style="margin-top:26px">En titt på kapitelindelningen.</p>
+  <div class="mini-badges" style="margin-top:26px">
+    <img class="mini-badge" src="images/_button-all-ages-alone-alpha.png" alt="Badge: all ages playing alone"/>
+    <img class="mini-badge" src="images/_button-all-ages-friends-alpha.png" alt="Badge: all ages playing with friends"/>
+  </div>
+  <div class="page-scroll">
+    <img src="images/yellow1.jpg" alt="Kids Gonna Play e-book page 1 – family activity for all ages playing alone"/>
+    <img src="images/yellow2.jpg" alt="Kids Gonna Play e-book page 2 – family activity for all ages playing alone"/>
+    <img src="images/yellow3.jpg" alt="Kids Gonna Play e-book page 3 – family activity for all ages playing with friends"/>
+    <img src="images/yellow4.jpg" alt="Kids Gonna Play e-book page 4 – family activity for all ages playing with friends"/>
+  </div>
+
+  <div class="mini-badges" style="margin-top:26px">
+    <img class="mini-badge" src="images/_button-big-kid-alone-alpha.png" alt="Badge: big kid playing alone"/>
+    <img class="mini-badge" src="images/_button-big-kids-friends-alpha.png" alt="Badge: big kids playing with friends"/>
+  </div>
+  <div class="page-scroll">
+    <img src="images/blue1.jpg" alt="Kids Gonna Play e-book page 1 – screen-free activity for a big kid playing alone"/>
+    <img src="images/blue2.jpg" alt="Kids Gonna Play e-book page 2 – screen-free activity for a big kid playing alone"/>
+    <img src="images/blue3.jpg" alt="Kids Gonna Play e-book page 3 – screen-free activity for big kids playing with friends"/>
+    <img src="images/blue4.jpg" alt="Kids Gonna Play e-book page 4 – screen-free activity for big kids playing with friends"/>
+  </div>
+
+  <div class="mini-badges" style="margin-top:26px">
+    <img class="mini-badge" src="images/_button-party-alpha.png" alt="Badge: party"/>
+  </div>
+  <div class="page-scroll">
+    <img src="images/pink1.jpg" alt="Kids Gonna Play e-book page 1 – kids party game idea"/>
+    <img src="images/pink2.jpg" alt="Kids Gonna Play e-book page 2 – kids party game idea"/>
+    <img src="images/pink3.jpg" alt="Kids Gonna Play e-book page 3 – kids party game idea"/>
+    <img src="images/pink4.jpg" alt="Kids Gonna Play e-book page 4 – kids party game idea"/>
+  </div>
+
+  <h3 class="subsection-title x-en">Print-ready chapters</h3>
+  <h3 class="subsection-title x-sv">Redo att skriva ut</h3>
+  <p class="section-sub x-en">Every chapter opens with its own cover page — perfect for a binder.</p>
+  <p class="section-sub x-sv">Varje kapitel har ett eget försättsblad – perfekt att samla i en pärm.</p>
   <div class="page-scroll">
     <img src="images/e-bok-chapter1.jpg" alt="Kids Gonna Play e-book, chapter 1 cover page"/>
     <img src="images/e-bok-chapter2.jpg" alt="Kids Gonna Play e-book, chapter 2 cover page"/>
