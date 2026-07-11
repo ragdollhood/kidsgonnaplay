@@ -234,8 +234,10 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .coming-soon-tag{font-size:.72em;font-weight:900;color:var(--pink);letter-spacing:.02em}
 
 /* Page gallery (inside the book) */
-.mini-badges{display:flex;justify-content:center;align-items:center;gap:10px;margin:6px auto 4px}
-.mini-badges img.mini-badge{width:44px;height:44px;border-radius:50%;box-shadow:0 4px 10px rgba(72,39,103,.2);cursor:default}
+.mini-badges{display:flex;justify-content:center;align-items:center;gap:14px;margin:6px auto 4px;flex-wrap:wrap}
+.mini-badges img.mini-badge{height:64px;width:auto;border-radius:8px;box-shadow:0 4px 10px rgba(72,39,103,.2);cursor:default}
+.subsection-title{text-align:center;color:#3c2470;font-weight:800;font-size:1.3rem;margin:26px 0 6px}
+@media(max-width:640px){.mini-badges img.mini-badge{height:52px}}
 .page-scroll{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px;padding:6px 6px 26px;margin:0 auto 10px;max-width:920px}
 .page-scroll img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 10px 22px rgba(72,39,103,.14);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;position:relative}
 .page-scroll img:hover{transform:translateY(-3px)}
@@ -336,8 +338,42 @@ body.lang-sv .x-en{display:none}
     <img src="images/green4.jpg" alt="Kids Gonna Play e-book, page preview"/>
   </div>
 
-  <p class="section-sub x-en" style="margin-top:26px">A peek at the chapters.</p>
-  <p class="section-sub x-sv" style="margin-top:26px">En titt på kapitelindelningen.</p>
+  <div class="mini-badges" style="margin-top:26px">
+    <img class="mini-badge" src="images/_button-all-ages-alone-alpha.png" alt="Badge: all ages playing alone"/>
+    <img class="mini-badge" src="images/_button-all-ages-friends-alpha.png" alt="Badge: all ages playing with friends"/>
+  </div>
+  <div class="page-scroll">
+    <img src="images/yellow1.jpg" alt="Kids Gonna Play e-book, page preview"/>
+    <img src="images/yellow2.jpg" alt="Kids Gonna Play e-book, page preview"/>
+    <img src="images/yellow3.jpg" alt="Kids Gonna Play e-book, page preview"/>
+    <img src="images/yellow4.jpg" alt="Kids Gonna Play e-book, page preview"/>
+  </div>
+
+  <div class="mini-badges" style="margin-top:26px">
+    <img class="mini-badge" src="images/_button-big-kid-alone-alpha.png" alt="Badge: big kid playing alone"/>
+    <img class="mini-badge" src="images/_button-big-kids-friends-alpha.png" alt="Badge: big kids playing with friends"/>
+  </div>
+  <div class="page-scroll">
+    <img src="images/blue1.jpg" alt="Kids Gonna Play e-book, page preview"/>
+    <img src="images/blue2.jpg" alt="Kids Gonna Play e-book, page preview"/>
+    <img src="images/blue3.jpg" alt="Kids Gonna Play e-book, page preview"/>
+    <img src="images/blue4.jpg" alt="Kids Gonna Play e-book, page preview"/>
+  </div>
+
+  <div class="mini-badges" style="margin-top:26px">
+    <img class="mini-badge" src="images/_button-party-alpha.png" alt="Badge: party"/>
+  </div>
+  <div class="page-scroll">
+    <img src="images/pink1.jpg" alt="Kids Gonna Play e-book, page preview"/>
+    <img src="images/pink2.jpg" alt="Kids Gonna Play e-book, page preview"/>
+    <img src="images/pink3.jpg" alt="Kids Gonna Play e-book, page preview"/>
+    <img src="images/pink4.jpg" alt="Kids Gonna Play e-book, page preview"/>
+  </div>
+
+  <h3 class="subsection-title x-en">Print-ready chapters</h3>
+  <h3 class="subsection-title x-sv">Redo att skriva ut</h3>
+  <p class="section-sub x-en">Every chapter opens with its own cover page — perfect for a binder.</p>
+  <p class="section-sub x-sv">Varje kapitel har ett eget försättsblad – perfekt att samla i en pärm.</p>
   <div class="page-scroll">
     <img src="images/e-bok-chapter1.jpg" alt="Kids Gonna Play e-book, chapter 1 cover page"/>
     <img src="images/e-bok-chapter2.jpg" alt="Kids Gonna Play e-book, chapter 2 cover page"/>
