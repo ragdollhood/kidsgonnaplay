@@ -290,7 +290,18 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .trust-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 0 20px}
 .trust-row span{background:#fff;border:2px solid var(--purple);border-radius:999px;padding:6px 12px;white-space:nowrap;font-size:.78rem;font-weight:800;color:#3c2470}
 
-.hero-secure-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--purple);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:800;color:#3c2470;box-shadow:0 3px 0 rgba(123,79,201,.2)}
+.hero-secure-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--purple);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:800;color:#3c2470;box-shadow:0 3px 0 rgba(123,79,201,.2);text-decoration:none;cursor:pointer;transition:transform .15s ease}
+.hero-secure-badge:hover{transform:translateY(-1px)}
+.hero-secure-badge:active{transform:scale(.97)}
+
+/* Why buy / benefits */
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:10px auto 0;max-width:1020px}
+.benefit-card{background:linear-gradient(180deg,#fff,var(--cream));border-radius:20px;box-shadow:0 10px 22px rgba(72,39,103,.14);padding:24px 16px;text-align:center}
+.benefit-card .benefit-icon{font-size:2.1rem;margin-bottom:10px;display:block}
+.benefit-card h3{margin:0 0 6px;font-size:1rem;color:#3c2470;line-height:1.3}
+.benefit-card p{margin:0;font-size:.86rem;color:#5a4a2c;line-height:1.45}
+@media(max-width:860px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.benefit-grid{grid-template-columns:1fr}}
 
 /* Page gallery (inside the book) */
 .mini-badges{display:flex;justify-content:center;align-items:center;gap:14px;margin:6px auto 4px;flex-wrap:wrap}
@@ -369,8 +380,8 @@ body.lang-sv .x-en{display:none}
       <a class="btn btn-primary" href="#buy"><span class="x-en">Buy Now (only $9)</span><span class="x-sv">📖 Köp e-boken (99kr)</span></a>
     </div>
     <div class="share-row">
-      <span class="hero-secure-badge x-en">🔒 Secure Checkout with PayPal</span>
-      <span class="hero-secure-badge x-sv">🔒 Säker betalning med PayPal</span>
+      <a class="hero-secure-badge x-en" href="#buy">🔒 Secure Checkout with PayPal</a>
+      <a class="hero-secure-badge x-sv" href="#buy">🔒 Säker betalning med PayPal</a>
     </div>
   </div>
   <div class="book-stage">
@@ -380,7 +391,43 @@ body.lang-sv .x-en{display:none}
   </div>
 </section>
 
-<!-- ===== Chapters ===== -->
+<!-- ===== Why buy ===== -->
+<section class="block" style="padding-top:0">
+  <h2 class="section-title x-en">Why parents (and grandparents!) love this book</h2>
+  <h2 class="section-title x-sv">Därför älskar föräldrar (och morföräldrar!) den här boken</h2>
+  <p class="section-sub x-en">Stop scrambling for entertainment ideas. This book hands you 100+ ready-made games so you save time for everything else — from a rainy Tuesday to birthday party planning to a full day of babysitting.</p>
+  <p class="section-sub x-sv">Slipp leta efter underhållning i sista sekunden. Boken ger dig 100+ färdiga lekar så att du sparar tid till annat – oavsett om det är en regnig tisdag, planering inför kalaset eller en dag med barnpassning.</p>
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <span class="benefit-icon" aria-hidden="true">⏱️</span>
+      <h3 class="x-en">Perfect for busy parents</h3>
+      <h3 class="x-sv">Perfekt för stressade föräldrar</h3>
+      <p class="x-en">Ready-made ideas the second you need them — no more racking your brain while the kids wait.</p>
+      <p class="x-sv">Färdiga idéer precis när du behöver dem – slipp klura ut något medan barnen väntar.</p>
+    </div>
+    <div class="benefit-card">
+      <span class="benefit-icon" aria-hidden="true">📵</span>
+      <h3 class="x-en">Screen-free fun</h3>
+      <h3 class="x-sv">Skärmfri kul</h3>
+      <p class="x-en">Cut down screen time without the arguments — games kids actually ask to play again.</p>
+      <p class="x-sv">Minska skärmtiden utan bråk – lekar barnen faktiskt vill leka om.</p>
+    </div>
+    <div class="benefit-card">
+      <span class="benefit-icon" aria-hidden="true">🎂</span>
+      <h3 class="x-en">Age-sorted, 3–10 years</h3>
+      <h3 class="x-sv">Åldersindelat, 3–10 år</h3>
+      <p class="x-en">Every activity is matched to the right age, so it's always the right level of fun — and the right level of challenge.</p>
+      <p class="x-sv">Varje aktivitet är anpassad efter ålder, så det alltid blir rätt nivå av kul – och lagom utmanande.</p>
+    </div>
+    <div class="benefit-card">
+      <span class="benefit-icon" aria-hidden="true">🎉</span>
+      <h3 class="x-en">Group-sorted</h3>
+      <h3 class="x-sv">Gruppindelat</h3>
+      <p class="x-en">Solo play, playdates, or a full birthday party — flip to the right section and you're ready to go.</p>
+      <p class="x-sv">Ensamlek, lekträffar eller ett helt kalas – slå upp rätt avsnitt och du är redo.</p>
+    </div>
+  </div>
+</section>
 <section class="block">
   <h2 class="section-title x-en">Inside the book</h2>
   <h2 class="section-title x-sv">Inuti boken</h2>
@@ -442,7 +489,7 @@ body.lang-sv .x-en{display:none}
 
   <!-- ===== About the creator ===== -->
   <div class="about-box">
-    <img class="about-avatar" src="images/Malin.png" alt="Malin Larsson, creator of Kids Gonna Play"/>
+    <img class="about-avatar" src="images/Malin.jpg" alt="Malin Larsson, creator of Kids Gonna Play"/>
     <div class="about-content">
       <h3 class="about-name x-en">Hi, I'm Malin — the person behind Kids Gonna Play</h3>
       <h3 class="about-name x-sv">Hej, jag är Malin – personen bakom Kids Gonna Play</h3>
@@ -469,7 +516,7 @@ body.lang-sv .x-en{display:none}
       <span id="price-sv" style="display:none">Endast 99 kr <small>/ engångsköp</small></span>
     </div>
     <ul>
-      <li class="buylang-en">PayPal will automatically redirect you to the download page, so please allow a few seconds for the page to appear.</li>
+      <li class="buylang-en">PayPal will automatically redirect you to the download page. Please allow a few seconds for the page to appear.</li>
       <li class="buylang-sv" style="display:none">Efter ditt köp omdirigeras du automatiskt till nedladdningssidan via PayPal. Vänta några sekunder medan sidan laddas.</li>
       <li class="buylang-en">Print at home or read on any device.</li>
       <li class="buylang-sv" style="display:none">Skriv ut hemma eller läs på valfri skärm.</li>
