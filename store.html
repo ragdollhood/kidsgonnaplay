@@ -73,7 +73,7 @@
       "name": "What ages is the Kids Gonna Play e-book for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The activities are sorted by age and by whether kids are playing alone or with friends, so there's something for small children, big kids, and everyone in between."
+        "text": "For ages 3\u201310, the activities are sorted by small or big kids and by whether they're playing alone or with friends, so there's something for everyone in that range."
       }
     },
     {
@@ -181,6 +181,7 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
 .eyebrow{display:inline-block;background:var(--purple);color:#fff;font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px}
 .hero h1{font-size:2.15rem;line-height:1.25;margin:0 0 16px;color:#3c2470;text-shadow:2px 2px 0 var(--gold)}
 .hero p.lead{font-size:1.12rem;line-height:1.55;color:#5a4a2c;max-width:520px;margin:0 0 26px}
+.lead-highlight{color:var(--pink);font-weight:800}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
 .share-row{display:flex;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
 .share-label{font-size:.85rem;font-weight:800;color:#5a4a2c}
@@ -223,8 +224,6 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
   .hero .eyebrow{display:none}
   /* Book cover is not clickable/zoomable on mobile */
   .book{cursor:default}
-  /* The share row is shown as small icons in the header instead */
-  .hero .share-row{display:none}
   /* "Get the e-book $9" button comes first, above the headline */
   .hero > div:first-child{display:flex;flex-direction:column}
   .hero-ctas{order:-1;margin-bottom:18px}
@@ -279,6 +278,31 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .book-lang-btn.disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
 .book-lang-label{font-size:.8rem;color:#5a4a2c;margin:0 0 6px;font-weight:700}
 .coming-soon-tag{font-size:.72em;font-weight:900;color:var(--pink);letter-spacing:.02em}
+
+/* About the creator */
+.about-box{max-width:820px;margin:38px auto 8px;background:linear-gradient(180deg,#fff,var(--cream));border-radius:22px;box-shadow:0 10px 24px rgba(72,39,103,.14);padding:28px 26px;display:flex;gap:22px;align-items:flex-start;text-align:left}
+.about-avatar{flex:0 0 auto;width:84px;height:84px;border-radius:50%;object-fit:cover;box-shadow:0 4px 10px rgba(72,39,103,.25);border:3px solid #fff}
+.about-content h3.about-name{margin:0 0 10px;color:#3c2470;font-size:1.12rem;line-height:1.3}
+.about-content p{margin:0 0 10px;color:#5a4a2c;font-size:.93rem;line-height:1.55}
+.about-badge{display:inline-block;background:var(--cream);border:2px solid var(--gold);border-radius:999px;padding:6px 14px;font-weight:800;font-size:.8rem;color:#3c2470;margin-top:2px}
+@media(max-width:640px){.about-box{flex-direction:column;align-items:center;text-align:center;padding:22px 18px}.about-content p{text-align:left}}
+
+/* Trust row above buy box */
+.trust-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 0 20px}
+.trust-row span{background:#fff;border:2px solid var(--purple);border-radius:999px;padding:6px 12px;white-space:nowrap;font-size:.78rem;font-weight:800;color:#3c2470}
+
+.hero-secure-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--purple);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:800;color:#3c2470;box-shadow:0 3px 0 rgba(123,79,201,.2);text-decoration:none;cursor:pointer;transition:transform .15s ease}
+.hero-secure-badge:hover{transform:translateY(-1px)}
+.hero-secure-badge:active{transform:scale(.97)}
+
+/* Why buy / benefits */
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:10px auto 0;max-width:1020px}
+.benefit-card{background:linear-gradient(180deg,#fff,var(--cream));border-radius:20px;box-shadow:0 10px 22px rgba(72,39,103,.14);padding:24px 16px;text-align:center}
+.benefit-card .benefit-icon{font-size:2.1rem;margin-bottom:10px;display:block}
+.benefit-card h3{margin:0 0 6px;font-size:1rem;color:#3c2470;line-height:1.3}
+.benefit-card p{margin:0;font-size:.86rem;color:#5a4a2c;line-height:1.45}
+@media(max-width:860px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.benefit-grid{grid-template-columns:1fr}}
 
 /* Page gallery (inside the book) */
 .mini-badges{display:flex;justify-content:center;align-items:center;gap:14px;margin:6px auto 4px;flex-wrap:wrap}
@@ -349,18 +373,16 @@ body.lang-sv .x-en{display:none}
   <div>
     <span class="eyebrow x-en">E-book</span>
     <span class="eyebrow x-sv">E-bok</span>
-    <h1 class="x-en">Your go-to playbook <br>for screen-free days.</h1>
+    <h1 class="x-en">Your go-to playbook for screen-free childhood memories.</h1>
     <h1 class="x-sv">För en barndom där minnen skapas bortom skärmarna.</h1>
-    <p class="lead x-en">100+ screen-free games and activities sorted by age and group size — perfect for families, playdates, and parties. Spark your kids imagination and strengthen family bonds.<br>Instant PDF download.<BR>🔒 Secure Checkout with PayPal</p>
-    <p class="lead x-sv">De bästa barndomsminnena kommer inte från skärmar. Denna e-bok ger dig 100+ skärmfria lekar och aktiviteter som väcker fantasin, stärker familjebanden och skapar minnen för livet.</p>
+    <p class="lead x-en">100+ screen-free games &amp; activities for ages 3–10, sorted by small or big kid, alone or with friends — or even a party! Perfect for everyday play that sparks your kids' imagination and strengthens family bonds.<br><span class="lead-highlight">⚡ Instant PDF download.</span></p>
+    <p class="lead x-sv">100+ skärmfria lekar &amp; aktiviteter för 3–10 år, indelade efter små eller stora barn, ensamlek eller med kompisar – eller till och med ett kalas! Perfekt för vardagslek som väcker fantasin och stärker familjebanden.<br><span class="lead-highlight">⚡ Direkt PDF-nedladdning.</span></p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="#buy"><span class="x-en">Buy Now (only $9)</span><span class="x-sv">📖 Köp e-boken (99kr)</span></a>
     </div>
     <div class="share-row">
-      <a class="share-btn share-fb" id="share-fb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
-        <span class="x-en">Share on Facebook!</span><span class="x-sv">Share on Facebook!</span>
-      </a>
+      <a class="hero-secure-badge x-en" href="#buy">🔒 Secure Checkout with PayPal</a>
+      <a class="hero-secure-badge x-sv" href="#buy">🔒 Säker betalning med PayPal</a>
     </div>
   </div>
   <div class="book-stage">
@@ -370,7 +392,43 @@ body.lang-sv .x-en{display:none}
   </div>
 </section>
 
-<!-- ===== Chapters ===== -->
+<!-- ===== Why buy ===== -->
+<section class="block" style="padding-top:0">
+  <h2 class="section-title x-en">Why parents (and grandparents!) love this book</h2>
+  <h2 class="section-title x-sv">Därför älskar föräldrar (och morföräldrar!) den här boken</h2>
+  <p class="section-sub x-en">Stop scrambling for entertainment ideas. This book hands you 100+ ready-made games so you save time for everything else — from a rainy Tuesday to birthday party planning to a full day of babysitting.</p>
+  <p class="section-sub x-sv">Slipp leta efter underhållning i sista sekunden. Boken ger dig 100+ färdiga lekar så att du sparar tid till annat – oavsett om det är en regnig tisdag, planering inför kalaset eller en dag med barnpassning.</p>
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <span class="benefit-icon" aria-hidden="true">⏱️</span>
+      <h3 class="x-en">Perfect for busy parents</h3>
+      <h3 class="x-sv">Perfekt för stressade föräldrar</h3>
+      <p class="x-en">Ready-made ideas the second you need them — no more racking your brain while the kids wait.</p>
+      <p class="x-sv">Färdiga idéer precis när du behöver dem – slipp klura ut något medan barnen väntar.</p>
+    </div>
+    <div class="benefit-card">
+      <span class="benefit-icon" aria-hidden="true">📵</span>
+      <h3 class="x-en">Screen-free fun</h3>
+      <h3 class="x-sv">Skärmfri kul</h3>
+      <p class="x-en">Cut down screen time without the arguments — games kids actually ask to play again.</p>
+      <p class="x-sv">Minska skärmtiden utan bråk – lekar barnen faktiskt vill leka om.</p>
+    </div>
+    <div class="benefit-card">
+      <span class="benefit-icon" aria-hidden="true">🎂</span>
+      <h3 class="x-en">For ages 3–10, sorted by small &amp; big kids</h3>
+      <h3 class="x-sv">För 3–10 år, indelat efter små &amp; stora barn</h3>
+      <p class="x-en">Every activity is grouped as small kid or big kid friendly — not by exact age — so it's always the right level of fun for ages 3–10.</p>
+      <p class="x-sv">Varje aktivitet är indelad efter små eller stora barn – inte exakt ålder – så det alltid blir rätt nivå av kul för 3–10 år.</p>
+    </div>
+    <div class="benefit-card">
+      <span class="benefit-icon" aria-hidden="true">🎉</span>
+      <h3 class="x-en">Group-sorted</h3>
+      <h3 class="x-sv">Gruppindelat</h3>
+      <p class="x-en">Solo play, playdates, or a full birthday party — flip to the right section and you're ready to go.</p>
+      <p class="x-sv">Ensamlek, lekträffar eller ett helt kalas – slå upp rätt avsnitt och du är redo.</p>
+    </div>
+  </div>
+</section>
 <section class="block">
   <h2 class="section-title x-en">Inside the book</h2>
   <h2 class="section-title x-sv">Inuti boken</h2>
@@ -430,10 +488,24 @@ body.lang-sv .x-en{display:none}
     <img src="images/e-bok-chapter4.jpg" alt="Kids Gonna Play e-book, chapter 4 cover page"/>
   </div>
 
+  <!-- ===== About the creator ===== -->
+  <div class="about-box">
+    <img class="about-avatar" src="images/Malin.png" alt="Malin Larsson, creator of Kids Gonna Play"/>
+    <div class="about-content">
+      <h3 class="about-name x-en">Hi, I'm Malin — the person behind Kids Gonna Play</h3>
+      <h3 class="about-name x-sv">Hej, jag är Malin – personen bakom Kids Gonna Play</h3>
+      <p class="x-en">I live in Sweden and I'm often described as playful and curious — I've never wanted to let go of the imaginative, wonder-filled way kids naturally see the world. With Kids Gonna Play, I want to help both kids and grown-ups rediscover the power of play and shared time together, and make a few more memories along the way. I dug through my own childhood memories and researched games and traditions from around the world to put this book together.</p>
+      <p class="x-sv">Jag bor i Sverige och beskrivs ofta som lekfull och nyfiken – jag har aldrig velat släppa det kreativa och fantasifulla sätt som barn naturligt ser på världen. Med Kids Gonna Play vill jag hjälpa både barn och vuxna att återupptäcka kraften i lek och gemensam tid tillsammans, och skapa några fler minnen på vägen. Jag har grävt i mina egna barndomsminnen och researchat lekar och traditioner från hela världen för att sätta ihop den här boken.</p>
+    </div>
+  </div>
+
   <!-- ===== Buy box ===== -->
   <div class="buybox" id="buy">
     <div class="buylang-en buybox-title">Kids Gonna Play<br>PDF Instant Download</div>
     <div class="buylang-sv buybox-title" style="display:none">Kids Gonna Play<br>Direkt Nedladdningsbar PDF</div>
+    <div class="trust-row">
+      <span class="x-en">🌍 Games played worldwide</span><span class="x-sv">🌍 Lekar spelade världen över</span>
+    </div>
     <p class="book-lang-label x-en" style="margin-top:0">Choose which language you'd like the book in:</p>
     <p class="book-lang-label x-sv" style="margin-top:0">Välj vilket språk du vill ha boken på:</p>
     <div class="book-lang-switch" role="group" aria-label="Book language">
