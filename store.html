@@ -177,7 +177,7 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
 }
 
 /* ===== Hero ===== */
-.hero{max-width:1100px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero{max-width:1100px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
 .eyebrow{display:inline-block;background:var(--purple);color:#fff;font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px}
 .hero h1{font-size:2.15rem;line-height:1.25;margin:0 0 16px;color:#3c2470;text-shadow:2px 2px 0 var(--gold)}
 .hero p.lead{font-size:1.12rem;line-height:1.55;color:#5a4a2c;max-width:520px;margin:0 0 26px}
@@ -217,6 +217,7 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
   .hero{grid-template-columns:1fr;text-align:center;padding-top:34px}
   .hero p.lead{margin-left:auto;margin-right:auto}
   .hero-ctas{justify-content:center}
+  .share-row{justify-content:center}
   .hero h1{font-size:1.7rem}
 }
 @media(max-width:640px){
@@ -224,11 +225,7 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
   .hero .eyebrow{display:none}
   /* Book cover is not clickable/zoomable on mobile */
   .book{cursor:default}
-  /* "Get the e-book $9" button comes first, above the headline */
-  .hero > div:first-child{display:flex;flex-direction:column}
-  .hero-ctas{order:-1;margin-bottom:18px}
-  .hero h1{order:0}
-  .hero p.lead{order:1;margin-bottom:6px}
+  .hero p.lead{margin-bottom:6px}
   /* Pull the book cover much closer to the text above it */
   .hero{gap:6px}
   .book-stage{gap:6px;margin-top:1.6em}
@@ -373,7 +370,7 @@ body.lang-sv .x-en{display:none}
   <div>
     <span class="eyebrow x-en">E-book</span>
     <span class="eyebrow x-sv">E-bok</span>
-    <h1 class="x-en">Your go-to playbook for screen-free childhood memories.</h1>
+    <h1 class="x-en">Your go-to playbook for <span style="white-space:nowrap">screen-free</span> childhood memories.</h1>
     <h1 class="x-sv">För en barndom där minnen skapas bortom skärmarna.</h1>
     <p class="lead x-en">100+ screen-free games &amp; activities for ages 3–10, sorted by small or big kid, alone or with friends — or even a party! Perfect for everyday play that sparks your kids' imagination and strengthens family bonds.<br><span class="lead-highlight">⚡ Instant PDF download.</span></p>
     <p class="lead x-sv">100+ skärmfria lekar &amp; aktiviteter för 3–10 år, indelade efter små eller stora barn, ensamlek eller med kompisar – eller till och med ett kalas! Perfekt för vardagslek som väcker fantasin och stärker familjebanden.<br><span class="lead-highlight">⚡ Direkt PDF-nedladdning.</span></p>
