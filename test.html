@@ -177,7 +177,9 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
 }
 
 /* ===== Hero ===== */
-.hero{max-width:1100px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero{max-width:1300px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:1.15fr auto .65fr;gap:32px;align-items:center}
+.hero-side-img{height:453px;width:auto;max-width:100%;display:block;border-radius:14px;box-shadow:0 20px 40px rgba(60,36,112,.25);justify-self:center}
+@media(max-width:860px){.hero-side-img{display:none}}
 .eyebrow{display:inline-block;background:var(--purple);color:#fff;font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px}
 .hero h1{font-size:2.15rem;line-height:1.25;margin:0 0 16px;color:#3c2470;text-shadow:2px 2px 0 var(--gold)}
 .hero p.lead{font-size:1.12rem;line-height:1.55;color:#5a4a2c;max-width:520px;margin:0 0 26px}
@@ -229,6 +231,7 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
   .hero-ctas{order:-1;margin-bottom:18px}
   .hero h1{order:0}
   .hero p.lead{order:1;margin-bottom:6px}
+  .share-row{justify-content:center}
   /* Pull the book cover much closer to the text above it */
   .hero{gap:6px}
   .book-stage{gap:6px;margin-top:1.6em}
@@ -373,7 +376,7 @@ body.lang-sv .x-en{display:none}
   <div>
     <span class="eyebrow x-en">E-book</span>
     <span class="eyebrow x-sv">E-bok</span>
-    <h1 class="x-en">Your go-to playbook for screen-free childhood memories.</h1>
+    <h1 class="x-en">Your go-to playbook for screen-free<br>childhood memories.</h1>
     <h1 class="x-sv">För en barndom där minnen skapas bortom skärmarna.</h1>
     <p class="lead x-en">100+ screen-free games &amp; activities for ages 3–10, sorted by small or big kid, alone or with friends — or even a party! Perfect for everyday play that sparks your kids' imagination and strengthens family bonds.<br><span class="lead-highlight">⚡ Instant PDF download.</span></p>
     <p class="lead x-sv">100+ skärmfria lekar &amp; aktiviteter för 3–10 år, indelade efter små eller stora barn, ensamlek eller med kompisar – eller till och med ett kalas! Perfekt för vardagslek som väcker fantasin och stärker familjebanden.<br><span class="lead-highlight">⚡ Direkt PDF-nedladdning.</span></p>
@@ -385,6 +388,7 @@ body.lang-sv .x-en{display:none}
       <a class="hero-secure-badge x-sv" href="#buy">🔒 Säker betalning med PayPal</a>
     </div>
   </div>
+  <img class="hero-side-img" src="images/34.jpg" alt="Kids Gonna Play – screen-free activity page preview"/>
   <div class="book-stage">
     <div class="book">
       <img class="book-cover-img" src="images/e-bok-framsida.jpg" alt="Kids Gonna Play e-book cover – 100+ screen-free activities for kids"/>
@@ -490,7 +494,7 @@ body.lang-sv .x-en{display:none}
 
   <!-- ===== About the creator ===== -->
   <div class="about-box">
-    <img class="about-avatar" src="images/Malin.png" alt="Malin Larsson, creator of Kids Gonna Play"/>
+    <img class="about-avatar" src="images/Malin.jpg" alt="Malin Larsson, creator of Kids Gonna Play"/>
     <div class="about-content">
       <h3 class="about-name x-en">Hi, I'm Malin — the person behind Kids Gonna Play</h3>
       <h3 class="about-name x-sv">Hej, jag är Malin – personen bakom Kids Gonna Play</h3>
