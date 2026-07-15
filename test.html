@@ -97,7 +97,7 @@
       "name": "What do I get after buying, and in which languages?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You get an instant PDF download that you can read on any device or print at home, available in English or Swedish."
+        "text": "You get an instant PDF download that you can read on any device or print at home, including both the English and Swedish versions. You only pick a currency at checkout, not a language."
       }
     }
   ]
@@ -182,7 +182,7 @@ header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180de
 .hero h1{font-size:2.15rem;line-height:1.25;margin:0 0 16px;color:#3c2470;text-shadow:2px 2px 0 var(--gold)}
 .hero p.lead{font-size:1.12rem;line-height:1.55;color:#5a4a2c;max-width:520px;margin:0 0 26px}
 .lead-highlight{color:var(--pink);font-weight:800}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .share-row{display:flex;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
 .share-label{font-size:.85rem;font-weight:800;color:#5a4a2c}
 .share-btn{display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-weight:800;font-size:.85rem;text-decoration:none;padding:8px 14px;border-radius:999px;transition:transform .15s ease;box-shadow:0 3px 0 rgba(0,0,0,.15)}
@@ -288,9 +288,7 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .trust-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 0 20px}
 .trust-row span{background:#fff;border:2px solid var(--purple);border-radius:999px;padding:6px 12px;white-space:nowrap;font-size:.78rem;font-weight:800;color:#3c2470}
 
-.hero-secure-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--purple);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:800;color:#3c2470;box-shadow:0 3px 0 rgba(123,79,201,.2);text-decoration:none;cursor:pointer;transition:transform .15s ease}
-.hero-secure-badge:hover{transform:translateY(-1px)}
-.hero-secure-badge:active{transform:scale(.97)}
+.hero-secure-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--purple);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:800;color:#3c2470;box-shadow:0 3px 0 rgba(123,79,201,.2)}
 
 /* Why buy / benefits */
 .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:10px auto 0;max-width:1020px}
@@ -310,6 +308,7 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .quote-card .quote-mark{position:absolute;top:8px;left:14px;font-size:2.4rem;line-height:1;color:var(--gold);font-family:Georgia,serif;font-weight:900}
 .quote-card p.quote-text{margin:18px 0 10px;font-size:.92rem;line-height:1.5;color:#4a3a20;font-style:italic}
 .quote-card p.quote-attribution{margin:0;font-size:.8rem;font-weight:800;color:var(--purple)}
+.quote-stars{display:block;color:var(--gold);font-size:.85rem;letter-spacing:2px;margin:4px 0 0}
 @media(max-width:860px){.quote-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.quote-grid{grid-template-columns:1fr}.social-proof-box{padding:24px 18px}}
 
@@ -414,13 +413,11 @@ body.lang-sv .x-en{display:none}
     <h1 class="x-en">Your go-to playbook for <span style="white-space:nowrap">screen-free</span> childhood memories.</h1>
     <h1 class="x-sv">För en barndom där minnen skapas bortom skärmarna.</h1>
     <p class="lead x-en">100+ screen-free games and activities that keep kids entertained without tablets, phones or TV. Perfect for rainy days, family time, road trips and birthday parties.<br><span class="lead-highlight">⚡ Instant PDF download.</span></p>
-    <p class="lead x-sv">100+ skärmfria lekar &amp; aktiviteter för 3–10 år, indelade efter små eller stora barn, ensamlek eller med kompisar – eller till och med ett kalas! Perfekt för vardagslek som väcker fantasin och stärker familjebanden.<br><span class="lead-highlight">⚡ Direkt PDF-nedladdning.</span></p>
+    <p class="lead x-sv">100+ skärmfria lekar och aktiviteter som håller barnen sysselsatta utan surfplattor, mobiler eller TV. Perfekt för regniga dagar, familjetid, bilresor och kalas.<br><span class="lead-highlight">⚡ Direkt PDF-nedladdning.</span></p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="#buy"><span class="x-en">Get Instant Access — $9</span><span class="x-sv">📖 Få direkt tillgång – 99kr</span></a>
-    </div>
-    <div class="share-row">
-      <a class="hero-secure-badge x-en" href="#buy">🔒 Secure Checkout with PayPal</a>
-      <a class="hero-secure-badge x-sv" href="#buy">🔒 Säker betalning med PayPal</a>
+      <span class="hero-secure-badge x-en">🔒 Secure Checkout with PayPal</span>
+      <span class="hero-secure-badge x-sv">🔒 Säker betalning med PayPal</span>
     </div>
   </div>
   <div class="book-stage">
@@ -434,8 +431,8 @@ body.lang-sv .x-en{display:none}
 <section class="block" style="padding-top:0">
   <h2 class="section-title x-en">Why parents (and grandparents!) love this book</h2>
   <h2 class="section-title x-sv">Därför älskar föräldrar (och morföräldrar!) den här boken</h2>
-  <p class="section-sub x-en">Stop scrambling for entertainment ideas. This book hands you 100+ ready-made games so you save time for everything else — from a rainy Tuesday to birthday party planning to a full day of babysitting.</p>
-  <p class="section-sub x-sv">Slipp leta efter underhållning i sista sekunden. Boken ger dig 100+ färdiga lekar så att du sparar tid till annat – oavsett om det är en regnig tisdag, planering inför kalaset eller en dag med barnpassning.</p>
+  <p class="section-sub x-en">Every parent knows the struggle: tablets, TV and phones are often the easiest option. This book gives you over 100 fun alternatives that help kids play, imagine, laugh and create memories they'll carry for years.</p>
+  <p class="section-sub x-sv">Alla föräldrar känner igen det: surfplattan, TV:n och mobilen är ofta det enklaste alternativet. Den här boken ger dig över 100 roliga alternativ som hjälper barnen att leka, fantisera, skratta och skapa minnen de bär med sig i många år.</p>
   <div class="benefit-grid">
     <div class="benefit-card">
       <span class="benefit-icon" aria-hidden="true">⏱️</span>
@@ -470,8 +467,8 @@ body.lang-sv .x-en{display:none}
 <section class="block">
   <h2 class="section-title x-en">Inside the book</h2>
   <h2 class="section-title x-sv">Inuti boken</h2>
-  <p class="section-sub x-en">A simple color-and-symbol system sorts the book by age and by playing alone or with friends.</p>
-  <p class="section-sub x-sv">Ett enkelt färg- och symbolsystem delar upp boken efter ålder, och efter om man leker ensam eller med vänner.</p>
+  <p class="section-sub x-en">Activities are neatly organized by age and group size, so you can find the right game in seconds.</p>
+  <p class="section-sub x-sv">Aktiviteterna är prydligt organiserade efter ålder och gruppstorlek, så du hittar rätt lek på några sekunder.</p>
   <div class="mini-badges" id="badges-small-children">
     <img class="mini-badge" src="images/_button-small-child-alone-alpha.png" alt="Badge: small child playing alone"/>
     <img class="mini-badge" src="images/_button-small-children-friends-alpha.png" alt="Badge: small children playing with friends"/>
@@ -579,6 +576,7 @@ body.lang-sv .x-en{display:none}
         <p class="quote-text x-sv">Mina barn brukade be om plattan så fort de blev uttråkade. Nu tar de den här boken istället – den har verkligen vänt på våra skärmtidsbråk.</p>
         <p class="quote-attribution x-en">— Parent of two, ages 4 &amp; 7</p>
         <p class="quote-attribution x-sv">— Förälder till två barn, 4 &amp; 7 år</p>
+        <span class="quote-stars" aria-label="5 out of 5 stars">★★★★★</span>
       </div>
       <div class="quote-card">
         <span class="quote-mark" aria-hidden="true">&ldquo;</span>
@@ -586,6 +584,7 @@ body.lang-sv .x-en{display:none}
         <p class="quote-text x-sv">Jag älskar att jag slipper hitta på något nytt varje gång det regnar. Jag bläddrar bara till en sida och barnen är sysselsatta – och leker faktiskt tillsammans.</p>
         <p class="quote-attribution x-en">— Parent of three</p>
         <p class="quote-attribution x-sv">— Förälder till tre barn</p>
+        <span class="quote-stars" aria-label="5 out of 5 stars">★★★★★</span>
       </div>
       <div class="quote-card">
         <span class="quote-mark" aria-hidden="true">&ldquo;</span>
@@ -593,6 +592,7 @@ body.lang-sv .x-en{display:none}
         <p class="quote-text x-sv">Skärmar kändes som den enkla lösningen, men jag märkte att min son blev rastlös och irriterad av för mycket av det. Boken gav oss ett enkelt skärmfritt alternativ som han verkligen gillar.</p>
         <p class="quote-attribution x-en">— Parent of one, age 5</p>
         <p class="quote-attribution x-sv">— Förälder till ett barn, 5 år</p>
+        <span class="quote-stars" aria-label="5 out of 5 stars">★★★★★</span>
       </div>
     </div>
   </div>
@@ -637,13 +637,13 @@ body.lang-sv .x-en{display:none}
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button">
-          <span class="x-en">Which languages is the book available in?</span>
-          <span class="x-sv">Vilka språk finns boken på?</span>
+          <span class="x-en">Do I have to choose a language before buying?</span>
+          <span class="x-sv">Måste jag välja språk innan jag köper?</span>
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
-          <p class="x-en">English or Swedish — just pick your language in the buy box below before purchasing.</p>
-          <p class="x-sv">Engelska eller svenska – välj bara ditt språk i köp-rutan nedan innan du köper.</p>
+          <p class="x-en">You'll get the full PDF in English and Swedish either way. The buy box just asks you to pick a currency (USD or SEK) for checkout.</p>
+          <p class="x-sv">Du får hela PDF:en på både engelska och svenska oavsett. Köp-rutan ber dig bara välja valuta (USD eller SEK) för betalningen.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -662,13 +662,10 @@ body.lang-sv .x-en{display:none}
 
   <!-- ===== Buy box ===== -->
   <div class="buybox" id="buy">
-    <div class="buylang-en buybox-title">Kids Gonna Play<br>PDF Instant Download</div>
-    <div class="buylang-sv buybox-title" style="display:none">Kids Gonna Play<br>Direkt Nedladdningsbar PDF</div>
-    <div class="trust-row">
-      <span class="x-en">🌍 Games played worldwide</span><span class="x-sv">🌍 Lekar spelade världen över</span>
-    </div>
-    <p class="book-lang-label x-en" style="margin-top:0">Choose which language you'd like the book in:</p>
-    <p class="book-lang-label x-sv" style="margin-top:0">Välj vilket språk du vill ha boken på:</p>
+    <div class="buylang-en buybox-title">Kids Gonna Play<br><span style="color:var(--pink)">PDF Instant Download</span></div>
+    <div class="buylang-sv buybox-title" style="display:none">Kids Gonna Play<br><span style="color:var(--pink)">Direkt Nedladdningsbar PDF</span></div>
+    <p class="book-lang-label x-en" style="margin-top:0">Choose your currency below — you'll get both the English and Swedish PDF either way:</p>
+    <p class="book-lang-label x-sv" style="margin-top:0">Välj din valuta nedan – du får både den engelska och svenska PDF:en oavsett:</p>
     <div class="book-lang-switch" role="group" aria-label="Book language">
       <button type="button" class="book-lang-btn" data-book-lang="en"><img src="images/engalpha.png" alt=""/>English</button>
       <button type="button" class="book-lang-btn" data-book-lang="sv"><img src="images/swealpha.png" alt=""/>Swedish</button>
