@@ -30,8 +30,8 @@
 
 <!-- ===== Twitter Card ===== -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Kids Gonna Play E-Book – 100+ e Family Activities"/>
-<meta name="twitter:description" content="100+ e games and activities sorted by age and group size — perfect for families, playdates, and parties. Instant PDF download."/>
+<meta name="twitter:title" content="Kids Gonna Play E-Book – 100+ Screen-Free Family Activities"/>
+<meta name="twitter:description" content="100+ screen-free games and activities sorted by age and group size — perfect for families, playdates, and parties. Instant PDF download."/>
 <meta name="twitter:image" content="https://www.kidsgonnaplay.com/images/e-bok-framsida.jpg"/>
 
 
@@ -42,8 +42,8 @@
   "@type": "Product",
   "name": "Kids Gonna Play E-Book",
   "image": "https://www.kidsgonnaplay.com/images/e-bok-framsida.jpg",
-  "description": "100+ e games and activities for kids, sorted by age and group size — solo play, with friends, or a party. Spark imagination, strengthen family bonds, and create lasting childhood memories. Instant PDF download, print at home or read on any device.",
-  "keywords": "e activities for kids, family activity book, kids games PDF, rainy day activities, indoor games for children, party games for kids, printable activity book for families",
+  "description": "100+ screen-free games and activities for kids, sorted by age and group size — solo play, with friends, or a party. Spark imagination, strengthen family bonds, and create lasting childhood memories. Instant PDF download, print at home or read on any device.",
+  "keywords": "screen-free activities for kids, family activity book, kids games PDF, rainy day activities, indoor games for children, party games for kids, printable activity book for families",
   "audience": {
     "@type": "PeopleAudience",
     "suggestedMinAge": "3",
@@ -78,10 +78,10 @@
     },
     {
       "@type": "Question",
-      "name": "Are the activities e?",
+      "name": "Are the activities screen-free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, every activity in the book is e, designed to spark imagination and strengthen family bonds."
+        "text": "Yes, every activity in the book is screen-free, designed to spark imagination and strengthen family bonds."
       }
     },
     {
@@ -302,8 +302,7 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 @media(max-width:480px){.benefit-grid{grid-template-columns:1fr}}
 
 /* Social proof (science + parent quotes) */
-.social-proof-box{max-width:1020px;margin:40px auto 8px;background:linear-gradient(180deg,#fff,var(--cream));border-radius:24px;border:3px solid var(--purple);box-shadow:0 12px 26px rgba(72,39,103,.16);padding:34px 28px}
-.social-proof-box .section-title{margin-bottom:6px}
+.social-proof-box{max-width:1020px;margin:40px auto 8px;background:linear-gradient(180deg,#fff,var(--cream));border-radius:24px;border:3px solid var(--purple);box-shadow:0 12px 26px rgba(72,39,103,.16);padding:34px 28px}.social-proof-box .section-title{margin-bottom:6px}
 .social-proof-tag{display:block;text-align:center;font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin:22px 0 12px}
 .social-proof-tag:first-of-type{margin-top:0}
 .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -313,6 +312,16 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .quote-card p.quote-attribution{margin:0;font-size:.8rem;font-weight:800;color:var(--purple)}
 @media(max-width:860px){.quote-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.quote-grid{grid-template-columns:1fr}.social-proof-box{padding:24px 18px}}
+
+/* FAQ accordion */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{background:#fff;border:2px solid rgba(123,79,201,.25);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.faq-question{width:100%;text-align:left;background:none;border:none;font-family:inherit;font-weight:800;font-size:1rem;color:#3c2470;padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-question .faq-icon{flex:0 0 auto;font-size:1.2rem;color:var(--purple);transition:transform .2s ease}
+.faq-item.open .faq-question .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .25s ease}
+.faq-answer p{margin:0;padding:0 20px 18px;font-size:.92rem;line-height:1.55;color:#5a4a2c}
+.faq-item.open .faq-answer{max-height:240px}
 
 /* Page gallery (inside the book) */
 .mini-badges{display:flex;justify-content:center;align-items:center;gap:14px;margin:6px auto 4px;flex-wrap:wrap}
@@ -407,7 +416,7 @@ body.lang-sv .x-en{display:none}
     <p class="lead x-en">100+ screen-free games &amp; activities for ages 3–10, sorted by small or big kid, alone or with friends — or even a party! Perfect for everyday play that sparks your kids' imagination and strengthens family bonds.<br><span class="lead-highlight">⚡ Instant PDF download.</span></p>
     <p class="lead x-sv">100+ skärmfria lekar &amp; aktiviteter för 3–10 år, indelade efter små eller stora barn, ensamlek eller med kompisar – eller till och med ett kalas! Perfekt för vardagslek som väcker fantasin och stärker familjebanden.<br><span class="lead-highlight">⚡ Direkt PDF-nedladdning.</span></p>
     <div class="hero-ctas">
-      <a class="btn btn-primary" href="#buy"><span class="x-en">Buy Now (only $9)</span><span class="x-sv">📖 Köp e-boken (99kr)</span></a>
+      <a class="btn btn-primary" href="#buy"><span class="x-en">Get Instant Access — $9</span><span class="x-sv">📖 Få direkt tillgång – 99kr</span></a>
     </div>
     <div class="share-row">
       <a class="hero-secure-badge x-en" href="#buy">🔒 Secure Checkout with PayPal</a>
@@ -588,6 +597,69 @@ body.lang-sv .x-en{display:none}
     </div>
   </div>
 
+  <!-- ===== FAQ ===== -->
+  <div class="social-proof-box" style="margin-top:24px">
+    <h2 class="section-title x-en">Questions before you buy?</h2>
+    <h2 class="section-title x-sv">Frågor innan du köper?</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">What ages is the book for?</span>
+          <span class="x-sv">Vilka åldrar passar boken för?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">Ages 3–10. Activities are sorted by small or big kid, so it's always the right level for your child.</p>
+          <p class="x-sv">3–10 år. Aktiviteterna är indelade efter små eller stora barn, så det alltid blir rätt nivå för ditt barn.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">How do I get the book after I buy it?</span>
+          <span class="x-sv">Hur får jag boken efter köpet?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">PayPal redirects you straight to the download page after checkout — no waiting, no shipping. Just allow a few seconds for the page to load.</p>
+          <p class="x-sv">PayPal skickar dig direkt till nedladdningssidan efter köpet – ingen väntan, ingen frakt. Vänta bara några sekunder medan sidan laddas.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">Can I print it, or read it on my phone?</span>
+          <span class="x-sv">Kan jag skriva ut den, eller läsa på mobilen?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">Both! It's a PDF you own, so you can print as many pages as you like at home, or read it on your phone, tablet, or computer.</p>
+          <p class="x-sv">Båda delarna! Det är en PDF du äger, så du kan skriva ut så många sidor du vill hemma, eller läsa den på mobilen, plattan eller datorn.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">Which languages is the book available in?</span>
+          <span class="x-sv">Vilka språk finns boken på?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">English or Swedish — just pick your language in the buy box below before purchasing.</p>
+          <p class="x-sv">Engelska eller svenska – välj bara ditt språk i köp-rutan nedan innan du köper.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">Is checkout secure?</span>
+          <span class="x-sv">Är betalningen säker?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">Yes — checkout is handled entirely through PayPal, including PayPal's own buyer protection. We never see or store your card details.</p>
+          <p class="x-sv">Ja – betalningen sker helt via PayPal, inklusive PayPals eget köparskydd. Vi ser eller sparar aldrig dina kortuppgifter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== Buy box ===== -->
   <div class="buybox" id="buy">
     <div class="buylang-en buybox-title">Kids Gonna Play<br>PDF Instant Download</div>
@@ -605,11 +677,17 @@ body.lang-sv .x-en{display:none}
       <span id="price-en">Only $9 <small>/ one-time</small></span>
       <span id="price-sv" style="display:none">Endast 99 kr <small>/ engångsköp</small></span>
     </div>
+    <p style="margin:-8px 0 16px;font-size:.82rem;color:#8a7550;font-weight:700">
+      <span class="x-en">That's less than $0.09 per activity — cheaper than a single coffee.</span>
+      <span class="x-sv">Det är mindre än en krona per aktivitet – billigare än en kopp kaffe.</span>
+    </p>
     <ul>
       <li class="buylang-en">PayPal will automatically redirect you to the download page. Please allow a few seconds for the page to appear.</li>
       <li class="buylang-sv" style="display:none">Efter ditt köp omdirigeras du automatiskt till nedladdningssidan via PayPal. Vänta några sekunder medan sidan laddas.</li>
       <li class="buylang-en">Print at home or read on any device.</li>
       <li class="buylang-sv" style="display:none">Skriv ut hemma eller läs på valfri skärm.</li>
+      <li class="buylang-en">Covered by PayPal Buyer Protection.</li>
+      <li class="buylang-sv" style="display:none">Omfattas av PayPals köparskydd.</li>
     </ul>
     <div style="max-width:340px;margin:0 auto">
       <style>
@@ -736,6 +814,18 @@ body.lang-sv .x-en{display:none}
   }
   window.addEventListener('scroll', closeAllZooms, {passive:true});
   window.addEventListener('touchmove', closeAllZooms, {passive:true});
+
+  // FAQ accordion toggle
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-question');
+    if(q){
+      q.addEventListener('click', ()=>{
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el=>{ if(el!==item) el.classList.remove('open'); });
+        item.classList.toggle('open', !isOpen);
+      });
+    }
+  });
 
   // Sticky floating buy button: appears once the hero CTA is scrolled past,
   // hides again once the real buy box is in view (no need to show it twice).
