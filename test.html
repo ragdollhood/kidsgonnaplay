@@ -581,10 +581,10 @@ font-size:clamp(0.9rem, 3vw, 1.3rem);
 .buynow-overlay{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;background:rgba(21,16,35,.78);padding:24px;box-sizing:border-box}
 .buynow-overlay.open{display:flex}
 .buynow-overlay-inner{position:relative;max-width:94vw;max-height:90vh;line-height:0;display:flex;align-items:center;justify-content:center;gap:18px}
-.buynow-overlay-inner img{display:block;max-width:44vw;max-height:90vh;width:auto;height:auto;border-radius:20px;box-shadow:0 18px 40px rgba(0,0,0,.4);cursor:pointer}
+.buynow-overlay-inner img{display:block;height:min(80vh,600px);width:auto;max-width:44vw;object-fit:contain;border-radius:20px;box-shadow:0 18px 40px rgba(0,0,0,.4);cursor:pointer}
 @media(max-width:700px){
   .buynow-overlay-inner{flex-direction:column;gap:12px}
-  .buynow-overlay-inner img{max-width:90vw;max-height:44vh}
+  .buynow-overlay-inner img{height:min(40vh,320px);max-width:90vw}
 }
 .buynow-close{position:absolute;top:-14px;right:-14px;border:3px solid var(--purple);background:#fff;color:#3c2470;width:40px;height:40px;border-radius:50%;font-size:1.4rem;line-height:1;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.15)}
 .buynow-float{position:fixed;z-index:900;display:none;cursor:pointer;border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(72,39,103,.25);transition:transform .18s ease,box-shadow .18s ease}
