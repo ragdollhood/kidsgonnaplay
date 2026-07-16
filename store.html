@@ -363,6 +363,22 @@ footer a{color:#5a4a2c;text-decoration:underline}
 body.lang-en .x-sv{display:none}
 body.lang-sv .x-en{display:none}
 
+/* Buy now upsell (ad for activity book) */
+.upsell-wrap{max-width:640px;margin:40px auto 0}
+.upsell-card{display:flex;align-items:center;gap:18px;background:#fff;border-radius:20px;padding:16px;box-shadow:0 10px 24px rgba(72,39,103,.14);border:3px solid var(--pink);text-decoration:none;color:inherit;text-align:left;transition:transform .15s ease,box-shadow .15s ease}
+.upsell-card:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(72,39,103,.2)}
+.upsell-card:active{transform:scale(.99)}
+.upsell-img{width:110px;height:110px;object-fit:cover;border-radius:14px;flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.upsell-title{font-size:1.15rem;font-weight:900;color:#3c2470;margin:0 0 6px}
+.upsell-text p{font-size:.9rem;color:#5a4a2c;line-height:1.4;margin:0 0 4px}
+.upsell-cta{display:inline-block;margin-top:6px;font-weight:800;color:var(--pink);font-size:.88rem}
+.upsell-price{font-size:1.8rem;font-weight:900;color:#e8283f;margin:2px 0 4px;letter-spacing:.02em}
+.upsell-note{font-size:.75rem;color:#8a7550;margin:6px 0 0}
+@media(max-width:560px){
+  .upsell-card{flex-direction:column;text-align:center;padding:18px 14px}
+  .upsell-img{width:140px;height:140px}
+}
+
 /* Sticky floating buy button */
 .sticky-buy{
   position:fixed;right:20px;bottom:20px;z-index:500;
@@ -717,6 +733,24 @@ body.lang-sv .x-en{display:none}
     </div>
     <p class="fineprint x-en">Secure checkout via PayPal. Questions? ragdollhood@gmail.com</p>
     <p class="fineprint x-sv">Säker betalning via PayPal. Frågor? ragdollhood@gmail.com</p>
+  </div>
+
+  <div class="upsell-wrap">
+    <a class="upsell-card" href="activity-book.html">
+      <img class="upsell-img" src="images/activity0.jpg" alt="Kids Gonna Play – get the printable activity book"/>
+      <div class="upsell-text">
+        <h3 class="upsell-title x-en">Want more screen-free fun?</h3>
+        <h3 class="upsell-title x-sv">Vill du ha mer skärmfri kul?</h3>
+        <p class="x-en">Check out the Activity Book — 50 pages of coloring, mazes and puzzles for kids.</p>
+        <p class="x-sv">Kolla in Pysselboken – 50 sidor med målarbilder, labyrinter och pussel för barn.</p>
+        <p class="upsell-price x-en">Only $2</p>
+        <p class="upsell-price x-sv">Endast 19 kr</p>
+        <span class="upsell-cta x-en">Shop now →</span>
+        <span class="upsell-cta x-sv">Handla nu →</span>
+        <p class="upsell-note x-en">(Also available in Swedish for 19 kr)</p>
+        <p class="upsell-note x-sv">(Finns även på engelska för $2)</p>
+      </div>
+    </a>
   </div>
 </section>
 

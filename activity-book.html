@@ -299,6 +299,61 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 @media(max-width:860px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.benefit-grid{grid-template-columns:1fr}}
 
+/* About the creator */
+.about-box{max-width:820px;margin:38px auto 8px;background:linear-gradient(180deg,#fff,var(--cream));border-radius:22px;box-shadow:0 10px 24px rgba(72,39,103,.14);padding:28px 26px;display:flex;gap:22px;align-items:flex-start;text-align:left}
+.about-avatar{flex:0 0 auto;width:84px;height:84px;border-radius:50%;object-fit:cover;box-shadow:0 4px 10px rgba(72,39,103,.25);border:3px solid #fff}
+.about-content h3.about-name{margin:0 0 10px;color:#3c2470;font-size:1.12rem;line-height:1.3}
+.about-content p{margin:0 0 10px;color:#5a4a2c;font-size:.93rem;line-height:1.55}
+.about-badge{display:inline-block;background:var(--cream);border:2px solid var(--gold);border-radius:999px;padding:6px 14px;font-weight:800;font-size:.8rem;color:#3c2470;margin-top:2px}
+@media(max-width:640px){.about-box{flex-direction:column;align-items:center;text-align:center;padding:22px 18px}.about-content p{text-align:left}}
+
+/* FAQ accordion */
+.social-proof-box{max-width:1020px;margin:40px auto 8px;background:linear-gradient(180deg,#fff,var(--cream));border-radius:24px;border:3px solid var(--purple);box-shadow:0 12px 26px rgba(72,39,103,.16);padding:34px 28px}
+.social-proof-box .section-title{margin-bottom:6px}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{background:#fff;border:2px solid rgba(123,79,201,.25);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.faq-question{width:100%;text-align:left;background:none;border:none;font-family:inherit;font-weight:800;font-size:1rem;color:#3c2470;padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-question .faq-icon{flex:0 0 auto;font-size:1.2rem;color:var(--purple);transition:transform .2s ease}
+.faq-item.open .faq-question .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .25s ease}
+.faq-answer p{margin:0;padding:0 20px 18px;font-size:.92rem;line-height:1.55;color:#5a4a2c}
+.faq-item.open .faq-answer{max-height:240px}
+
+/* Buy now upsell (ad for full e-book) */
+.upsell-wrap{max-width:640px;margin:0 auto 26px}
+.upsell-card{display:flex;align-items:center;gap:18px;background:#fff;border-radius:20px;padding:16px;box-shadow:0 10px 24px rgba(72,39,103,.14);border:3px solid var(--pink);text-decoration:none;color:inherit;text-align:left;transition:transform .15s ease,box-shadow .15s ease}
+.upsell-card:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(72,39,103,.2)}
+.upsell-card:active{transform:scale(.99)}
+.upsell-img{width:110px;height:110px;object-fit:cover;border-radius:14px;flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.upsell-title{font-size:1.15rem;font-weight:900;color:#3c2470;margin:0 0 6px}
+.upsell-text p{font-size:.9rem;color:#5a4a2c;line-height:1.4;margin:0 0 4px}
+.upsell-cta{display:inline-block;margin-top:6px;font-weight:800;color:var(--pink);font-size:.88rem}
+.upsell-price{font-size:1.8rem;font-weight:900;color:#e8283f;margin:2px 0 4px;letter-spacing:.02em}
+.upsell-note{font-size:.75rem;color:#8a7550;margin:6px 0 0}
+@media(max-width:560px){
+  .upsell-card{flex-direction:column;text-align:center;padding:18px 14px}
+  .upsell-img{width:140px;height:140px}
+}
+
+/* Sticky floating buy button */
+.sticky-buy{
+  position:fixed;right:20px;bottom:20px;z-index:500;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:inherit;font-weight:900;font-size:.95rem;
+  background:linear-gradient(135deg,var(--gold),var(--orange));color:#3c2470;
+  border-radius:999px;padding:14px 22px;text-decoration:none;
+  box-shadow:0 8px 0 #c97e10,0 12px 24px rgba(0,0,0,.25);
+  opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease;
+}
+.sticky-buy.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.sticky-buy:hover{transform:translateY(-2px) scale(1.03)}
+.sticky-buy.visible:hover{transform:translateY(-2px) scale(1.03)}
+.sticky-buy:active{transform:scale(.96)}
+@media(max-width:640px){
+  .sticky-buy{right:14px;bottom:14px;padding:12px 18px;font-size:.88rem}
+}
+
 /* Page gallery (inside the book) */
 .mini-badges{display:flex;justify-content:center;align-items:center;gap:14px;margin:6px auto 4px;flex-wrap:wrap}
 .mini-badges img.mini-badge{height:64px;width:auto;border-radius:8px;cursor:default}
@@ -487,6 +542,91 @@ body.lang-sv .x-en{display:none}
     <img src="images/activitybw8.png" alt="Kids Gonna Play activity book page 8 – printer-friendly black &amp; white version"/>
   </div>
 
+  <!-- ===== About the creator ===== -->
+  <div class="about-box">
+    <img class="about-avatar" src="images/Malin.png" alt="Malin Larsson, creator of Kids Gonna Play"/>
+    <div class="about-content">
+      <h3 class="about-name x-en">Hi, I'm Malin — the person behind Kids Gonna Play</h3>
+      <h3 class="about-name x-sv">Hej, jag är Malin – personen bakom Kids Gonna Play</h3>
+      <p class="x-en">I live in Sweden and I'm often described as playful and curious — I've never wanted to let go of the imaginative, wonder-filled way kids naturally see the world.<br>With Kids Gonna Play, I want to help both kids and grown-ups rediscover the power of play and shared time together, and make a few more memories along the way. I dug through my own childhood memories and researched games and traditions from around the world to put this book together.</p>
+      <p class="x-sv">Jag bor i Sverige och beskrivs ofta som lekfull och nyfiken – jag har aldrig velat släppa det kreativa och fantasifulla sätt som barn naturligt ser på världen.<br>Med Kids Gonna Play vill jag hjälpa både barn och vuxna att återupptäcka kraften i lek och gemensam tid tillsammans, och skapa några fler minnen på vägen. Jag har grävt i mina egna barndomsminnen och researchat lekar och traditioner från hela världen för att sätta ihop den här boken.</p>
+    </div>
+  </div>
+
+  <!-- ===== FAQ ===== -->
+  <div class="social-proof-box" style="margin-top:24px">
+    <h2 class="section-title x-en">Questions before you buy?</h2>
+    <h2 class="section-title x-sv">Frågor innan du köper?</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">What's inside the activity book?</span>
+          <span class="x-sv">Vad ingår i pysselboken?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">50 pages packed with coloring pages, mazes and puzzles designed to keep kids entertained for hours, screen-free.</p>
+          <p class="x-sv">50 sidor fullproppade med målarbilder, labyrinter och pussel som håller barnen sysselsatta i timmar, helt skärmfritt.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">What age is the activity book for?</span>
+          <span class="x-sv">Vilka åldrar passar pysselboken för?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">The activities are made for kids roughly ages 3 to 12, with a mix of easier and more challenging pages so the fun keeps going as they grow.</p>
+          <p class="x-sv">Aktiviteterna passar barn i ungefär 3–12 årsåldern, med en blandning av enklare och klurigare sidor så att det förblir roligt allt eftersom barnen växer.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">How do I get the book after I buy it?</span>
+          <span class="x-sv">Hur får jag boken efter köpet?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">PayPal redirects you straight to the download page after checkout — no waiting, no shipping. Just allow a few seconds for the page to load. If you accidentally close the page, just contact ragdollhood@gmail.com and I will help you get back to it.</p>
+          <p class="x-sv">PayPal skickar dig direkt till nedladdningssidan efter köpet – ingen väntan, ingen frakt. Vänta bara några sekunder medan sidan laddas. Om du råkar stänga sidan för tidigt, så kontakta ragdollhood@gmail.com så hjälper jag dig.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">Can I print it, or read it on my phone?</span>
+          <span class="x-sv">Kan jag skriva ut den, eller läsa på mobilen?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">Both! It's a PDF you own, so you can print as many pages as you like at home, or read it on your phone, tablet, or computer.</p>
+          <p class="x-sv">Båda delarna! Det är en PDF du äger, så du kan skriva ut så många sidor du vill hemma, eller läsa den på mobilen, plattan eller datorn.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">Do I have to choose a language before buying?</span>
+          <span class="x-sv">Måste jag välja språk innan jag köper?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">You'll get the full PDF in English or Swedish, depending on the language you pick in the buy box below — that also sets the currency (USD or SEK) for checkout.</p>
+          <p class="x-sv">Du får hela PDF:en på engelska eller svenska, beroende på vilket språk du väljer i köp-rutan nedan – det sätter även valutan (USD eller SEK) för betalningen.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span class="x-en">Is checkout secure?</span>
+          <span class="x-sv">Är betalningen säker?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p class="x-en">Yes — checkout is handled entirely through PayPal, including PayPal's own buyer protection. We never see or store your card details.</p>
+          <p class="x-sv">Ja – betalningen sker helt via PayPal, inklusive PayPals eget köparskydd. Vi ser eller sparar aldrig dina kortuppgifter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== Buy box ===== -->
   <div class="buybox" id="buy">
     <div class="buylang-en buybox-title">Activity Book<br>PDF Instant Download</div>
@@ -534,7 +674,29 @@ body.lang-sv .x-en{display:none}
     <p class="fineprint x-en">Secure checkout via PayPal. Questions? ragdollhood@gmail.com</p>
     <p class="fineprint x-sv">Säker betalning via PayPal. Frågor? ragdollhood@gmail.com</p>
   </div>
+
+  <div class="upsell-wrap">
+    <a class="upsell-card" href="store.html">
+      <img class="upsell-img" src="images/buynow.jpg" alt="Kids Gonna Play – buy the full activity book"/>
+      <div class="upsell-text">
+        <h3 class="upsell-title x-en">Thank you for playing with us!</h3>
+        <h3 class="upsell-title x-sv">Tack för att du leker med oss!</h3>
+        <p class="x-en">Get the full book with over 100 screen-free games and activities for kids.</p>
+        <p class="x-sv">Få hela boken med över 100 skärmfria lekar och aktiviteter för barn.</p>
+        <p class="upsell-price x-en">Only $9</p>
+        <p class="upsell-price x-sv">Endast 99 kr</p>
+        <span class="upsell-cta x-en">Shop now →</span>
+        <span class="upsell-cta x-sv">Handla nu →</span>
+        <p class="upsell-note x-en">(Also available in Swedish for 99 kr)</p>
+        <p class="upsell-note x-sv">(Finns även på engelska för $9)</p>
+      </div>
+    </a>
+  </div>
 </section>
+
+<a class="sticky-buy" id="stickyBuy" href="#buy">
+  <span class="x-en">🛒 Buy Now</span><span class="x-sv">🛒 Köp Nu</span>
+</a>
 
 <footer>
   <p class="x-en">Contact: <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
@@ -632,6 +794,36 @@ body.lang-sv .x-en{display:none}
   }
   window.addEventListener('scroll', closeAllZooms, {passive:true});
   window.addEventListener('touchmove', closeAllZooms, {passive:true});
+
+  // FAQ accordion toggle
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-question');
+    if(q){
+      q.addEventListener('click', ()=>{
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el=>{ if(el!==item) el.classList.remove('open'); });
+        item.classList.toggle('open', !isOpen);
+      });
+    }
+  });
+
+  // Sticky floating buy button: appears once the hero CTA is scrolled past,
+  // hides again once the real buy box is in view (no need to show it twice).
+  const stickyBuy = document.getElementById('stickyBuy');
+  const heroCta = document.querySelector('.hero-ctas');
+  const buyBox = document.getElementById('buy');
+  if(stickyBuy && heroCta && buyBox){
+    function updateStickyBuy(){
+      const heroRect = heroCta.getBoundingClientRect();
+      const buyRect = buyBox.getBoundingClientRect();
+      const pastHero = heroRect.bottom < 0;
+      const reachedBuyBox = buyRect.top < window.innerHeight * 0.85;
+      stickyBuy.classList.toggle('visible', pastHero && !reachedBuyBox);
+    }
+    window.addEventListener('scroll', updateStickyBuy, {passive:true});
+    window.addEventListener('resize', updateStickyBuy);
+    updateStickyBuy();
+  }
 })();
 
 
