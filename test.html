@@ -52,15 +52,15 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 
 /* ===== Cover thumb spanning the full height of its section (used for both color & B&W) ===== */
 .section-row{display:flex;align-items:flex-start;justify-content:center;gap:14px;max-width:380px;margin:0 auto}
-.section-col{display:flex;flex-direction:column;flex:0 1 150px;min-width:0}
+.section-col{display:flex;flex-direction:column;flex:1 1 auto;min-width:0}
 .section-col .thumb-col{margin-top:10px}
-.thumb-col{display:flex;flex-direction:column;gap:10px;max-width:150px}
-.thumb-col .btn{justify-content:center;width:100%;padding-left:14px;padding-right:14px;font-size:.88rem}
+.thumb-col{display:flex;flex-direction:column;gap:10px}
+.thumb-col .btn{justify-content:center;width:100%}
 .cover-thumb{height:110px;width:auto;object-fit:contain;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,.24);border:2px solid #fff;flex-shrink:0}
 
 @media(max-width:560px){
-  .cover-thumb{height:90px}
-  .thumb-col{max-width:130px}
+  .cover-thumb{height:90px;order:-1}
+  .section-row{align-items:flex-start}
 }
 
 /* ===== Two-language split ===== */
