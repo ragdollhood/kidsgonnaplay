@@ -2256,13 +2256,13 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
   function renderSlogan(){if(!slogan)return; slogan.innerHTML = state.lang==='sv' ? '<span class="w1">Massor</span> <span class="w2">med</span> <span class="w3">lekar</span> <span class="w4">offline!</span>' : '<span class="w1">Phones</span> <span class="w2">away</span> – <span class="w3">we\'re</span> <span class="w4">gonna</span> <span class="w5">play</span><span class="w6">!</span>'; }
   function applyTranslations(){document.documentElement.lang=state.lang; buttons.forEach(btn=>btn.classList.toggle('active', btn.dataset.langTarget===state.lang)); document.querySelectorAll('[data-en][data-sv]:not(.card):not(.filter-btn):not(.slogan)').forEach(el=>{el.textContent=state.lang==='sv'?el.dataset.sv:el.dataset.en;}); document.querySelectorAll('.filter-btn[data-en][data-sv]').forEach(el=>{el.textContent=state.lang==='sv'?el.dataset.sv:el.dataset.en; if(el.classList.contains('active')) el.textContent=el.textContent;}); cards.forEach(card=>{const title=textFor(card,'title'); const subtitle=textFor(card,'subtitle'); card.querySelector('[data-field="title"]').textContent=title; card.querySelector('[data-field="subtitle"]').textContent=subtitle; card.setAttribute('aria-label', title); const img=card.querySelector('img'); img.alt=title; const newSrc=imageFor(card); if(img.src!==newSrc) img.src=newSrc;}); renderSlogan(); } 
   function isLockedCard(card){ return cards.indexOf(card) % 2 === 1; }
-  const BUY_DETAILS_TEXT = "100+ screen-free games & activities!<br>Every parent knows the struggle: tablets, TV and phones are often the easiest option. This book gives you over 100 fun alternatives that makes kids play, imagine, laugh and create memories.<br>Perfect for rainy days, family time, road trips and birthday parties.\n⚡ Instant PDF download.";
+  const BUY_DETAILS_TEXT = "100+ screen-free games & activities! \nEvery parent knows the struggle: tablets, TV and phones are often the easiest option. This book gives you over 100 fun alternatives that makes kids play, imagine, laugh and create memories. \nPerfect for rainy days, family time, road trips and birthday parties.\n⚡ Instant PDF download.";
   function openModal(card,focusClose=true){state.activeCard=card; const title=textFor(card,'title'); const subtitle=textFor(card,'subtitle'); const details=textFor(card,'details'); modalImage.alt=title;
     if(isLockedCard(card)){
       modalImage.src = 'https://kidsgonnaplay.com/images/buynow.jpg';
       modalImage.alt = 'Buy the PDF';
       modalImage.style.cursor = 'pointer';
-      modalTitle.textContent = 'Unlock 100+ games in the PDF';
+      modalTitle.textContent = 'Unlock 100+ games now';
       modalSubtitle.textContent = 'Only $9';
       modalDetails.textContent = BUY_DETAILS_TEXT;
     } else {
