@@ -45,19 +45,28 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 /* ===== Thank you section ===== */
 .thanks-wrap{max-width:1000px;margin:0 auto;padding:18px 20px 12px;text-align:center}
 .thanks-title{font-size:1.6rem;color:#3c2470;margin:0 0 20px;text-shadow:2px 2px 0 var(--gold)}
-.product-badge-caption{font-size:.9rem;color:#5a4a2c;font-weight:700;line-height:1.4;text-align:left;margin:0}
+.product-badge-caption{font-size:.9rem;color:#5a4a2c;font-weight:700;line-height:1.4;text-align:center;max-width:460px;margin:0 auto 22px}
 
-.cover-caption-row{display:flex;align-items:center;justify-content:center;gap:18px;max-width:560px;margin:0 auto 22px}
-.cover-decor{width:90px;flex-shrink:0;border-radius:12px;box-shadow:0 8px 18px rgba(72,39,103,.25);border:3px solid #fff}
+/* ===== Tilted cover images in box corners ===== */
+.corner-cover{position:absolute;width:72px;border-radius:10px;box-shadow:0 8px 16px rgba(72,39,103,.3);border:3px solid #fff;z-index:6}
+.corner-cover.en{top:-18px;left:-16px;transform:rotate(-14deg)}
+.corner-cover.sv{top:-18px;right:-16px;transform:rotate(14deg)}
+
+/* ===== Small cover thumb beside a B&W download button ===== */
+.bw-download-row{display:flex;align-items:center;justify-content:center;gap:10px;max-width:340px;margin:0 auto 12px}
+.bw-download-row .btn{flex:1;min-width:0}
+.bw-thumb{width:46px;height:auto;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.22);border:2px solid #fff;flex-shrink:0}
 
 @media(max-width:560px){
-  .cover-caption-row{gap:12px;max-width:340px}
-  .cover-decor{width:64px}
+  .corner-cover{width:56px;top:-14px}
+  .corner-cover.en{left:-10px}
+  .corner-cover.sv{right:-10px}
+  .bw-thumb{width:38px}
 }
 
 /* ===== Two-language split ===== */
 .two-col{display:flex;gap:24px;justify-content:center;align-items:stretch;flex-wrap:wrap;margin:0 auto 20px}
-.lang-col{flex:1 1 320px;max-width:440px;background:#fff;border-radius:20px;padding:22px 18px 20px;box-shadow:0 10px 24px rgba(72,39,103,.12);border:3px solid rgba(123,79,201,.15)}
+.lang-col{position:relative;flex:1 1 320px;max-width:440px;background:#fff;border-radius:20px;padding:22px 18px 20px;box-shadow:0 10px 24px rgba(72,39,103,.12);border:3px solid rgba(123,79,201,.15)}
 .lang-col-header{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
 .lang-flag{width:34px;height:34px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25);display:block}
 .lang-col-title{font-size:1.25rem;font-weight:900;color:#3c2470;margin:0}
@@ -117,15 +126,13 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 <section class="thanks-wrap">
   <h1 class="thanks-title">Thank you! / Tack!</h1>
 
-  <div class="cover-caption-row">
-    <img class="cover-decor" src="images/activity0.png" alt="Kids Gonna Play Activity Book cover"/>
-    <p class="product-badge-caption">Available in full color or a printer-friendly black &amp; white version.<br/>Finns i färg eller i en skrivarvänlig svartvit version.</p>
-  </div>
+  <p class="product-badge-caption">Available in full color or a printer-friendly black &amp; white version.<br/>Finns i färg eller i en skrivarvänlig svartvit version.</p>
 
   <div class="two-col-wrap">
     <div class="two-col">
     <!-- English version -->
     <div class="lang-col">
+      <img class="corner-cover en" src="images/activity0.png" alt="Kids Gonna Play Activity Book cover"/>
       <div class="lang-col-header">
         <img class="lang-flag" src="images/engalpha.png" alt="English flag"/>
         <h2 class="lang-col-title">Thank you!</h2>
@@ -147,10 +154,13 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           Printer-friendly · Black &amp; White
         </span>
-        <div class="download-row bw">
+        <div class="bw-download-row">
+          <img class="bw-thumb" src="images/acitityomslagsv.png" alt="Activity Book black &amp; white cover"/>
           <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" download>
             ⬇️ Download B&amp;W PDF
           </a>
+        </div>
+        <div class="download-row bw">
           <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" target="_blank" rel="noopener">
             👀 View in browser
           </a>
@@ -160,6 +170,7 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 
     <!-- Swedish version -->
     <div class="lang-col">
+      <img class="corner-cover sv" src="images/pysselomslag.png" alt="Kids Gonna Play Pysselbok omslag"/>
       <div class="lang-col-header">
         <img class="lang-flag" src="images/swealpha.png" alt="Svensk flagga"/>
         <h2 class="lang-col-title">Tack!</h2>
@@ -181,10 +192,13 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           Skrivarvänlig · Svartvit
         </span>
-        <div class="download-row bw">
+        <div class="bw-download-row">
           <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" download>
             ⬇️ Ladda ner svartvit PDF
           </a>
+          <img class="bw-thumb" src="images/pysselomslagsv.png" alt="Pysselbok svartvitt omslag"/>
+        </div>
+        <div class="download-row bw">
           <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" target="_blank" rel="noopener">
             👀 Öppna i webbläsaren
           </a>
