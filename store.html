@@ -912,8 +912,9 @@ async function registerUniqueVisitor() {
       localStorage.setItem("ebook_visitor_id", visitorId);
 
       const country = await getVisitorCountry();
-
-      await fetch(`${SUPABASE_URL}/rest/v1/E-boken`, {
+console.log("Försöker skriva till ebook");
+      await fetch(`${SUPABASE_URL}/rest/v1/ebook`, {
+ console.log("Skickat till Supabase");
         method: "POST",
         headers: {
           apikey: SUPABASE_KEY,
@@ -933,7 +934,7 @@ async function registerUniqueVisitor() {
     console.error(e);
   }
 }
-
+console.log("Scriptet körs");
 registerUniqueVisitor();
 </script>
 </body>
