@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#f5a623"/>
 <title>KIDS GONNA PLAY – Download your activity book</title>
 <meta name="description" content="Thank you for your purchase! View and download your Kids Gonna Play activity book here."/>
-<meta name="robots" content="noindex"/>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet"/>
 <link rel="icon" type="image/png" href="images/icon.png">
 <style>
 :root{
@@ -44,14 +44,31 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 
 /* ===== Thank you section ===== */
 .thanks-wrap{max-width:1000px;margin:0 auto;padding:18px 20px 12px;text-align:center}
-.thanks-title{font-size:1.6rem;color:#3c2470;margin:0 0 20px;text-shadow:2px 2px 0 var(--gold)}
+
+.main-heading{font-size:clamp(2rem,7vw,3.4rem);font-weight:900;color:#3c2470;letter-spacing:.03em;margin:6px 0 14px;text-shadow:3px 3px 0 var(--gold)}
+
+.above-box-text{font-size:.9rem;color:#5a4a2c;line-height:1.4;margin:0 0 10px}
+.above-box-caption{font-weight:700;color:#3c2470}
+.lang-heading{font-size:clamp(1.7rem,5.5vw,2.4rem);font-weight:900;color:#3c2470;margin:0 0 8px}
+
+/* ===== Cover thumb spanning the full height of its section (used for both color & B&W) ===== */
+.section-row{display:flex;align-items:flex-start;justify-content:center;gap:14px;max-width:380px;margin:0 auto}
+.section-col{display:flex;flex-direction:column;flex:1 1 auto;min-width:0}
+.section-col .thumb-col{margin-top:10px}
+.thumb-col{display:flex;flex-direction:column;gap:10px}
+.thumb-col .btn{justify-content:center;width:100%}
+.cover-thumb{height:210px;width:auto;object-fit:contain;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,.24);border:2px solid #fff;flex-shrink:0}
+
+@media(max-width:560px){
+  .cover-thumb{height:170px;order:-1}
+  .section-row{align-items:flex-start}
+}
 
 /* ===== Two-language split ===== */
-.two-col{display:flex;gap:24px;justify-content:center;align-items:stretch;flex-wrap:wrap;margin:0 auto 20px}
-.lang-col{flex:1 1 320px;max-width:440px;background:#fff;border-radius:20px;padding:22px 18px 20px;box-shadow:0 10px 24px rgba(72,39,103,.12);border:3px solid rgba(123,79,201,.15)}
-.lang-col-header{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
+.two-col{display:flex;gap:24px;justify-content:center;align-items:flex-start;flex-wrap:wrap;margin:0 auto 20px}
+.lang-col-wrap{flex:1 1 320px;max-width:440px}
+.lang-col{position:relative;background:#fff;border-radius:20px;padding:22px 18px 20px;box-shadow:0 10px 24px rgba(72,39,103,.12);border:3px solid rgba(123,79,201,.15)}
 .lang-flag{width:34px;height:34px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25);display:block}
-.lang-col-title{font-size:1.25rem;font-weight:900;color:#3c2470;margin:0}
 
 /* ===== Download buttons ===== */
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:900;font-size:1.0rem;border-radius:999px;padding:14px 26px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
@@ -66,15 +83,40 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 .contact-line{font-size:.85rem;color:#5a4a2c;margin:0 0 16px}
 .contact-line a{color:#5a4a2c;text-decoration:underline}
 
-/* ===== Illustration ===== */
-.illustration-wrap{max-width:480px;margin:0 auto}
-.illustration-img{width:100%;display:block;border-radius:18px;box-shadow:0 14px 30px rgba(72,39,103,.18)}
+.mobile-only{display:none}
+
+/* ===== Buy now upsell ===== */
+.upsell-wrap{max-width:640px;margin:0 auto 26px}
+.upsell-card{display:flex;align-items:center;gap:18px;background:#fff;border-radius:20px;padding:16px;box-shadow:0 10px 24px rgba(72,39,103,.14);border:3px solid var(--pink);text-decoration:none;color:inherit;text-align:left;transition:transform .15s ease,box-shadow .15s ease}
+.upsell-card:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(72,39,103,.2)}
+.upsell-card:active{transform:scale(.99)}
+.upsell-img{width:110px;height:110px;object-fit:cover;border-radius:14px;flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.upsell-title{font-size:1.15rem;font-weight:900;color:#3c2470;margin:0 0 6px}
+.upsell-text p{font-size:.9rem;color:#5a4a2c;line-height:1.4;margin:0 0 4px}
+.upsell-cta{display:inline-block;margin-top:6px;font-weight:800;color:var(--pink);font-size:.88rem}
+.upsell-price{font-size:1.8rem;font-weight:900;color:#e8283f;margin:2px 0 4px;letter-spacing:.02em}
+.upsell-note{font-size:.75rem;color:#8a7550;margin:6px 0 0}
 
 @media(max-width:560px){
-  .thanks-title{font-size:1.5rem}
+  .upsell-card{flex-direction:column;text-align:center;padding:18px 14px}
+  .upsell-img{width:140px;height:140px}
+}
+
+/* ===== BW printable section ===== */
+.bw-block{margin-top:18px;padding-top:16px;border-top:2px dashed rgba(123,79,201,.25)}
+.bw-label{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:800;color:#3c2470;background:var(--cream);border-radius:999px;padding:5px 12px;margin-bottom:10px}
+.bw-label svg{width:15px;height:15px;flex-shrink:0}
+.download-row.bw .btn-primary{background:linear-gradient(135deg,#e9e9e9,#bfbfbf);color:#2b2b2b;box-shadow:0 6px 0 #8c8c8c}
+.download-row.bw .btn-secondary{color:#4a4a4a;border-color:#4a4a4a;box-shadow:0 5px 0 rgba(74,74,74,.25)}
+.bw-flag{display:block;margin:0 auto 6px}
+
+@media(max-width:560px){
   .two-col{gap:16px}
   .lang-col{padding:18px 14px 16px}
   .fineprint{max-width:none;padding:0 4px}
+  .above-box-text{font-size:.85rem}
+  .desktop-only{display:none}
+  .mobile-only{display:inline}
 }
 </style>
 </head>
@@ -98,53 +140,128 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 </header>
 
 <section class="thanks-wrap">
-  <h1 class="thanks-title">Thank you! / Tack!</h1>
 
-  <div class="two-col">
+  <h1 class="main-heading">DOWNLOAD</h1>
+
+  <div class="two-col-wrap">
+    <div class="two-col">
     <!-- English version -->
-    <div class="lang-col">
-      <div class="lang-col-header">
-        <img class="lang-flag" src="images/engalpha.png" alt="English flag"/>
-        <h2 class="lang-col-title">Thank you!</h2>
-      </div>
-      <div class="download-row">
-        <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" download>
-          ⬇️ Download PDF
-        </a>
-        <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" target="_blank" rel="noopener">
-          👀 View in browser
-        </a>
-      </div>
-      <p class="fineprint">
+    <div class="lang-col-wrap">
+      <h2 class="lang-heading">Thank you!</h2>
+      <p class="above-box-text">
+        <span class="above-box-caption">Available in full color or a printer-friendly black &amp; white version.</span><br/>
         This PDF is for your personal use only. Download it to your device for access, even offline.
       </p>
+      <div class="lang-col">
+      <div class="section-row">
+        <img class="cover-thumb" src="images/activity0.png" alt="Kids Gonna Play Activity Book cover"/>
+        <div class="section-col">
+          <img class="lang-flag bw-flag" src="images/engalpha.png" alt="English flag"/>
+          <span class="bw-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.25 0 2-.75 2-2 0-.5-.19-.95-.5-1.29-.3-.33-.5-.78-.5-1.21 0-.94.76-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-4.42-4.48-8-10-8Z"/><circle cx="6.5" cy="11.5" r="1.5"/><circle cx="9.5" cy="7.5" r="1.5"/><circle cx="14.5" cy="7.5" r="1.5"/><circle cx="17.5" cy="11.5" r="1.5"/></svg>
+            Activity Book · Full Color
+          </span>
+          <div class="thumb-col">
+            <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" download>
+              ⬇️ Download PDF
+            </a>
+            <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" target="_blank" rel="noopener">
+              👀 View in browser
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bw-block">
+        <div class="section-row">
+          <img class="cover-thumb" src="images/activityomslagsv.png" alt="Activity Book black &amp; white cover"/>
+          <div class="section-col">
+            <img class="lang-flag bw-flag" src="images/engalpha.png" alt="English flag"/>
+            <span class="bw-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Printer-friendly · Black &amp; White
+            </span>
+            <div class="thumb-col">
+              <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" download>
+                ⬇️ Download B&amp;W PDF
+              </a>
+              <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" target="_blank" rel="noopener">
+                👀 View in browser
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
 
     <!-- Swedish version -->
-    <div class="lang-col">
-      <div class="lang-col-header">
-        <img class="lang-flag" src="images/swealpha.png" alt="Svensk flagga"/>
-        <h2 class="lang-col-title">Tack!</h2>
-      </div>
-      <div class="download-row">
-        <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" download>
-          ⬇️ Ladda ner PDF
-        </a>
-        <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" target="_blank" rel="noopener">
-          👀 Öppna i webbläsaren
-        </a>
-      </div>
-      <p class="fineprint">
+    <div class="lang-col-wrap">
+      <h2 class="lang-heading">Tack!</h2>
+      <p class="above-box-text">
+        <span class="above-box-caption">Finns i färg eller i en skrivarvänlig svartvit version.</span><br/>
         Denna PDF är endast för ditt personliga bruk och får ej delas. Ladda ner på din enhet för att få tillgång till den offline.
       </p>
+      <div class="lang-col">
+      <div class="section-row">
+        <div class="section-col">
+          <img class="lang-flag bw-flag" src="images/swealpha.png" alt="Svensk flagga"/>
+          <span class="bw-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.25 0 2-.75 2-2 0-.5-.19-.95-.5-1.29-.3-.33-.5-.78-.5-1.21 0-.94.76-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-4.42-4.48-8-10-8Z"/><circle cx="6.5" cy="11.5" r="1.5"/><circle cx="9.5" cy="7.5" r="1.5"/><circle cx="14.5" cy="7.5" r="1.5"/><circle cx="17.5" cy="11.5" r="1.5"/></svg>
+            Pysselbok · Färg
+          </span>
+          <div class="thumb-col">
+            <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" download>
+              ⬇️ Ladda ner PDF
+            </a>
+            <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" target="_blank" rel="noopener">
+              👀 <span class="desktop-only">Öppna i webbläsaren</span><span class="mobile-only">Öppna i webbläsare</span>
+            </a>
+          </div>
+        </div>
+        <img class="cover-thumb" src="images/pysselomslag.png" alt="Kids Gonna Play Pysselbok omslag"/>
+      </div>
+
+      <div class="bw-block">
+        <div class="section-row">
+          <div class="section-col">
+            <img class="lang-flag bw-flag" src="images/swealpha.png" alt="Svensk flagga"/>
+            <span class="bw-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Skrivarvänlig · Svartvit
+            </span>
+            <div class="thumb-col">
+              <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" download>
+                ⬇️ <span class="desktop-only">Ladda ner svartvit PDF</span><span class="mobile-only">Ladda ner s/v PDF</span>
+              </a>
+              <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" target="_blank" rel="noopener">
+                👀 <span class="desktop-only">Öppna i webbläsaren</span><span class="mobile-only">Öppna i webbläsare</span>
+              </a>
+            </div>
+          </div>
+          <img class="cover-thumb" src="images/pysselomslagsv.png" alt="Pysselbok svartvitt omslag"/>
+        </div>
+      </div>
+      </div>
     </div>
+  </div>
+  </div>
+
+  <div class="upsell-wrap">
+    <a class="upsell-card" href="store.html">
+      <img class="upsell-img" src="images/buynow.jpg" alt="Kids Gonna Play – buy the full activity book"/>
+      <div class="upsell-text">
+        <h3 class="upsell-title">Thank you for playing with us!</h3>
+        <p>Get the full book with over 100 screen-free games and activities for kids.</p>
+        <p class="upsell-price">Only $9</p>
+        <span class="upsell-cta">Shop now →</span>
+        <p class="upsell-note">(Also available in Swedish for 99 kr)</p>
+      </div>
+    </a>
   </div>
 
   <p class="contact-line">Contact / Kontakt: <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
 
-  <div class="illustration-wrap">
-    <img class="illustration-img" src="images/thank-you.jpg" alt="Kids Gonna Play"/>
-  </div>
 </section>
 
 </body>
