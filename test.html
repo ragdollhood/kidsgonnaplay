@@ -2258,9 +2258,8 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
   function isLockedCard(card){ return cards.indexOf(card) % 2 === 1; }
   function openModal(card,focusClose=true){state.activeCard=card; const title=textFor(card,'title'); const subtitle=textFor(card,'subtitle'); const details=textFor(card,'details'); modalImage.src=imageFor(card); modalImage.alt=title;
     if(isLockedCard(card)){
-      const lockedTitle = state.lang==='sv' ? 'KÖP PDF:EN FÖR ATT SE HUR MAN LEKER' : 'BUY THE PDF TO FIND OUT HOW TO PLAY';
-      modalTitle.textContent = lockedTitle;
-      modalSubtitle.textContent = subtitle;
+      modalTitle.textContent = 'Get the PDF to learn how to play.';
+      modalSubtitle.textContent = 'Only $9';
       modalDetails.innerHTML = '';
       const buyLink = document.createElement('a');
       buyLink.href = 'store.html';
@@ -2269,7 +2268,7 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
       const buyImg = document.createElement('img');
       buyImg.src = 'https://kidsgonnaplay.com/images/buynow.jpg';
       buyImg.alt = state.lang==='sv' ? 'Köp PDF:en' : 'Buy the PDF';
-      buyImg.style.cssText = 'max-width:100%;border-radius:14px;cursor:pointer;display:block;box-shadow:0 8px 18px rgba(0,0,0,.15);transition:transform .15s ease;';
+      buyImg.style.cssText = 'width:100%;max-width:420px;border-radius:24px;cursor:pointer;display:block;box-shadow:0 8px 20px rgba(0,0,0,.12);transition:transform .15s ease;';
       buyLink.appendChild(buyImg);
       buyLink.addEventListener('click', function(e){ e.preventDefault(); window.location.href='store.html'; });
       modalDetails.appendChild(buyLink);
