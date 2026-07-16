@@ -22,7 +22,6 @@ img{max-width:100%}
 header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180deg,var(--orange),#f7b94d);border-bottom:clamp(3px,1.2vw,8px) solid var(--purple);position:relative;min-height:90px}
 .header-inner{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:1100px;margin:0 auto}
 .logo-img{width:clamp(140px, 30vw, 300px);height:auto;display:block;margin:0 auto}
-.header-cover-img{width:clamp(56px, 9vw, 90px);height:auto;display:block;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,.25);border:2px solid #fff}
 .header-donate{position:absolute;left:12px;top:8px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;z-index:10}
 .header-share{display:flex;align-items:center;gap:6px}
 .header-share .share-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:999px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s ease}
@@ -41,13 +40,22 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
   .back-btn{padding:0 10px;font-size:.72rem;height:28px}
   .back-btn .back-btn-label{display:none}
   .logo-img{width:clamp(180px, 44vw, 260px);margin-top:6px}
-  .header-cover-img{width:clamp(44px, 14vw, 60px)}
 }
 
 /* ===== Thank you section ===== */
 .thanks-wrap{max-width:1000px;margin:0 auto;padding:18px 20px 12px;text-align:center}
 .thanks-title{font-size:1.6rem;color:#3c2470;margin:0 0 20px;text-shadow:2px 2px 0 var(--gold)}
 .product-badge-caption{font-size:.9rem;color:#5a4a2c;margin:0 auto 22px;font-weight:700;max-width:460px;line-height:1.4}
+
+.two-col-wrap{position:relative;max-width:1000px;margin:0 auto}
+.cover-decor{position:absolute;left:8%;top:-58px;width:120px;transform:rotate(-8deg);border-radius:14px;box-shadow:0 10px 22px rgba(72,39,103,.28);border:3px solid #fff;z-index:5}
+
+@media(max-width:900px){
+  .cover-decor{left:2%;width:100px;top:-46px}
+}
+@media(max-width:700px){
+  .cover-decor{position:static;transform:none;display:block;margin:0 auto 18px;width:120px}
+}
 
 /* ===== Two-language split ===== */
 .two-col{display:flex;gap:24px;justify-content:center;align-items:stretch;flex-wrap:wrap;margin:0 auto 20px}
@@ -104,7 +112,6 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
     </div>
   </div>
   <div class="header-inner">
-    <img class="header-cover-img" src="images/activity0.png" alt="Kids Gonna Play Activity Book cover"/>
     <img class="logo-img" src="images/GONNAPLAY-titel-alpha.png" alt="Kids Gonna Play"/>
   </div>
 </header>
@@ -113,7 +120,9 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
   <h1 class="thanks-title">Thank you! / Tack!</h1>
   <p class="product-badge-caption">Available in full color or a printer-friendly black &amp; white version.<br/>Finns i färg eller i en skrivarvänlig svartvit version.</p>
 
-  <div class="two-col">
+  <div class="two-col-wrap">
+    <img class="cover-decor" src="images/activity0.png" alt="Kids Gonna Play Activity Book cover"/>
+    <div class="two-col">
     <!-- English version -->
     <div class="lang-col">
       <div class="lang-col-header">
@@ -181,6 +190,7 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <p class="contact-line">Contact / Kontakt: <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
