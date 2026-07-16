@@ -4,846 +4,208 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="theme-color" content="#f5a623"/>
-
-<!-- ===== Core SEO ===== -->
-<title>Kids Gonna Play E-Book – 100+ Screen-Free Family Activities</title>
-<meta name="description" content="100+ screen-free games sorted by age and group size — for solo play, friends, or a party. Spark imagination and family fun. Instant PDF, print at home."/>
-<meta name="robots" content="index, follow, max-image-preview:large"/>
-<!-- TODO: replace with your real, final page URL before publishing -->
-<link rel="canonical" href="https://www.kidsgonnaplay.com/store.html"/>
+<title>KIDS GONNA PLAY – Download your activity book</title>
+<meta name="description" content="Thank you for your purchase! View and download your Kids Gonna Play activity book here."/>
+<meta name="robots" content="noindex"/>
 <link rel="icon" type="image/png" href="images/icon.png">
-<link rel="apple-touch-icon" href="images/icon.png">
-
-<!-- ===== Open Graph (Facebook, etc.) ===== -->
-<meta property="og:type" content="product"/>
-<meta property="og:site_name" content="Kids Gonna Play"/>
-<meta property="og:title" content="Kids Gonna Play E-Book – 100+ Screen-Free Family Activities"/>
-<meta property="og:description" content="100+ screen-free games and activities sorted by age and group size — perfect for families, playdates, and parties. Spark imagination and family bonds. Instant PDF download."/>
-<!-- TODO: replace with your real, final page URL before publishing -->
-<meta property="og:url" content="https://www.kidsgonnaplay.com/store.html"/>
-<meta property="og:image" content="https://www.kidsgonnaplay.com/images/e-bok-framsida.jpg"/>
-<meta property="og:image:alt" content="Kids Gonna Play e-book cover – 100+ screen-free family activities"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:locale:alternate" content="sv_SE"/>
-<meta property="product:price:amount" content="9"/>
-<meta property="product:price:currency" content="USD"/>
-
-<!-- ===== Twitter Card ===== -->
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Kids Gonna Play E-Book – 100+ Screen-Free Family Activities"/>
-<meta name="twitter:description" content="100+ screen-free games and activities sorted by age and group size — perfect for families, playdates, and parties. Instant PDF download."/>
-<meta name="twitter:image" content="https://www.kidsgonnaplay.com/images/e-bok-framsida.jpg"/>
-
-
-<!-- ===== Structured data (rich results for Google) ===== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Kids Gonna Play E-Book",
-  "image": "https://www.kidsgonnaplay.com/images/e-bok-framsida.jpg",
-  "description": "100+ screen-free games and activities for kids, sorted by age and group size — solo play, with friends, or a party. Spark imagination, strengthen family bonds, and create lasting childhood memories. Instant PDF download, print at home or read on any device.",
-  "keywords": "screen-free activities for kids, family activity book, kids games PDF, rainy day activities, indoor games for children, party games for kids, printable activity book for families",
-  "audience": {
-    "@type": "PeopleAudience",
-    "suggestedMinAge": "3",
-    "suggestedMaxAge": "12"
-  },
-  "brand": {
-    "@type": "Brand",
-    "name": "Kids Gonna Play"
-  },
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.kidsgonnaplay.com/store.html",
-    "priceCurrency": "USD",
-    "price": "9.00",
-    "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/NewCondition"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What ages is the Kids Gonna Play e-book for?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For ages 3\u201310, the activities are sorted by small or big kids and by whether they're playing alone or with friends, so there's something for everyone in that range."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are the activities screen-free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, every activity in the book is screen-free, designed to spark imagination and strengthen family bonds."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I print the e-book at home?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, each chapter opens with its own cover page, making it easy to print at home and organize in a binder."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What do I get after buying, and in which languages?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You get an instant PDF download that you can read on any device or print at home, including both the English and Swedish versions. You only pick a currency at checkout, not a language."
-      }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Games",
-      "item": "https://www.kidsgonnaplay.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Kids Gonna Play E-Book"
-    }
-  ]
-}
-</script>
 <style>
 :root{
   --orange:#f5a623;--blue:#2eb6e8;--pink:#e8417c;--green:#5cc95c;--purple:#7b4fc9;--cream:#fff7e6;
   --gold:#ffd23f;--ink:#2b2b2b;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:"Trebuchet MS","Comic Sans MS",sans-serif;background:radial-gradient(circle at top left,#ffe9b3,#fdf6e3 60%);color:var(--ink);overflow-x:hidden}
+body{margin:0;font-family:"Trebuchet MS","Comic Sans MS",sans-serif;color:var(--ink);overflow-x:hidden;position:relative}
 a{color:inherit}
 img{max-width:100%}
 
+/* ===== Full-screen flag background ===== */
+.flag-bg{position:fixed;inset:0;z-index:-2;display:flex}
+.flag-bg .half{flex:1 1 50%;background-size:cover;background-position:center;background-repeat:no-repeat}
+.flag-bg .half.en{background-image:url(images/engalpha.png)}
+.flag-bg .half.sv{background-image:url(images/swealpha.png)}
+.flag-bg-divider{position:fixed;left:50%;top:0;bottom:0;width:5px;transform:translateX(-50%);background:linear-gradient(var(--purple),var(--gold));z-index:-1}
+
 /* ===== Header ===== */
-header{text-align:center;padding:20px 20px 18px;background:linear-gradient(180deg,var(--orange),#f7b94d);border-bottom:clamp(3px,1.2vw,10px) solid var(--purple);position:relative}
+header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180deg,var(--orange),#f7b94d);border-bottom:clamp(3px,1.2vw,8px) solid var(--purple);position:relative;min-height:90px}
 .header-inner{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:1100px;margin:0 auto}
+.logo-img{width:clamp(140px, 30vw, 300px);height:auto;display:block;margin:0 auto}
 .header-donate{position:absolute;left:12px;top:8px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;z-index:10}
 .header-share{display:flex;align-items:center;gap:6px}
 .header-share .share-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:999px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s ease}
 .header-share .share-icon-btn:hover{transform:translateY(-1px)}
 .header-share .share-icon-btn:active{transform:scale(.92)}
-.header-share .share-icon-btn.share-fb{background:#1877F2;color:#fff}
+.header-share .share-fb{background:#1877F2;color:#fff}
 .header-share .share-icon-btn svg{width:14px;height:14px;display:block}
 .back-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--purple);border:2px solid var(--purple);border-radius:999px;padding:6px 12px;font-weight:800;font-size:.8rem;text-decoration:none;white-space:nowrap;box-shadow:0 3px 0 rgba(123,79,201,.25);transition:transform .15s ease}
 .back-btn:hover{transform:translateY(-1px)}
 .back-btn:active{transform:scale(.95)}
-  
-.title-img{
-  width: clamp(140px, 30vw, 300px);
-  height:auto;
-  display:block;
-  margin:6px auto 0;
-}
-  
-.lang-switcher{position:absolute;top:8px;right:14px;display:flex;gap:6px}
-.lang-switcher .lang-btn{border:none;background:transparent;padding:0;cursor:pointer}
-.lang-switcher .lang-btn img{display:block;width:28px;height:28px;border-radius:999px}
-.lang-switcher .lang-btn.active{display:none}
-
-@media(max-width:640px){
-  header{padding:14px 14px 16px;min-height:110px}
+@media(max-width:560px){
+  header{padding:10px 10px 14px;min-height:70px}
   .header-donate{left:8px;top:8px;gap:6px;flex-direction:column;align-items:flex-start}
-  .header-share .share-icon-btn{width:28px;height:28px}
-  .header-share .share-icon-btn svg{width:14px;height:14px}
+  .header-share .share-icon-btn{width:22px;height:22px}
+  .header-share .share-icon-btn svg{width:12px;height:12px}
   .back-btn{padding:0 10px;font-size:.72rem;height:28px}
   .back-btn .back-btn-label{display:none}
-  /* Language flags stay top-right, same as desktop */
-  .lang-switcher{position:absolute;top:8px;right:14px;justify-content:flex-end;margin-top:0}
-  .header-inner{padding-top:0}
-  .title-img{
-  width: clamp(180px, 44vw, 260px);
-  height:auto;
-  display:block;
-  margin:6px auto 0;
-}
+  .logo-img{width:clamp(180px, 44vw, 260px);margin-top:6px}
 }
 
-/* ===== Hero ===== */
-.hero{max-width:1100px;margin:0 auto;padding:48px 20px 20px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
-.eyebrow{display:inline-block;background:var(--purple);color:#fff;font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px}
-.hero h1{font-size:2.15rem;line-height:1.25;margin:0 0 16px;color:#3c2470;text-shadow:2px 2px 0 var(--gold)}
-.hero p.lead{font-size:1.12rem;line-height:1.55;color:#5a4a2c;max-width:520px;margin:0 0 26px}
-.lead-highlight{color:var(--pink);font-weight:800}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.share-row{display:flex;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
-.share-label{font-size:.85rem;font-weight:800;color:#5a4a2c}
-.share-btn{display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-weight:800;font-size:.85rem;text-decoration:none;padding:8px 14px;border-radius:999px;transition:transform .15s ease;box-shadow:0 3px 0 rgba(0,0,0,.15)}
-.share-btn:hover{transform:translateY(-1px)}
-.share-fb{background:#1877F2;color:#fff}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:900;font-size:1rem;border-radius:999px;padding:14px 26px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
+/* ===== Thank you section ===== */
+.thanks-wrap{max-width:1100px;margin:0 auto;padding:22px 20px 12px}
+
+/* ===== Product preview badge (shared, sits on the divider) ===== */
+.product-badge{max-width:150px;margin:0 auto 18px;text-align:center}
+.product-badge img{width:100%;display:block;border-radius:14px;box-shadow:0 10px 24px rgba(72,39,103,.3);border:3px solid #fff}
+.product-badge-caption{font-size:.85rem;color:#3c2470;font-weight:800;margin:10px auto 0;max-width:460px;line-height:1.4;text-align:center;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+
+/* ===== Two-language split (content) ===== */
+.two-col{display:flex;gap:0;justify-content:center;align-items:stretch;margin:0 auto 20px;border-radius:20px;overflow:hidden;box-shadow:0 10px 24px rgba(72,39,103,.15)}
+.lang-col{flex:1 1 50%;background:rgba(255,255,255,.94);padding:22px 22px 20px;text-align:center}
+.lang-col.en{border-right:3px solid rgba(123,79,201,.15)}
+.lang-col-title{font-size:1.6rem;font-weight:900;color:#3c2470;margin:0 0 16px;text-shadow:1px 1px 0 var(--gold);letter-spacing:.5px}
+
+/* ===== Download buttons ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:900;font-size:1.0rem;border-radius:999px;padding:14px 26px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:scale(.97)}
 .btn-primary{background:linear-gradient(135deg,var(--gold),var(--orange));color:#3c2470;box-shadow:0 6px 0 #c97e10}
 .btn-secondary{background:#fff;color:var(--purple);border:3px solid var(--purple);box-shadow:0 5px 0 rgba(123,79,201,.25)}
+.download-row{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin:0 auto 12px;max-width:340px}
+.download-row .btn{justify-content:center}
+.fineprint{font-size:.82rem;color:#8a7550;max-width:360px;margin:0 auto;line-height:1.4}
 
-/* Book mockup */
-.book-stage{display:flex;flex-direction:column;align-items:center;gap:18px;justify-content:center;perspective:1400px}
-.book{
-  position:relative;width:340px;max-width:80vw;aspect-ratio:3/4;border-radius:10px 16px 16px 10px;
-  box-shadow:0 30px 50px rgba(60,36,112,.35),inset -8px 0 0 rgba(0,0,0,.18);
-  transform:rotateY(-18deg) rotateX(4deg);transition:transform .4s ease,box-shadow .4s ease;
-  overflow:hidden;cursor:default;z-index:5;
+.contact-line{font-size:.85rem;color:#5a4a2c;margin:14px 0 0}
+.contact-line a{color:#5a4a2c;text-decoration:underline}
+
+/* ===== Illustration ===== */
+.illustration-wrap{max-width:480px;margin:0 auto}
+.illustration-img{width:100%;display:block;border-radius:18px;box-shadow:0 14px 30px rgba(72,39,103,.18)}
+
+/* ===== BW printable section ===== */
+.bw-block{margin-top:18px;padding-top:16px;border-top:2px dashed rgba(123,79,201,.25)}
+.bw-label{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:800;color:#3c2470;background:var(--cream);border-radius:999px;padding:5px 12px;margin-bottom:10px}
+.bw-label svg{width:15px;height:15px;flex-shrink:0}
+.download-row.bw .btn-primary{background:linear-gradient(135deg,#e9e9e9,#bfbfbf);color:#2b2b2b;box-shadow:0 6px 0 #8c8c8c}
+.download-row.bw .btn-secondary{color:#4a4a4a;border-color:#4a4a4a;box-shadow:0 5px 0 rgba(74,74,74,.25)}
+
+@media(max-width:700px){
+  .two-col{flex-direction:column}
+  .lang-col.en{border-right:none;border-bottom:3px solid rgba(123,79,201,.15)}
+  .flag-bg{flex-direction:column}
+  .flag-bg-divider{left:0;right:0;top:50%;bottom:auto;width:auto;height:5px;transform:translateY(-50%)}
 }
-.book-stage:hover .book{transform:rotateY(-6deg) rotateX(2deg)}
-.book.zoomed{
-  position:fixed !important;
-  top:50% !important;left:50% !important;
-  transform:translate(-50%,-50%) rotateY(0deg) rotateX(0deg) !important;
-  width:min(78vw,360px) !important;max-width:78vw !important;
-  height:auto !important;max-height:80vh !important;
-  box-shadow:0 45px 90px rgba(60,36,112,.5),inset -8px 0 0 rgba(0,0,0,.18);
-  z-index:999;
-}
-.book-cover-img{width:100%;height:100%;object-fit:cover;display:block}
-@media(max-width:860px){
-  .hero{grid-template-columns:1fr;text-align:center;padding-top:34px}
-  .hero p.lead{margin-left:auto;margin-right:auto}
-  .hero-ctas{justify-content:center}
-  .share-row{justify-content:center}
-  .hero h1{font-size:1.7rem}
-}
-@media(max-width:640px){
-  /* Remove the purple "E-book" tag on mobile */
-  .hero .eyebrow{display:none}
-  /* Book cover is not clickable/zoomable on mobile */
-  .book{cursor:default}
-  .hero p.lead{margin-bottom:6px}
-  /* Pull the book cover much closer to the text above it */
-  .hero{gap:6px}
-  .book-stage{gap:6px;margin-top:1.6em}
-}
-
-/* ===== Section shells ===== */
-section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
-.section-title{text-align:center;font-size:1.9rem;color:#3c2470;margin:0 0 8px}
-.section-sub{text-align:center;color:#5a4a2c;max-width:600px;margin:0 auto 34px;font-size:1.02rem;line-height:1.5}
-
-/* Feature cards (reuses homepage card language) */
-.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.feature-card{background:linear-gradient(180deg,#fff,var(--cream));border-radius:20px;box-shadow:0 10px 22px rgba(72,39,103,.14);padding:22px 16px;text-align:center}
-.feature-card img{width:64px;height:64px;border-radius:50%;margin-bottom:10px;box-shadow:0 4px 10px rgba(72,39,103,.2)}
-.feature-card .collage-img{width:100%;height:auto;max-width:220px;border-radius:14px}
-.feature-card .collage-img-h{height:160px;width:auto;max-width:100%;border-radius:14px;display:block;margin:0 auto}
-.feature-card h3{margin:6px 0 6px;font-size:1.05rem;color:#3c2470}
-.feature-card h3:not(:first-of-type){margin-top:14px}
-.feature-card p{margin:0;font-size:.9rem;color:#5a4a2c;line-height:1.45}
-@media(max-width:860px){.feature-grid{grid-template-columns:1fr}}
-
-/* Chapter list */
-.chapters{max-width:640px;margin:0 auto;background:#fff;border:3px solid var(--purple);border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(72,39,103,.14)}
-.chapter-row{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:2px solid rgba(123,79,201,.12)}
-.chapter-row:last-child{border-bottom:none}
-.chapter-num{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--purple);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:.95rem}
-.chapter-name{font-weight:800;color:#3c2470}
-
-/* Buy box */
-.buybox{max-width:560px;margin:40px auto 0;background:linear-gradient(180deg,#fff,var(--cream));border-radius:24px;border:4px solid var(--gold);box-shadow:0 14px 30px rgba(72,39,103,.18);padding:30px 28px;text-align:center}
-.buybox-title{font-size:1.9rem;font-weight:900;color:#3c2470;margin:-10px 0 26px;line-height:1.2}
-.buybox .price{font-size:2.6rem;font-weight:900;color:var(--pink);margin:6px 0}
-.buybox .price .old-price{font-size:1.3rem;font-weight:700;color:#8a7550;text-decoration:line-through;margin-right:6px;vertical-align:middle}
-.buybox .price small{font-size:1rem;color:#5a4a2c;font-weight:700}
-.buybox ul{list-style:none;padding:0;margin:16px 0 22px;text-align:left;max-width:340px;margin-left:auto;margin-right:auto}
-.buybox li{padding:6px 0;font-size:.95rem;color:#3b2a00}
-.buybox li:before{content:"✓ ";color:var(--green);font-weight:900}
-.buybox .fineprint{margin-top:14px;font-size:.78rem;color:#8a7550}
-.book-lang-note{display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:2px solid var(--gold);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:800;color:#3c2470;margin:2px 0 18px}
-.book-lang-note img{width:20px;height:20px;border-radius:50%;box-shadow:0 0 0 2px #fff}
-.hero-lang-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:2px solid var(--purple);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:800;color:#3c2470;margin:0 0 18px}
-.hero-lang-badge img{width:22px;height:22px;border-radius:50%;box-shadow:0 0 0 2px var(--cream)}
-.book-lang-switch{display:flex;justify-content:center;gap:8px;margin:4px 0 18px}
-.book-lang-btn{font-family:inherit;font-weight:800;font-size:.9rem;border-radius:999px;padding:9px 20px 9px 12px;cursor:pointer;border:2px solid var(--purple);background:#fff;color:var(--purple);transition:all .15s ease;display:inline-flex;align-items:center;gap:8px}
-.book-lang-btn img{width:20px;height:20px;border-radius:50%}
-.book-lang-btn.active{background:var(--purple);color:#fff}
-.book-lang-btn.disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
-.book-lang-label{font-size:.8rem;color:#5a4a2c;margin:0 0 6px;font-weight:700}
-.coming-soon-tag{font-size:.72em;font-weight:900;color:var(--pink);letter-spacing:.02em}
-
-/* About the creator */
-.about-box{max-width:820px;margin:38px auto 8px;background:linear-gradient(180deg,#fff,var(--cream));border-radius:22px;box-shadow:0 10px 24px rgba(72,39,103,.14);padding:28px 26px;display:flex;gap:22px;align-items:flex-start;text-align:left}
-.about-avatar{flex:0 0 auto;width:84px;height:84px;border-radius:50%;object-fit:cover;box-shadow:0 4px 10px rgba(72,39,103,.25);border:3px solid #fff}
-.about-content h3.about-name{margin:0 0 10px;color:#3c2470;font-size:1.12rem;line-height:1.3}
-.about-content p{margin:0 0 10px;color:#5a4a2c;font-size:.93rem;line-height:1.55}
-.about-badge{display:inline-block;background:var(--cream);border:2px solid var(--gold);border-radius:999px;padding:6px 14px;font-weight:800;font-size:.8rem;color:#3c2470;margin-top:2px}
-@media(max-width:640px){.about-box{flex-direction:column;align-items:center;text-align:center;padding:22px 18px}.about-content p{text-align:left}}
-
-/* Trust row above buy box */
-.trust-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 0 20px}
-.trust-row span{background:#fff;border:2px solid var(--purple);border-radius:999px;padding:6px 12px;white-space:nowrap;font-size:.78rem;font-weight:800;color:#3c2470}
-
-.hero-secure-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--purple);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:800;color:#3c2470;box-shadow:0 3px 0 rgba(123,79,201,.2)}
-
-/* Why buy / benefits */
-.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:10px auto 0;max-width:1020px}
-.benefit-card{background:linear-gradient(180deg,#fff,var(--cream));border-radius:20px;box-shadow:0 10px 22px rgba(72,39,103,.14);padding:24px 16px;text-align:center}
-.benefit-card .benefit-icon{font-size:2.1rem;margin-bottom:10px;display:block}
-.benefit-card h3{margin:0 0 6px;font-size:1rem;color:#3c2470;line-height:1.3}
-.benefit-card p{margin:0;font-size:.86rem;color:#5a4a2c;line-height:1.45}
-@media(max-width:860px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.benefit-grid{grid-template-columns:1fr}}
-
-/* Social proof (science + parent quotes) */
-.social-proof-box{max-width:1020px;margin:40px auto 8px;background:linear-gradient(180deg,#fff,var(--cream));border-radius:24px;border:3px solid var(--purple);box-shadow:0 12px 26px rgba(72,39,103,.16);padding:34px 28px}.social-proof-box .section-title{margin-bottom:6px}
-.social-proof-tag{display:block;text-align:center;font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin:22px 0 12px}
-.social-proof-tag:first-of-type{margin-top:0}
-.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.quote-card{background:#fff;border-radius:16px;box-shadow:0 6px 16px rgba(72,39,103,.12);padding:20px 18px;text-align:left;position:relative}
-.quote-card .quote-mark{position:absolute;top:8px;left:14px;font-size:2.4rem;line-height:1;color:var(--gold);font-family:Georgia,serif;font-weight:900}
-.quote-card p.quote-text{margin:18px 0 10px;font-size:.92rem;line-height:1.5;color:#4a3a20;font-style:italic}
-.quote-card p.quote-attribution{margin:0;font-size:.8rem;font-weight:800;color:var(--purple)}
-.quote-stars{display:block;color:var(--gold);font-size:.85rem;letter-spacing:2px;margin:4px 0 0}
-@media(max-width:860px){.quote-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.quote-grid{grid-template-columns:1fr}.social-proof-box{padding:24px 18px}}
-
-/* FAQ accordion */
-.faq-list{max-width:720px;margin:0 auto}
-.faq-item{background:#fff;border:2px solid rgba(123,79,201,.25);border-radius:16px;margin-bottom:12px;overflow:hidden}
-.faq-question{width:100%;text-align:left;background:none;border:none;font-family:inherit;font-weight:800;font-size:1rem;color:#3c2470;padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.faq-question .faq-icon{flex:0 0 auto;font-size:1.2rem;color:var(--purple);transition:transform .2s ease}
-.faq-item.open .faq-question .faq-icon{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .25s ease}
-.faq-answer p{margin:0;padding:0 20px 18px;font-size:.92rem;line-height:1.55;color:#5a4a2c}
-.faq-item.open .faq-answer{max-height:240px}
-
-/* Page gallery (inside the book) */
-.mini-badges{display:flex;justify-content:center;align-items:center;gap:14px;margin:6px auto 4px;flex-wrap:wrap}
-.mini-badges img.mini-badge{height:64px;width:auto;border-radius:8px;cursor:default}
-#badges-small-children img.mini-badge{height:92px}
-@media(max-width:640px){#badges-small-children img.mini-badge{height:74px}}
-.subsection-title{text-align:center;color:#3c2470;font-weight:800;font-size:1.3rem;margin:26px 0 6px}
-@media(max-width:640px){.mini-badges img.mini-badge{height:52px}}
-.page-scroll{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px;padding:6px 6px 26px;margin:0 auto 10px;max-width:920px}
-.page-scroll img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 10px 22px rgba(72,39,103,.14);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;position:relative}
-.page-scroll img:hover{transform:translateY(-3px)}
-@media(max-width:640px){.page-scroll{grid-template-columns:repeat(2,1fr);gap:14px}}
-
-/* Click-to-enlarge for any image (opens centered on screen, like a lightbox) */
-.zoom-pop{cursor:pointer}
-.zoom-pop.zoomed{
-  position:fixed !important;
-  top:50% !important;left:50% !important;
-  transform:translate(-50%,-50%) !important;
-  width:auto !important;height:auto !important;
-  max-width:90vw !important;max-height:85vh !important;
-  z-index:999;
-  box-shadow:0 30px 60px rgba(60,36,112,.5)!important;
-}
-.feature-card img{position:relative;transition:transform .3s ease,box-shadow .3s ease}
-
-/* Dimmed backdrop behind any zoomed/enlarged image */
-body.zoom-active::after{
-  content:'';
-  position:fixed;inset:0;
-  background:rgba(43,20,60,.55);
-  z-index:998;
-}
-
-footer{text-align:center;padding:30px 20px;color:#5a4a2c;font-size:.9rem}
-footer a{color:#5a4a2c;text-decoration:underline}
-
-/* lang toggle */
-body.lang-en .x-sv{display:none}
-body.lang-sv .x-en{display:none}
-
-/* Sticky floating buy button */
-.sticky-buy{
-  position:fixed;right:20px;bottom:20px;z-index:500;
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:inherit;font-weight:900;font-size:.95rem;
-  background:linear-gradient(135deg,var(--gold),var(--orange));color:#3c2470;
-  border-radius:999px;padding:14px 22px;text-decoration:none;
-  box-shadow:0 8px 0 #c97e10,0 12px 24px rgba(0,0,0,.25);
-  opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;
-  transition:opacity .25s ease,transform .25s ease;
-}
-.sticky-buy.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
-.sticky-buy:hover{transform:translateY(-2px) scale(1.03)}
-.sticky-buy.visible:hover{transform:translateY(-2px) scale(1.03)}
-.sticky-buy:active{transform:scale(.96)}
-@media(max-width:640px){
-  .sticky-buy{right:14px;bottom:14px;padding:12px 18px;font-size:.88rem}
+@media(max-width:560px){
+  .lang-col{padding:18px 14px 16px}
+  .lang-col-title{font-size:1.3rem}
+  .fineprint{max-width:none;padding:0 4px}
+  .product-badge{max-width:110px}
+  .product-badge-caption{font-size:.8rem}
 }
 </style>
 </head>
 <body>
 
+<div class="flag-bg">
+  <div class="half en"></div>
+  <div class="half sv"></div>
+</div>
+<div class="flag-bg-divider"></div>
+
 <header>
   <div class="header-donate">
-    <a class="back-btn" href="/" aria-label="Back to all games" title="Back to all games">
+    <a class="back-btn" href="/" aria-label="Back to all games / Tillbaka till lekarna" title="Back to all games / Tillbaka till lekarna">
       <span aria-hidden="true">&larr;</span>
-      <span class="back-btn-label x-en">Games</span><span class="back-btn-label x-sv">Lekar</span>
+      <span class="back-btn-label">Games</span>
     </a>
     <div class="header-share">
-      <a class="share-icon-btn share-fb" id="share-fb-mobile" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">
+      <a class="share-icon-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.kidsgonnaplay.com" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94Z"/></svg>
       </a>
     </div>
   </div>
-  <div aria-label="Language selector" class="lang-switcher">
-    <button aria-label="English" class="lang-btn active" data-lang-target="en" title="English" type="button"><img src="images/engalpha.png"/></button>
-    <button aria-label="Svenska" class="lang-btn" data-lang-target="sv" title="Svenska" type="button"><img src="images/swealpha.png"/></button>
-  </div>
   <div class="header-inner">
-    <img class="title-img" src="images/GONNAPLAY-titel-alpha.png" alt="KIDS GONNA PLAY"/>
+    <img class="logo-img" src="images/GONNAPLAY-titel-alpha.png" alt="Kids Gonna Play"/>
   </div>
 </header>
 
-<!-- ===== Hero ===== -->
-<section class="hero">
-  <div>
-    <span class="eyebrow x-en">100+ games & activities</span>
-    <span class="eyebrow x-sv">100+ lekar</span>
-    <h1 class="x-en">Your go-to playbook for <span style="white-space:nowrap">screen-free</span> childhood memories.</h1>
-    <h1 class="x-sv">För en barndom där minnen skapas bortom skärmarna.</h1>
-    <p class="lead x-en">Every parent knows the struggle: tablets, TV and phones are often the easiest option. This book gives you over 100 fun alternatives that help kids play, imagine, laugh and create memories they'll carry for years.<br><span class="lead-highlight">⚡ Instant PDF download.</span></p>
-    <p class="lead x-sv">Alla föräldrar känner igen det: surfplattan, TV:n och mobilen är ofta det enklaste alternativet. Den här boken ger dig över 100 roliga alternativ som hjälper barnen att leka, fantisera, skratta och skapa minnen de bär med sig i många år.<br><span class="lead-highlight">⚡ Direkt PDF-nedladdning.</span></p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#buy"><span class="x-en">Get Instant Access — $9</span><span class="x-sv">📖 Få direkt tillgång – 99kr</span></a>
-      <span class="hero-secure-badge x-en">🔒 Secure Checkout with PayPal</span>
-      <span class="hero-secure-badge x-sv">🔒 Säker betalning med PayPal</span>
+<section class="thanks-wrap">
+
+  <div class="product-badge">
+    <img src="images/activity0.png" alt="Kids Gonna Play Activity Book preview"/>
+  </div>
+  <p class="product-badge-caption">Available in full color or a printer-friendly black &amp; white version.<br/>Finns i färg eller i en skrivarvänlig svartvit version.</p>
+
+  <div class="two-col">
+    <!-- English version -->
+    <div class="lang-col en">
+      <h1 class="lang-col-title">THANK YOU!</h1>
+      <div class="download-row">
+        <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" download>
+          ⬇️ Download PDF
+        </a>
+        <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" target="_blank" rel="noopener">
+          👀 View in browser
+        </a>
+      </div>
+      <p class="fineprint">
+        This PDF is for your personal use only. Download it to your device for access, even offline.
+      </p>
+
+      <div class="bw-block">
+        <span class="bw-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Printer-friendly · Black &amp; White
+        </span>
+        <div class="download-row bw">
+          <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" download>
+            ⬇️ Download B&amp;W PDF
+          </a>
+          <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" target="_blank" rel="noopener">
+            👀 View in browser
+          </a>
+        </div>
+      </div>
+
+      <p class="contact-line">Contact: <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
+    </div>
+
+    <!-- Swedish version -->
+    <div class="lang-col sv">
+      <h1 class="lang-col-title">TACK!</h1>
+      <div class="download-row">
+        <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" download>
+          ⬇️ Ladda ner PDF
+        </a>
+        <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" target="_blank" rel="noopener">
+          👀 Öppna i webbläsaren
+        </a>
+      </div>
+      <p class="fineprint">
+        Denna PDF är endast för ditt personliga bruk och får ej delas. Ladda ner på din enhet för att få tillgång till den offline.
+      </p>
+
+      <div class="bw-block">
+        <span class="bw-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Skrivarvänlig · Svartvit
+        </span>
+        <div class="download-row bw">
+          <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" download>
+            ⬇️ Ladda ner svartvit PDF
+          </a>
+          <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" target="_blank" rel="noopener">
+            👀 Öppna i webbläsaren
+          </a>
+        </div>
+      </div>
+
+      <p class="contact-line">Kontakt: <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
     </div>
   </div>
-  <div class="book-stage">
-    <div class="book">
-      <img class="book-cover-img" src="images/e-bok-framsida.jpg" alt="Kids Gonna Play e-book cover – 100+ screen-free activities for kids"/>
-    </div>
+
+  <div class="illustration-wrap">
+    <img class="illustration-img" src="images/thank-you.jpg" alt="Kids Gonna Play"/>
   </div>
 </section>
 
-<!-- ===== Why buy ===== -->
-<section class="block" style="padding-top:0">
-  <h2 class="section-title x-en">Why parents (and grandparents!) love this book</h2>
-  <h2 class="section-title x-sv">Därför älskar föräldrar (och morföräldrar!) den här boken</h2>
-  <p class="section-sub x-en">100+ screen-free games and activities that keep kids entertained without tablets, phones or TV. Perfect for rainy days, family time, road trips and birthday parties.</p>
-  <p class="section-sub x-sv">100+ skärmfria lekar och aktiviteter som håller barnen sysselsatta utan surfplattor, mobiler eller TV. Perfekt för regniga dagar, familjetid, bilresor och kalas.</p>
-  <div class="benefit-grid">
-    <div class="benefit-card">
-      <span class="benefit-icon" aria-hidden="true">⏱️</span>
-      <h3 class="x-en">Perfect for busy parents</h3>
-      <h3 class="x-sv">Perfekt för stressade föräldrar</h3>
-      <p class="x-en">Ready-made ideas the second you need them — no more racking your brain while the kids wait.</p>
-      <p class="x-sv">Färdiga idéer precis när du behöver dem – slipp klura ut något medan barnen väntar.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon" aria-hidden="true">📵</span>
-      <h3 class="x-en">Screen-free fun</h3>
-      <h3 class="x-sv">Skärmfri kul</h3>
-      <p class="x-en">Cut down screen time without the arguments — games kids actually ask to play again.</p>
-      <p class="x-sv">Minska skärmtiden utan bråk – lekar barnen faktiskt vill leka om.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon" aria-hidden="true">🎂</span>
-      <h3 class="x-en">For ages 3–10, sorted by small &amp; big kids</h3>
-      <h3 class="x-sv">För 3–10 år, indelat efter små &amp; stora barn</h3>
-      <p class="x-en">Every activity is grouped as small kid or big kid friendly — not by exact age — so it's always the right level of fun for ages 3–10.</p>
-      <p class="x-sv">Varje aktivitet är indelad efter små eller stora barn – inte exakt ålder – så det alltid blir rätt nivå av kul för 3–10 år.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="benefit-icon" aria-hidden="true">🎉</span>
-      <h3 class="x-en">Group-sorted</h3>
-      <h3 class="x-sv">Gruppindelat</h3>
-      <p class="x-en">Solo play, playdates, or a full birthday party — flip to the right section and you're ready to go.</p>
-      <p class="x-sv">Ensamlek, lekträffar eller ett helt kalas – slå upp rätt avsnitt och du är redo.</p>
-    </div>
-  </div>
-</section>
-<section class="block">
-  <h2 class="section-title x-en">Inside the book</h2>
-  <h2 class="section-title x-sv">Inuti boken</h2>
-  <p class="section-sub x-en">Activities are organized by age and group size. Find the right game in seconds.</p>
-  <p class="section-sub x-sv">Aktiviteterna är organiserade efter ålder och gruppstorlek. Hitta rätt lek på några sekunder.</p>
-  <div class="mini-badges" id="badges-small-children">
-    <img class="mini-badge" src="images/_button-small-child-alone-alpha.png" alt="Badge: small child playing alone"/>
-    <img class="mini-badge" src="images/_button-small-children-friends-alpha.png" alt="Badge: small children playing with friends"/>
-  </div>
-  <div class="page-scroll">
-    <img src="images/green4.jpg" alt="Kids Gonna Play e-book page 1 – screen-free activity for a small child playing alone"/>
-    <img src="images/green3.jpg" alt="Kids Gonna Play e-book page 2 – screen-free activity for a small child playing alone"/>
-    <img src="images/green5.jpg" alt="Kids Gonna Play e-book page 3 – screen-free activity for small children playing with friends"/>
-    <img src="images/green6.jpg" alt="Kids Gonna Play e-book page 4 – screen-free activity for small children playing with friends"/>
-  </div>
-
-  <div class="mini-badges" style="margin-top:26px">
-    <img class="mini-badge" src="images/_button-all-ages-alone-alpha.png" alt="Badge: all ages playing alone"/>
-    <img class="mini-badge" src="images/_button-all-ages-friends-alpha.png" alt="Badge: all ages playing with friends"/>
-  </div>
-  <div class="page-scroll">
-    <img src="images/yellow1.jpg" alt="Kids Gonna Play e-book page 1 – family activity for all ages playing alone"/>
-    <img src="images/yellow2.jpg" alt="Kids Gonna Play e-book page 2 – family activity for all ages playing alone"/>
-    <img src="images/yellow3.jpg" alt="Kids Gonna Play e-book page 3 – family activity for all ages playing with friends"/>
-    <img src="images/yellow4.jpg" alt="Kids Gonna Play e-book page 4 – family activity for all ages playing with friends"/>
-  </div>
-
-  <div class="mini-badges" style="margin-top:26px">
-    <img class="mini-badge" src="images/_button-big-kid-alone-alpha.png" alt="Badge: big kid playing alone"/>
-    <img class="mini-badge" src="images/_button-big-kids-friends-alpha.png" alt="Badge: big kids playing with friends"/>
-  </div>
-  <div class="page-scroll">
-    <img src="images/blue1.jpg" alt="Kids Gonna Play e-book page 1 – screen-free activity for a big kid playing alone"/>
-    <img src="images/blue2.jpg" alt="Kids Gonna Play e-book page 2 – screen-free activity for a big kid playing alone"/>
-    <img src="images/blue3.jpg" alt="Kids Gonna Play e-book page 3 – screen-free activity for big kids playing with friends"/>
-    <img src="images/blue4.jpg" alt="Kids Gonna Play e-book page 4 – screen-free activity for big kids playing with friends"/>
-  </div>
-
-  <div class="mini-badges" style="margin-top:26px">
-    <img class="mini-badge" src="images/_button-party-alpha.png" alt="Badge: party"/>
-  </div>
-  <div class="page-scroll">
-    <img src="images/pink1.jpg" alt="Kids Gonna Play e-book page 1 – kids party game idea"/>
-    <img src="images/pink2.jpg" alt="Kids Gonna Play e-book page 2 – kids party game idea"/>
-    <img src="images/pink3.jpg" alt="Kids Gonna Play e-book page 3 – kids party game idea"/>
-    <img src="images/pink4.jpg" alt="Kids Gonna Play e-book page 4 – kids party game idea"/>
-  </div>
-
-  <h3 class="subsection-title x-en">Print-ready chapters</h3>
-  <h3 class="subsection-title x-sv">Redo att skriva ut</h3>
-  <p class="section-sub x-en">Every chapter opens with its own cover page — perfect for a binder.</p>
-  <p class="section-sub x-sv">Varje kapitel har ett eget försättsblad – perfekt att samla i en pärm.</p>
-  <div class="page-scroll">
-    <img src="images/e-bok-chapter1.jpg" alt="Kids Gonna Play e-book, chapter 1 cover page"/>
-    <img src="images/e-bok-chapter2.jpg" alt="Kids Gonna Play e-book, chapter 2 cover page"/>
-    <img src="images/e-bok-chapter3.jpg" alt="Kids Gonna Play e-book, chapter 3 cover page"/>
-    <img src="images/e-bok-chapter4.jpg" alt="Kids Gonna Play e-book, chapter 4 cover page"/>
-  </div>
-
-  <!-- ===== About the creator ===== -->
-  <div class="about-box">
-    <img class="about-avatar" src="images/Malin.png" alt="Malin Larsson, creator of Kids Gonna Play"/>
-    <div class="about-content">
-      <h3 class="about-name x-en">Hi, I'm Malin — the person behind Kids Gonna Play</h3>
-      <h3 class="about-name x-sv">Hej, jag är Malin – personen bakom Kids Gonna Play</h3>
-      <p class="x-en">I live in Sweden and I'm often described as playful and curious — I've never wanted to let go of the imaginative, wonder-filled way kids naturally see the world. With Kids Gonna Play, I want to help both kids and grown-ups rediscover the power of play and shared time together, and make a few more memories along the way. I dug through my own childhood memories and researched games and traditions from around the world to put this book together.</p>
-      <p class="x-sv">Jag bor i Sverige och beskrivs ofta som lekfull och nyfiken – jag har aldrig velat släppa det kreativa och fantasifulla sätt som barn naturligt ser på världen. Med Kids Gonna Play vill jag hjälpa både barn och vuxna att återupptäcka kraften i lek och gemensam tid tillsammans, och skapa några fler minnen på vägen. Jag har grävt i mina egna barndomsminnen och researchat lekar och traditioner från hela världen för att sätta ihop den här boken.</p>
-    </div>
-  </div>
-
-  <!-- ===== Social proof: science + parents ===== -->
-  <div class="social-proof-box">
-    <h2 class="section-title x-en">What science — and parents — say about play</h2>
-    <h2 class="section-title x-sv">Vad forskningen – och föräldrar – säger om lek</h2>
-    <p class="section-sub x-en">Free play isn't just fun — it's how kids grow. Here's why experts and parents keep coming back to it.</p>
-    <p class="section-sub x-sv">Fri lek är inte bara roligt – det är så barn utvecklas. Här är varför experter och föräldrar fortsätter satsa på det.</p>
-
-    <span class="social-proof-tag x-en">🔬 What science says</span>
-    <span class="social-proof-tag x-sv">🔬 Vad forskningen säger</span>
-    <div class="quote-grid">
-      <div class="quote-card">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="quote-text x-en">Pediatric experts describe play as essential to healthy brain development, helping children build thinking skills, creativity, and the ability to manage emotions.</p>
-        <p class="quote-text x-sv">Barnläkare beskriver lek som avgörande för en frisk hjärnutveckling – det hjälper barn att bygga upp tankeförmåga, kreativitet och förmågan att hantera känslor.</p>
-        <p class="quote-attribution x-en">— based on pediatric &amp; child development guidance</p>
-        <p class="quote-attribution x-sv">— baserat på barnläkares &amp; utvecklingsforskares rekommendationer</p>
-      </div>
-      <div class="quote-card">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="quote-text x-en">Health authorities recommend limiting recreational screen time for young children in favor of active, hands-on play that supports physical and social development.</p>
-        <p class="quote-text x-sv">Hälsomyndigheter rekommenderar att begränsa skärmtid för yngre barn till förmån för aktiv lek som stödjer den fysiska och sociala utvecklingen.</p>
-        <p class="quote-attribution x-en">— based on public health screen-time guidelines</p>
-        <p class="quote-attribution x-sv">— baserat på hälsomyndigheters riktlinjer om skärmtid</p>
-      </div>
-      <div class="quote-card">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="quote-text x-en">Child psychologists note that unstructured, imaginative play builds problem-solving skills and resilience in ways that passive screen time simply can't replicate.</p>
-        <p class="quote-text x-sv">Barnpsykologer menar att fri, fantasifull lek bygger problemlösningsförmåga och motståndskraft på ett sätt som passiv skärmtid helt enkelt inte kan ersätta.</p>
-        <p class="quote-attribution x-en">— based on child psychology research</p>
-        <p class="quote-attribution x-sv">— baserat på barnpsykologisk forskning</p>
-      </div>
-    </div>
-
-    <span class="social-proof-tag x-en">💛 What parents say</span>
-    <span class="social-proof-tag x-sv">💛 Vad föräldrar säger</span>
-    <div class="quote-grid">
-      <div class="quote-card">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="quote-text x-en">We have to much screentime at home. I am so happy that I found this, so that I can give my daughter real-life memories instead.</p>
-        <p class="quote-text x-sv">Vi har alldeles för mycket skärmtid hemma. Det här uppskattas mycket och det ska bli kul att få visa henne alla riktiga lekar.</p>
-        <p class="quote-attribution x-en">— Parent of one, ages 7</p>
-        <p class="quote-attribution x-sv">— Förälder till ett barn, 7 år</p>
-        <span class="quote-stars" aria-label="5 out of 5 stars">★★★★★</span>
-      </div>
-      <div class="quote-card">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="quote-text x-en">I use to play some of the games when I was a child. This is fun even for an old man like me to read.</p>
-        <p class="quote-text x-sv">Jag brukade leka några av dessa lekar när jag var barn. Det är till och med roligt för en gammal gubbe som mig att läsa denna bok!</p>
-        <p class="quote-attribution x-en">— Grandfather of one</p>
-        <p class="quote-attribution x-sv">— Morfar till en</p>
-        <span class="quote-stars" aria-label="5 out of 5 stars">★★★★★</span>
-      </div>
-      <div class="quote-card">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="quote-text x-en">My son choose his first game after breakfast and before lunchtime he had already played two of them. He really loves this book and also the pictures in it.</p>
-        <p class="quote-text x-sv">Min son valde sin första lek efter frukost och hade redan lekt två av dem innan lunch. Han älskar boken och även bilderna inuti den.</p>
-        <p class="quote-attribution x-en">— Parent of a boy, age 5</p>
-        <p class="quote-attribution x-sv">— Förälder till en pojke, 5 år</p>
-        <span class="quote-stars" aria-label="5 out of 5 stars">★★★★★</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== FAQ ===== -->
-  <div class="social-proof-box" style="margin-top:24px">
-    <h2 class="section-title x-en">Questions before you buy?</h2>
-    <h2 class="section-title x-sv">Frågor innan du köper?</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span class="x-en">What ages is the book for?</span>
-          <span class="x-sv">Vilka åldrar passar boken för?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p class="x-en">Ages 3–10. Activities are sorted by small or big kid, so it's always the right level for your child.</p>
-          <p class="x-sv">3–10 år. Aktiviteterna är indelade efter små eller stora barn, så det alltid blir rätt nivå för ditt barn.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span class="x-en">How do I get the book after I buy it?</span>
-          <span class="x-sv">Hur får jag boken efter köpet?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p class="x-en">PayPal redirects you straight to the download page after checkout — no waiting, no shipping. Just allow a few seconds for the page to load.</p>
-          <p class="x-sv">PayPal skickar dig direkt till nedladdningssidan efter köpet – ingen väntan, ingen frakt. Vänta bara några sekunder medan sidan laddas.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span class="x-en">Can I print it, or read it on my phone?</span>
-          <span class="x-sv">Kan jag skriva ut den, eller läsa på mobilen?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p class="x-en">Both! It's a PDF you own, so you can print as many pages as you like at home, or read it on your phone, tablet, or computer.</p>
-          <p class="x-sv">Båda delarna! Det är en PDF du äger, så du kan skriva ut så många sidor du vill hemma, eller läsa den på mobilen, plattan eller datorn.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span class="x-en">Do I have to choose a language before buying?</span>
-          <span class="x-sv">Måste jag välja språk innan jag köper?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p class="x-en">You'll get the full PDF in English and Swedish either way. The buy box just asks you to pick a currency (USD or SEK) for checkout.</p>
-          <p class="x-sv">Du får hela PDF:en på både engelska och svenska oavsett. Köp-rutan ber dig bara välja valuta (USD eller SEK) för betalningen.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span class="x-en">Is checkout secure?</span>
-          <span class="x-sv">Är betalningen säker?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <p class="x-en">Yes — checkout is handled entirely through PayPal, including PayPal's own buyer protection. We never see or store your card details.</p>
-          <p class="x-sv">Ja – betalningen sker helt via PayPal, inklusive PayPals eget köparskydd. Vi ser eller sparar aldrig dina kortuppgifter.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== Buy box ===== -->
-  <div class="buybox" id="buy">
-    <div class="buylang-en buybox-title">Kids Gonna Play<br><span style="color:var(--pink)">PDF Instant Download</span></div>
-    <div class="buylang-sv buybox-title" style="display:none">Kids Gonna Play<br><span style="color:var(--pink)">Direkt Nedladdningsbar PDF</span></div>
-    <p class="book-lang-label x-en" style="margin-top:0">Choose your currency below — you'll get both the English and Swedish PDF either way:</p>
-    <p class="book-lang-label x-sv" style="margin-top:0">Välj din valuta nedan – du får både den engelska och svenska PDF:en oavsett:</p>
-    <div class="book-lang-switch" role="group" aria-label="Book language">
-      <button type="button" class="book-lang-btn" data-book-lang="en"><img src="images/engalpha.png" alt=""/>English</button>
-      <button type="button" class="book-lang-btn" data-book-lang="sv"><img src="images/swealpha.png" alt=""/>Swedish</button>
-    </div>
-    <div class="price">
-      <span id="price-en">Only $9 <small>/ one-time</small></span>
-      <span id="price-sv" style="display:none">Endast 99 kr <small>/ engångsköp</small></span>
-    </div>
-    <p style="margin:-8px 0 16px;font-size:.82rem;color:#8a7550;font-weight:700">
-      <span class="x-en">That's less than $0.09 per activity — cheaper than a single coffee.</span>
-      <span class="x-sv">Det är mindre än en krona per aktivitet – billigare än en kopp kaffe.</span>
-    </p>
-    <ul>
-      <li class="buylang-en">PayPal will automatically redirect you to the download page. Please allow a few seconds for the page to appear.</li>
-      <li class="buylang-sv" style="display:none">Efter ditt köp omdirigeras du automatiskt till nedladdningssidan via PayPal. Vänta några sekunder medan sidan laddas.</li>
-      <li class="buylang-en">Print at home or read on any device.</li>
-      <li class="buylang-sv" style="display:none">Skriv ut hemma eller läs på valfri skärm.</li>
-      <li class="buylang-en">Covered by PayPal Buyer Protection.</li>
-      <li class="buylang-sv" style="display:none">Omfattas av PayPals köparskydd.</li>
-    </ul>
-    <div style="max-width:340px;margin:0 auto">
-      <style>
-        .pp-4ERR86VEF8EUE{text-align:center;border:none;border-radius:1.5rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}
-        .pp-7Y78K5A768YTC{text-align:center;border:none;border-radius:1.5rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}
-      </style>
-      <div id="buy-form-en">
-        <form action="https://www.paypal.com/ncp/payment/4ERR86VEF8EUE" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-          <input class="pp-4ERR86VEF8EUE" type="submit" value="Buy Now" />
-          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-          <section style="font-size: 0.75rem;"> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-        </form>
-      </div>
-      <div id="buy-form-sv" style="display:none">
-        <form action="https://www.paypal.com/ncp/payment/7Y78K5A768YTC" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-          <input class="pp-7Y78K5A768YTC" type="submit" value="Köp Nu" />
-          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
-          <section style="font-size: 0.75rem;"> Tillhandahålls av <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-        </form>
-      </div>
-    </div>
-    <p class="fineprint x-en">Secure checkout via PayPal. Questions? ragdollhood@gmail.com</p>
-    <p class="fineprint x-sv">Säker betalning via PayPal. Frågor? ragdollhood@gmail.com</p>
-  </div>
-</section>
-
-<a class="sticky-buy" id="stickyBuy" href="#buy">
-  <span class="x-en">🛒 Buy Now</span><span class="x-sv">🛒 Köp Nu</span>
-</a>
-
-<footer>
-  <p class="x-en">Contact: <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
-  <p class="x-sv">Kontakt: <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
-  <p><a href="/" class="x-en">&larr; Back to all games</a><a href="/" class="x-sv">&larr; Tillbaka till lekarna</a></p>
-</footer>
-
-<script>
-(function(){
-  const state={lang:'en'};
-  document.body.classList.add('lang-en');
-  const buttons=[...document.querySelectorAll('.lang-btn')];
-  function applyLang(){
-    document.documentElement.lang=state.lang;
-    document.body.classList.remove('lang-en','lang-sv');
-    document.body.classList.add('lang-'+state.lang);
-    buttons.forEach(b=>b.classList.toggle('active', b.dataset.langTarget===state.lang));
-  }
-  buttons.forEach(btn=>btn.addEventListener('click',()=>{ state.lang=btn.dataset.langTarget; applyLang(); }));
-  applyLang();
-
-  // Track whether anything is currently zoomed, to toggle the dimmed backdrop
-  function updateZoomBackdrop(){
-    const anyZoomed=document.querySelector('.zoomed');
-    document.body.classList.toggle('zoom-active', !!anyZoomed);
-  }
-
-  // Book cover is not clickable
-  const bookEl=document.querySelector('.book');
-
-  // Book purchase language selector (independent of site UI language)
-  const bookState={lang:'en'};
-  const bookButtons=[...document.querySelectorAll('.book-lang-btn')];
-  const buyFormEn=document.getElementById('buy-form-en');
-  const buyFormSv=document.getElementById('buy-form-sv');
-  const priceEn=document.getElementById('price-en');
-  const priceSv=document.getElementById('price-sv');
-  const buylangEn=[...document.querySelectorAll('.buylang-en')];
-  const buylangSv=[...document.querySelectorAll('.buylang-sv')];
-  function applyBookLang(){
-    bookButtons.forEach(b=>b.classList.toggle('active', b.dataset.bookLang===bookState.lang));
-    if(buyFormEn) buyFormEn.style.display = bookState.lang==='en' ? '' : 'none';
-    if(buyFormSv) buyFormSv.style.display = bookState.lang==='sv' ? '' : 'none';
-    if(priceEn) priceEn.style.display = bookState.lang==='en' ? '' : 'none';
-    if(priceSv) priceSv.style.display = bookState.lang==='sv' ? '' : 'none';
-    buylangEn.forEach(el=>{ el.style.display = bookState.lang==='en' ? '' : 'none'; });
-    buylangSv.forEach(el=>{ el.style.display = bookState.lang==='sv' ? '' : 'none'; });
-  }
-  bookButtons.forEach(btn=>btn.addEventListener('click',()=>{ if(btn.disabled||btn.classList.contains('disabled'))return; bookState.lang=btn.dataset.bookLang; applyBookLang(); }));
-  applyBookLang();
-
-  // Share buttons (desktop, inline in hero)
-  const pageUrl=window.location.href;
-  const fbLink=document.getElementById('share-fb');
-  if(fbLink){ fbLink.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(pageUrl); }
-
-  // Share buttons (small icons in header, used on mobile)
-  const fbLinkMobile=document.getElementById('share-fb-mobile');
-  if(fbLinkMobile){ fbLinkMobile.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(pageUrl); }
-
-  // Click any content image to lift it up larger, centered on screen (same effect as the book cover)
-  const zoomables=[...document.querySelectorAll('.page-scroll img, .feature-card img')];
-  zoomables.forEach(img=>{
-    img.classList.add('zoom-pop');
-    img.addEventListener('click', (e)=>{
-      e.stopPropagation();
-      const wasZoomed=img.classList.contains('zoomed');
-      zoomables.forEach(el=>{ if(el!==img) el.classList.remove('zoomed'); });
-      if(bookEl) bookEl.classList.remove('zoomed');
-      img.classList.toggle('zoomed', !wasZoomed);
-      updateZoomBackdrop();
-    });
-  });
-  document.addEventListener('click', (e)=>{
-    if(!e.target.classList.contains('zoom-pop')){
-      zoomables.forEach(el=>el.classList.remove('zoomed'));
-      updateZoomBackdrop();
-    }
-  });
-  document.addEventListener('keydown', (e)=>{
-    if(e.key==='Escape'){
-      zoomables.forEach(el=>el.classList.remove('zoomed'));
-      if(bookEl) bookEl.classList.remove('zoomed');
-      updateZoomBackdrop();
-    }
-  });
-
-  // Close any enlarged image as soon as the user starts scrolling
-  function closeAllZooms(){
-    if(document.querySelector('.zoomed')){
-      zoomables.forEach(el=>el.classList.remove('zoomed'));
-      if(bookEl) bookEl.classList.remove('zoomed');
-      updateZoomBackdrop();
-    }
-  }
-  window.addEventListener('scroll', closeAllZooms, {passive:true});
-  window.addEventListener('touchmove', closeAllZooms, {passive:true});
-
-  // FAQ accordion toggle
-  document.querySelectorAll('.faq-item').forEach(item=>{
-    const q = item.querySelector('.faq-question');
-    if(q){
-      q.addEventListener('click', ()=>{
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(el=>{ if(el!==item) el.classList.remove('open'); });
-        item.classList.toggle('open', !isOpen);
-      });
-    }
-  });
-
-  // Sticky floating buy button: appears once the hero CTA is scrolled past,
-  // hides again once the real buy box is in view (no need to show it twice).
-  const stickyBuy = document.getElementById('stickyBuy');
-  const heroCta = document.querySelector('.hero-ctas');
-  const buyBox = document.getElementById('buy');
-  if(stickyBuy && heroCta && buyBox){
-    function updateStickyBuy(){
-      const heroRect = heroCta.getBoundingClientRect();
-      const buyRect = buyBox.getBoundingClientRect();
-      const pastHero = heroRect.bottom < 0;
-      const reachedBuyBox = buyRect.top < window.innerHeight * 0.85;
-      stickyBuy.classList.toggle('visible', pastHero && !reachedBuyBox);
-    }
-    window.addEventListener('scroll', updateStickyBuy, {passive:true});
-    window.addEventListener('resize', updateStickyBuy);
-    updateStickyBuy();
-  }
-})();
-
-
-</script>
 </body>
 </html>
