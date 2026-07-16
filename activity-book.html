@@ -831,5 +831,53 @@ body.lang-sv .x-en{display:none}
 
 
 </script>
+  <script>
+const SUPABASE_URL = "https://qjevqnimmmqjxyewdrpk.supabase.co";
+const SUPABASE_KEY = "sb_publishable_zTb_SonUDr4Tp47x-FGZxQ_2hQm7G6m";
+
+async function getVisitorCountry() {
+  try {
+    const res = await fetch("https://ipapi.co/json/");
+    const data = await res.json();
+    return data.country_name || "Unknown";
+  } catch {
+    return "Unknown";
+  }
+}
+
+async function registerUniqueVisitor() {
+  try {
+    let visitorId = localStorage.getItem("activity_book_visitor_id");
+
+    if (!visitorId) {
+      visitorId = crypto.randomUUID();
+
+      localStorage.setItem("activity_book_visitor_id", visitorId);
+
+      const country = await getVisitorCountry();
+
+      await fetch(`${SUPABASE_URL}/rest/v1/activity_book`, {
+        method: "POST",
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+          Prefer: "return=minimal"
+        },
+        body: JSON.stringify({
+          visitor_id: visitorId,
+          visit_date: new Date().toISOString().split("T")[0],
+          country: country
+        })
+      });
+    }
+
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+registerUniqueVisitor();
+</script>
 </body>
 </html>
