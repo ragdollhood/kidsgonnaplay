@@ -291,11 +291,12 @@ section.block{max-width:1100px;margin:0 auto;padding:22px 20px 50px}
 .hero-secure-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid var(--purple);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:800;color:#3c2470;box-shadow:0 3px 0 rgba(123,79,201,.2)}
 
 /* Why buy / benefits */
-.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:10px auto 0;max-width:1020px}
-.benefit-card{background:linear-gradient(180deg,#fff,var(--cream));border-radius:20px;box-shadow:0 10px 22px rgba(72,39,103,.14);padding:24px 16px;text-align:center}
-.benefit-card .benefit-icon{font-size:2.1rem;margin-bottom:10px;display:block}
-.benefit-card h3{margin:0 0 6px;font-size:1rem;color:#3c2470;line-height:1.3}
-.benefit-card p{margin:0;font-size:.86rem;color:#5a4a2c;line-height:1.45}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:10px auto 0;max-width:1020px}
+.benefit-card{background:linear-gradient(180deg,#fff,var(--cream));border-radius:16px;box-shadow:0 8px 16px rgba(72,39,103,.14);padding:14px 14px;text-align:left}
+.benefit-header{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.benefit-card .benefit-icon{font-size:1.5rem;display:block;flex-shrink:0}
+.benefit-card h3{margin:0;font-size:.95rem;color:#3c2470;line-height:1.25}
+.benefit-card p{margin:0;font-size:.83rem;color:#5a4a2c;line-height:1.4}
 @media(max-width:860px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.benefit-grid{grid-template-columns:1fr}}
 
@@ -435,30 +436,38 @@ body.lang-sv .x-en{display:none}
   <p class="section-sub x-sv">100+ skärmfria lekar och aktiviteter som håller barnen sysselsatta utan surfplattor, mobiler eller TV. Perfekt för regniga dagar, familjetid, bilresor och kalas.</p>
   <div class="benefit-grid">
     <div class="benefit-card">
-      <span class="benefit-icon" aria-hidden="true">⏱️</span>
-      <h3 class="x-en">Perfect for busy parents</h3>
-      <h3 class="x-sv">Perfekt för stressade föräldrar</h3>
+      <div class="benefit-header">
+        <span class="benefit-icon" aria-hidden="true">⏱️</span>
+        <h3 class="x-en">Perfect for busy parents</h3>
+        <h3 class="x-sv">Perfekt för stressade föräldrar</h3>
+      </div>
       <p class="x-en">Ready-made ideas the second you need them — no more racking your brain while the kids wait.</p>
       <p class="x-sv">Färdiga idéer precis när du behöver dem – slipp klura ut något medan barnen väntar.</p>
     </div>
     <div class="benefit-card">
-      <span class="benefit-icon" aria-hidden="true">📵</span>
-      <h3 class="x-en">Screen-free fun</h3>
-      <h3 class="x-sv">Skärmfri kul</h3>
+      <div class="benefit-header">
+        <span class="benefit-icon" aria-hidden="true">📵</span>
+        <h3 class="x-en">Screen-free fun</h3>
+        <h3 class="x-sv">Skärmfri kul</h3>
+      </div>
       <p class="x-en">Cut down screen time without the arguments — games kids actually ask to play again.</p>
       <p class="x-sv">Minska skärmtiden utan bråk – lekar barnen faktiskt vill leka om.</p>
     </div>
     <div class="benefit-card">
-      <span class="benefit-icon" aria-hidden="true">🎂</span>
-      <h3 class="x-en">For ages 3–10, sorted by small &amp; big kids</h3>
-      <h3 class="x-sv">För 3–10 år, indelat efter små &amp; stora barn</h3>
+      <div class="benefit-header">
+        <span class="benefit-icon" aria-hidden="true">🎂</span>
+        <h3 class="x-en">For ages 3–10, sorted by small &amp; big kids</h3>
+        <h3 class="x-sv">För 3–10 år, indelat efter små &amp; stora barn</h3>
+      </div>
       <p class="x-en">Every activity is grouped as small kid or big kid friendly — not by exact age — so it's always the right level of fun for ages 3–10.</p>
       <p class="x-sv">Varje aktivitet är indelad efter små eller stora barn – inte exakt ålder – så det alltid blir rätt nivå av kul för 3–10 år.</p>
     </div>
     <div class="benefit-card">
-      <span class="benefit-icon" aria-hidden="true">🎉</span>
-      <h3 class="x-en">Group-sorted</h3>
-      <h3 class="x-sv">Gruppindelat</h3>
+      <div class="benefit-header">
+        <span class="benefit-icon" aria-hidden="true">🎉</span>
+        <h3 class="x-en">Group-sorted</h3>
+        <h3 class="x-sv">Gruppindelat</h3>
+      </div>
       <p class="x-en">Solo play, playdates, or a full birthday party — flip to the right section and you're ready to go.</p>
       <p class="x-sv">Ensamlek, lekträffar eller ett helt kalas – slå upp rätt avsnitt och du är redo.</p>
     </div>
