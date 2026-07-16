@@ -120,7 +120,7 @@ h1{font-size:3rem;margin:0 0 12px;color:white;text-shadow:3px 3px 0 var(--pink),
 .intro{max-width:920px;margin:28px auto 10px;text-align:center;padding:0 20px;font-size:1.12rem;line-height:1.6}.gallery-note,.file-note{text-align:center;font-size:1rem;color:#5a4a2c;margin:8px auto 10px;padding:0 20px}.file-note{font-size:.95rem;max-width:980px}
 
 
-.cta{text-align:center;margin:10px auto 40px;font-size:1.1rem;color:#3b2a00}.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(21,16,35,.78);padding:24px;z-index:1000;box-sizing:border-box}.modal.open{display:flex}.modal-dialog{width:min(1040px,100%);max-height:90vh;overflow:auto;background:#fffdf6;border:6px solid var(--purple);border-radius:28px;box-shadow:0 18px 40px rgba(0,0,0,.3);position:relative}.modal-grid{display:grid;grid-template-columns:minmax(300px,460px) 1fr;gap:0}.modal-media{background:linear-gradient(180deg,#d5efff,#eef9ff);padding:20px;display:flex;align-items:center;justify-content:center}.modal-media img{width:100%;max-width:420px;border-radius:24px;box-shadow:0 8px 20px rgba(0,0,0,.12)}.modal-content{padding:28px 28px 32px}.modal-title{margin:0 0 10px;color:#3c2470;font-size:2rem}.modal-subtitle{margin:0 0 20px;color:#62441a;font-size:1.15rem;font-weight:800}.modal-details{white-space:pre-line;line-height:1.7;font-size:1.02rem}.modal-meta{margin-top:18px;font-size:.92rem;color:#6b5a3a}.modal-close{position:absolute;top:12px;right:14px;border:none;background:#fff;color:#3c2470;width:42px;height:42px;border-radius:50%;border:3px solid var(--purple);font-size:1.4rem;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.cta{text-align:center;margin:10px auto 40px;font-size:1.1rem;color:#3b2a00}.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(21,16,35,.78);padding:24px;z-index:1000;box-sizing:border-box}.modal.open{display:flex}.modal-dialog{width:min(1040px,100%);max-height:90vh;overflow:auto;background:#fffdf6;border:6px solid var(--purple);border-radius:28px;box-shadow:0 18px 40px rgba(0,0,0,.3);position:relative}.modal-grid{display:grid;grid-template-columns:minmax(300px,460px) 1fr;gap:0}.modal-media{background:linear-gradient(180deg,#d5efff,#eef9ff);padding:20px;display:flex;align-items:center;justify-content:center}.modal-media img{width:100%;max-width:420px;border-radius:24px;box-shadow:0 8px 20px rgba(0,0,0,.12)}.modal-content{padding:28px 28px 32px}.modal-title{margin:0 0 10px;color:#3c2470;font-size:2rem;padding-right:84px}.modal-subtitle{margin:0 0 20px;color:#62441a;font-size:1.15rem;font-weight:800}.modal-details{white-space:pre-line;line-height:1.7;font-size:1.02rem}.modal-meta{margin-top:18px;font-size:.92rem;color:#6b5a3a}.modal-close{position:absolute;top:12px;right:14px;border:none;background:#fff;color:#3c2470;width:42px;height:42px;border-radius:50%;border:3px solid var(--purple);font-size:1.4rem;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.15)}
 footer{text-align:center;padding:30px;color:#5a4a2c;font-size:.95rem}
 @media(max-width:780px){
   .modal-grid{grid-template-columns:1fr}
@@ -128,7 +128,7 @@ footer{text-align:center;padding:30px;color:#5a4a2c;font-size:.95rem}
   .modal-media{flex-shrink:0;max-height:48vh;overflow:hidden;padding:8px}
   .modal-media img{max-height:46vh;width:100%;max-width:none;object-fit:contain}
   .modal-content{padding:16px 20px 24px;overflow-y:auto;flex:1;min-height:0}
-  .modal-title{font-size:1.5rem}
+  .modal-title{font-size:1.5rem;padding-right:74px}
   .lang-switcher{top:8px;right:14px}
   h1{font-size:2.3rem}
   .slogan{font-size:1.5rem}
@@ -139,7 +139,7 @@ footer{text-align:center;padding:30px;color:#5a4a2c;font-size:.95rem}
   .modal-media{padding:6px;max-height:50vh;flex-shrink:0;overflow:hidden}
   .modal-media img{max-height:48vh;width:100%;max-width:none;object-fit:contain}
   .modal-content{padding:12px 14px 20px;overflow-y:auto;flex:1;min-height:0}
-  .modal-title{font-size:1.3rem}
+  .modal-title{font-size:1.3rem;padding-right:68px}
   .modal-subtitle{font-size:1rem;margin-bottom:10px}
   .modal-details{font-size:.95rem;overflow-wrap:break-word;white-space:pre-wrap}
 }
@@ -2262,7 +2262,7 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
       modalImage.src = 'https://kidsgonnaplay.com/images/buynow.jpg';
       modalImage.alt = 'Buy the PDF';
       modalImage.style.cursor = 'pointer';
-      modalTitle.textContent = 'Get the PDF to learn how to play.';
+      modalTitle.textContent = 'Unlock 100+ fun games with the PDF';
       modalSubtitle.textContent = 'Only $9';
       modalDetails.textContent = BUY_DETAILS_TEXT;
     } else {
