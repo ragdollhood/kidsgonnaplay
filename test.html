@@ -2256,23 +2256,18 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
   function renderSlogan(){if(!slogan)return; slogan.innerHTML = state.lang==='sv' ? '<span class="w1">Massor</span> <span class="w2">med</span> <span class="w3">lekar</span> <span class="w4">offline!</span>' : '<span class="w1">Phones</span> <span class="w2">away</span> – <span class="w3">we\'re</span> <span class="w4">gonna</span> <span class="w5">play</span><span class="w6">!</span>'; }
   function applyTranslations(){document.documentElement.lang=state.lang; buttons.forEach(btn=>btn.classList.toggle('active', btn.dataset.langTarget===state.lang)); document.querySelectorAll('[data-en][data-sv]:not(.card):not(.filter-btn):not(.slogan)').forEach(el=>{el.textContent=state.lang==='sv'?el.dataset.sv:el.dataset.en;}); document.querySelectorAll('.filter-btn[data-en][data-sv]').forEach(el=>{el.textContent=state.lang==='sv'?el.dataset.sv:el.dataset.en; if(el.classList.contains('active')) el.textContent=el.textContent;}); cards.forEach(card=>{const title=textFor(card,'title'); const subtitle=textFor(card,'subtitle'); card.querySelector('[data-field="title"]').textContent=title; card.querySelector('[data-field="subtitle"]').textContent=subtitle; card.setAttribute('aria-label', title); const img=card.querySelector('img'); img.alt=title; const newSrc=imageFor(card); if(img.src!==newSrc) img.src=newSrc;}); renderSlogan(); } 
   function isLockedCard(card){ return cards.indexOf(card) % 2 === 1; }
-  function openModal(card,focusClose=true){state.activeCard=card; const title=textFor(card,'title'); const subtitle=textFor(card,'subtitle'); const details=textFor(card,'details'); modalImage.src=imageFor(card); modalImage.alt=title;
+  const BUY_DETAILS_TEXT = "100+ screen-free games and activities that keep kids entertained without tablets, phones or TV. Perfect for rainy days, family time, road trips and birthday parties. Every parent knows the struggle: tablets, TV and phones are often the easiest option. This book gives you over 100 fun alternatives that help kids play, imagine, laugh and create memories they'll carry for years.\n⚡ Instant PDF download.";
+  function openModal(card,focusClose=true){state.activeCard=card; const title=textFor(card,'title'); const subtitle=textFor(card,'subtitle'); const details=textFor(card,'details'); modalImage.alt=title;
     if(isLockedCard(card)){
+      modalImage.src = 'https://kidsgonnaplay.com/images/buynow.jpg';
+      modalImage.alt = 'Buy the PDF';
+      modalImage.style.cursor = 'pointer';
       modalTitle.textContent = 'Get the PDF to learn how to play.';
       modalSubtitle.textContent = 'Only $9';
-      modalDetails.innerHTML = '';
-      const buyLink = document.createElement('a');
-      buyLink.href = 'store.html';
-      buyLink.setAttribute('aria-label', state.lang==='sv' ? 'Köp PDF:en i vår butik' : 'Buy the PDF in our store');
-      buyLink.style.display = 'block';
-      const buyImg = document.createElement('img');
-      buyImg.src = 'https://kidsgonnaplay.com/images/buynow.jpg';
-      buyImg.alt = state.lang==='sv' ? 'Köp PDF:en' : 'Buy the PDF';
-      buyImg.style.cssText = 'width:100%;max-width:420px;border-radius:24px;cursor:pointer;display:block;box-shadow:0 8px 20px rgba(0,0,0,.12);transition:transform .15s ease;';
-      buyLink.appendChild(buyImg);
-      buyLink.addEventListener('click', function(e){ e.preventDefault(); window.location.href='store.html'; });
-      modalDetails.appendChild(buyLink);
+      modalDetails.textContent = BUY_DETAILS_TEXT;
     } else {
+      modalImage.src = imageFor(card);
+      modalImage.style.cursor = '';
       modalTitle.textContent=title; modalSubtitle.textContent=subtitle; modalDetails.textContent=details;
     }
     modalMeta.textContent=''; modalMeta.style.display='none'; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; if(focusClose) modalClose.focus(); }
@@ -2283,6 +2278,7 @@ Om ni vill så kan ni göra detta som en staffett om ni är flera!" data-has-en-
 
                                                          state.activeCard=null; closeModal(); applyTranslations();}));
   cards.forEach(card=>card.addEventListener('click',()=>openModal(card)));
+  modalImage.addEventListener('click', function(){ if(state.activeCard && isLockedCard(state.activeCard)){ window.location.href='store.html'; } });
 
   function visibleCards(){return cards.filter(c=>c.style.display!=='none');}
   function currentCardIndex(){const list=visibleCards(); return list.indexOf(state.activeCard);}
