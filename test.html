@@ -53,15 +53,16 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 .corner-cover.sv{top:-18px;right:-16px;transform:rotate(14deg)}
 
 /* ===== Small cover thumb beside a B&W download button ===== */
-.bw-download-row{display:flex;align-items:center;justify-content:center;gap:10px;max-width:340px;margin:0 auto 12px}
-.bw-download-row .btn{flex:1;min-width:0}
-.bw-thumb{width:46px;height:auto;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.22);border:2px solid #fff;flex-shrink:0}
+.bw-download-row{display:flex;align-items:stretch;justify-content:center;gap:10px;max-width:340px;margin:0 auto}
+.bw-buttons-col{display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
+.bw-buttons-col .btn{justify-content:center;width:100%}
+.bw-thumb{width:56px;height:auto;align-self:stretch;object-fit:cover;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.22);border:2px solid #fff;flex-shrink:0}
 
 @media(max-width:560px){
   .corner-cover{width:56px;top:-14px}
   .corner-cover.en{left:-10px}
   .corner-cover.sv{right:-10px}
-  .bw-thumb{width:38px}
+  .bw-thumb{width:44px}
 }
 
 /* ===== Two-language split ===== */
@@ -155,15 +156,15 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
           Printer-friendly · Black &amp; White
         </span>
         <div class="bw-download-row">
-          <img class="bw-thumb" src="images/actityomslagsv.png" alt="Activity Book black &amp; white cover"/>
-          <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" download>
-            ⬇️ Download B&amp;W PDF
-          </a>
-        </div>
-        <div class="download-row bw">
-          <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" target="_blank" rel="noopener">
-            👀 View in browser
-          </a>
+          <img class="bw-thumb" src="images/acitityomslagsv.png" alt="Activity Book black &amp; white cover"/>
+          <div class="bw-buttons-col">
+            <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" download>
+              ⬇️ Download B&amp;W PDF
+            </a>
+            <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" target="_blank" rel="noopener">
+              👀 View in browser
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -193,15 +194,15 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
           Skrivarvänlig · Svartvit
         </span>
         <div class="bw-download-row">
-          <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" download>
-            ⬇️ Ladda ner svartvit PDF
-          </a>
+          <div class="bw-buttons-col">
+            <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" download>
+              ⬇️ Ladda ner svartvit PDF
+            </a>
+            <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" target="_blank" rel="noopener">
+              👀 Öppna i webbläsaren
+            </a>
+          </div>
           <img class="bw-thumb" src="images/pysselomslagsv.png" alt="Pysselbok svartvitt omslag"/>
-        </div>
-        <div class="download-row bw">
-          <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" target="_blank" rel="noopener">
-            👀 Öppna i webbläsaren
-          </a>
         </div>
       </div>
     </div>
