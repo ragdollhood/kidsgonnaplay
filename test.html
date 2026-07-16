@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#f5a623"/>
 <title>KIDS GONNA PLAY – Download your activity book</title>
 <meta name="description" content="Thank you for your purchase! View and download your Kids Gonna Play activity book here."/>
-<meta name="robots" content="noindex"/>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet"/>
 <link rel="icon" type="image/png" href="images/icon.png">
 <style>
 :root{
@@ -68,9 +68,7 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 .two-col{display:flex;gap:24px;justify-content:center;align-items:flex-start;flex-wrap:wrap;margin:0 auto 20px}
 .lang-col-wrap{flex:1 1 320px;max-width:440px}
 .lang-col{position:relative;background:#fff;border-radius:20px;padding:22px 18px 20px;box-shadow:0 10px 24px rgba(72,39,103,.12);border:3px solid rgba(123,79,201,.15)}
-.lang-col-header{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
 .lang-flag{width:34px;height:34px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25);display:block}
-.lang-col-title{font-size:1.25rem;font-weight:900;color:#3c2470;margin:0}
 
 /* ===== Download buttons ===== */
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:900;font-size:1.0rem;border-radius:999px;padding:14px 26px;text-decoration:none;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
@@ -84,6 +82,23 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 
 .contact-line{font-size:.85rem;color:#5a4a2c;margin:0 0 16px}
 .contact-line a{color:#5a4a2c;text-decoration:underline}
+
+.mobile-only{display:none}
+
+/* ===== Buy now upsell ===== */
+.upsell-wrap{max-width:640px;margin:0 auto 26px}
+.upsell-card{display:flex;align-items:center;gap:18px;background:#fff;border-radius:20px;padding:16px;box-shadow:0 10px 24px rgba(72,39,103,.14);border:3px solid var(--pink);text-decoration:none;color:inherit;text-align:left;transition:transform .15s ease,box-shadow .15s ease}
+.upsell-card:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(72,39,103,.2)}
+.upsell-card:active{transform:scale(.99)}
+.upsell-img{width:110px;height:110px;object-fit:cover;border-radius:14px;flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.upsell-title{font-size:1.15rem;font-weight:900;color:#3c2470;margin:0 0 6px}
+.upsell-text p{font-size:.9rem;color:#5a4a2c;line-height:1.4;margin:0 0 4px}
+.upsell-cta{display:inline-block;margin-top:6px;font-weight:800;color:var(--pink);font-size:.88rem}
+
+@media(max-width:560px){
+  .upsell-card{flex-direction:column;text-align:center;padding:18px 14px}
+  .upsell-img{width:140px;height:140px}
+}
 
 /* ===== Illustration ===== */
 .illustration-wrap{max-width:480px;margin:0 auto}
@@ -102,6 +117,8 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
   .lang-col{padding:18px 14px 16px}
   .fineprint{max-width:none;padding:0 4px}
   .above-box-text{font-size:.85rem}
+  .desktop-only{display:none}
+  .mobile-only{display:inline}
 }
 </style>
 </head>
@@ -200,7 +217,7 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
               ⬇️ Ladda ner PDF
             </a>
             <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" target="_blank" rel="noopener">
-              👀 Öppna i webbläsaren
+              👀 <span class="desktop-only">Öppna i webbläsaren</span><span class="mobile-only">Öppna i webbläsare</span>
             </a>
           </div>
         </div>
@@ -217,10 +234,10 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
             </span>
             <div class="thumb-col">
               <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" download>
-                ⬇️ Ladda ner svartvit PDF
+                ⬇️ <span class="desktop-only">Ladda ner svartvit PDF</span><span class="mobile-only">Ladda ner s/v PDF</span>
               </a>
               <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" target="_blank" rel="noopener">
-                👀 Öppna i webbläsaren
+                👀 <span class="desktop-only">Öppna i webbläsaren</span><span class="mobile-only">Öppna i webbläsare</span>
               </a>
             </div>
           </div>
@@ -230,6 +247,18 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
       </div>
     </div>
   </div>
+  </div>
+
+  <div class="upsell-wrap">
+    <a class="upsell-card" href="store.html">
+      <img class="upsell-img" src="images/buynow.jpg" alt="Kids Gonna Play – buy the full activity book"/>
+      <div class="upsell-text">
+        <h3 class="upsell-title">Thank you for playing with us!</h3>
+        <p>Get the full book with over 100 screen-free games and activities for kids.</p>
+        <p>Köp boken med över 100 lekar och aktiviteter för barn!</p>
+        <span class="upsell-cta">Shop now / Handla nu →</span>
+      </div>
+    </a>
   </div>
 
   <p class="contact-line">Contact / Kontakt: <a href="mailto:ragdollhood@gmail.com">ragdollhood@gmail.com</a></p>
