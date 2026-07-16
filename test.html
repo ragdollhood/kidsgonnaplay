@@ -47,22 +47,14 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 .thanks-title{font-size:1.6rem;color:#3c2470;margin:0 0 20px;text-shadow:2px 2px 0 var(--gold)}
 .product-badge-caption{font-size:.9rem;color:#5a4a2c;font-weight:700;line-height:1.4;text-align:center;max-width:460px;margin:0 auto 22px}
 
-/* ===== Tilted cover images in box corners ===== */
-.corner-cover{position:absolute;width:72px;border-radius:10px;box-shadow:0 8px 16px rgba(72,39,103,.3);border:3px solid #fff;z-index:6}
-.corner-cover.en{top:-18px;left:-16px;transform:rotate(-14deg)}
-.corner-cover.sv{top:-18px;right:-16px;transform:rotate(14deg)}
-
-/* ===== Small cover thumb beside a B&W download button ===== */
-.bw-download-row{display:flex;align-items:stretch;justify-content:center;gap:10px;max-width:340px;margin:0 auto}
-.bw-buttons-col{display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
-.bw-buttons-col .btn{justify-content:center;width:100%}
-.bw-thumb{width:56px;height:auto;align-self:stretch;object-fit:cover;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.22);border:2px solid #fff;flex-shrink:0}
+/* ===== Cover thumb beside stacked download buttons (used for both color & B&W) ===== */
+.thumb-row{display:flex;align-items:stretch;justify-content:center;gap:10px;max-width:340px;margin:0 auto}
+.thumb-col{display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
+.thumb-col .btn{justify-content:center;width:100%}
+.cover-thumb{width:56px;height:auto;align-self:stretch;object-fit:cover;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.22);border:2px solid #fff;flex-shrink:0}
 
 @media(max-width:560px){
-  .corner-cover{width:56px;top:-14px}
-  .corner-cover.en{left:-10px}
-  .corner-cover.sv{right:-10px}
-  .bw-thumb{width:44px}
+  .cover-thumb{width:44px}
 }
 
 /* ===== Two-language split ===== */
@@ -133,18 +125,20 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
     <div class="two-col">
     <!-- English version -->
     <div class="lang-col">
-      <img class="corner-cover en" src="images/activity0.png" alt="Kids Gonna Play Activity Book cover"/>
       <div class="lang-col-header">
         <img class="lang-flag" src="images/engalpha.png" alt="English flag"/>
         <h2 class="lang-col-title">Thank you!</h2>
       </div>
-      <div class="download-row">
-        <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" download>
-          ⬇️ Download PDF
-        </a>
-        <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" target="_blank" rel="noopener">
-          👀 View in browser
-        </a>
+      <div class="thumb-row">
+        <img class="cover-thumb" src="images/activity0.png" alt="Kids Gonna Play Activity Book cover"/>
+        <div class="thumb-col">
+          <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" download>
+            ⬇️ Download PDF
+          </a>
+          <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Activity_Book.pdf" target="_blank" rel="noopener">
+            👀 View in browser
+          </a>
+        </div>
       </div>
       <p class="fineprint">
         This PDF is for your personal use only. Download it to your device for access, even offline.
@@ -155,9 +149,9 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           Printer-friendly · Black &amp; White
         </span>
-        <div class="bw-download-row">
-          <img class="bw-thumb" src="images/acitityomslagsv.png" alt="Activity Book black &amp; white cover"/>
-          <div class="bw-buttons-col">
+        <div class="thumb-row">
+          <img class="cover-thumb" src="images/acitityomslagsv.png" alt="Activity Book black &amp; white cover"/>
+          <div class="thumb-col">
             <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Activity_Book-bw.pdf" download>
               ⬇️ Download B&amp;W PDF
             </a>
@@ -171,18 +165,20 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
 
     <!-- Swedish version -->
     <div class="lang-col">
-      <img class="corner-cover sv" src="images/pysselomslag.png" alt="Kids Gonna Play Pysselbok omslag"/>
       <div class="lang-col-header">
         <img class="lang-flag" src="images/swealpha.png" alt="Svensk flagga"/>
         <h2 class="lang-col-title">Tack!</h2>
       </div>
-      <div class="download-row">
-        <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" download>
-          ⬇️ Ladda ner PDF
-        </a>
-        <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" target="_blank" rel="noopener">
-          👀 Öppna i webbläsaren
-        </a>
+      <div class="thumb-row">
+        <div class="thumb-col">
+          <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" download>
+            ⬇️ Ladda ner PDF
+          </a>
+          <a class="btn btn-secondary" href="gonnadownload/Kids_Gonna_Play-Pysselbok.pdf" target="_blank" rel="noopener">
+            👀 Öppna i webbläsaren
+          </a>
+        </div>
+        <img class="cover-thumb" src="images/pysselomslag.png" alt="Kids Gonna Play Pysselbok omslag"/>
       </div>
       <p class="fineprint">
         Denna PDF är endast för ditt personliga bruk och får ej delas. Ladda ner på din enhet för att få tillgång till den offline.
@@ -193,8 +189,8 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           Skrivarvänlig · Svartvit
         </span>
-        <div class="bw-download-row">
-          <div class="bw-buttons-col">
+        <div class="thumb-row">
+          <div class="thumb-col">
             <a class="btn btn-primary" href="gonnadownload/Kids_Gonna_Play-Pysselbok-bw.pdf" download>
               ⬇️ Ladda ner svartvit PDF
             </a>
@@ -202,7 +198,7 @@ header{text-align:center;padding:10px 20px 14px;background:linear-gradient(180de
               👀 Öppna i webbläsaren
             </a>
           </div>
-          <img class="bw-thumb" src="images/pysselomslagsv.png" alt="Pysselbok svartvitt omslag"/>
+          <img class="cover-thumb" src="images/pysselomslagsv.png" alt="Pysselbok svartvitt omslag"/>
         </div>
       </div>
     </div>
